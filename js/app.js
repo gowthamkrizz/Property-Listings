@@ -716,31 +716,113 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 11. Mobile Drawer Navigation
+  // 11. Mobile Drawer Navigation & Background Scroll Lock
   const mobileDrawer = document.getElementById('mobileDrawer');
   const mobileMenuToggle = document.getElementById('mobileMenuToggle');
   const closeMobileDrawerBtn = document.getElementById('closeMobileDrawer');
+  let savedScrollPosition = 0;
+
+  function openMobileDrawer() {
+    if (!mobileDrawer) return;
+    savedScrollPosition = window.pageYOffset || document.documentElement.scrollTop || 0;
+    mobileDrawer.classList.add('is-open');
+    document.documentElement.classList.add('menu-open');
+    document.body.classList.add('menu-open');
+    document.body.style.top = `-${savedScrollPosition}px`;
+  }
+
+  function closeMobileDrawer() {
+    if (!mobileDrawer) return;
+    mobileDrawer.classList.remove('is-open');
+    document.documentElement.classList.remove('menu-open');
+    document.body.classList.remove('menu-open');
+    document.body.style.top = '';
+    window.scrollTo(0, savedScrollPosition);
+  }
 
   if (mobileMenuToggle && mobileDrawer) {
-    mobileMenuToggle.addEventListener('click', () => {
-      mobileDrawer.classList.add('is-open');
-      document.body.style.overflow = 'hidden';
+    mobileMenuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openMobileDrawer();
     });
   }
 
   if (closeMobileDrawerBtn && mobileDrawer) {
-    closeMobileDrawerBtn.addEventListener('click', () => {
-      mobileDrawer.classList.remove('is-open');
-      document.body.style.overflow = '';
+    closeMobileDrawerBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeMobileDrawer();
+    });
+  }
+
+  if (mobileDrawer) {
+    mobileDrawer.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        closeMobileDrawer();
+      });
     });
   }
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && mobileDrawer && mobileDrawer.classList.contains('is-open')) {
-      mobileDrawer.classList.remove('is-open');
-      document.body.style.overflow = '';
+      closeMobileDrawer();
     }
   });
+
+  // Automatically close mobile menu if viewport resized to desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 991 && mobileDrawer && mobileDrawer.classList.contains('is-open')) {
+      closeMobileDrawer();
+    }
+  });
+
+  // Prevent background wheel / trackpad scroll chaining to window
+  if (mobileDrawer) {
+    mobileDrawer.addEventListener('wheel', (e) => {
+      const scrollBody = mobileDrawer.querySelector('.mobile-drawer-body');
+      if (!scrollBody) {
+        e.preventDefault();
+        return;
+      }
+      const isAtTop = scrollBody.scrollTop <= 0;
+      const isAtBottom = Math.ceil(scrollBody.scrollTop + scrollBody.clientHeight) >= scrollBody.scrollHeight;
+
+      if ((e.deltaY < 0 && isAtTop) || (e.deltaY > 0 && isAtBottom)) {
+        e.preventDefault();
+      }
+    }, { passive: false });
+
+    let touchStartY = 0;
+    mobileDrawer.addEventListener('touchstart', (e) => {
+      if (e.touches && e.touches.length > 0) {
+        touchStartY = e.touches[0].clientY;
+      }
+    }, { passive: true });
+
+    mobileDrawer.addEventListener('touchmove', (e) => {
+      const scrollBody = mobileDrawer.querySelector('.mobile-drawer-body');
+      if (!scrollBody || !e.touches || e.touches.length === 0) {
+        e.preventDefault();
+        return;
+      }
+      const currentY = e.touches[0].clientY;
+      const isAtTop = scrollBody.scrollTop <= 0;
+      const isAtBottom = Math.ceil(scrollBody.scrollTop + scrollBody.clientHeight) >= scrollBody.scrollHeight;
+
+      // Prevent overscroll rubber-banding into background document
+      if ((currentY > touchStartY && isAtTop) || (currentY < touchStartY && isAtBottom)) {
+        e.preventDefault();
+      }
+    }, { passive: false });
+  }
+
+  // Prevent background touch scrolling on any area outside the drawer
+  document.addEventListener('touchmove', (e) => {
+    if (mobileDrawer && mobileDrawer.classList.contains('is-open')) {
+      if (!mobileDrawer.contains(e.target)) {
+        e.preventDefault();
+      }
+    }
+  }, { passive: false });
 
   // 12. Toast Notification System
   window.showToast = (message, isError = false) => {
