@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In | Stackly Real Estate Platform</title>
+  <meta name="description" content="Sign in to your Stackly account to manage property listings, portfolio investments, and real estate advisory.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/webp" href="assets/images/stackly.webp">
+
+  <!-- Google Fonts: Inter & Josefin Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome 6 Icons & Remix Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-page-body">
+
+  <div class="auth-page-container">
+    <div class="auth-card-wrapper">
+      
+      <!-- Left Visual Card -->
+      <div class="auth-side-banner">
+        <div class="auth-banner-bg" style="background-image: url('assets/images/banner-loan.webp');"></div>
+        <div class="auth-banner-overlay"></div>
+        
+        <div class="auth-banner-content">
+          <!-- Stackly Logo -->
+          <a href="index.html" class="auth-brand-logo">
+            <img src="assets/images/stackly.webp" alt="Stackly" class="auth-logo-img">
+          </a>
+
+          <!-- Pill Badge -->
+          <div class="auth-kicker-badge">
+            <i class="ri-shield-user-line"></i> WELCOME BACK
+          </div>
+
+          <!-- Main Heading -->
+          <h1 class="auth-banner-title">
+            Unlock your <span class="auth-highlight-text">property clarity</span>
+          </h1>
+
+          <!-- Description -->
+          <p class="auth-banner-desc">
+            Access your Stackly account to manage your property portfolio, track real-time valuations, explore exclusive listings, and connect with licensed advisory specialists.
+          </p>
+
+          <!-- 3 Feature Badges -->
+          <div class="auth-feature-pills">
+            <div class="auth-pill-item">
+              <i class="ri-lock-2-fill"></i> Secure Access
+            </div>
+            <div class="auth-pill-item">
+              <i class="ri-check-line"></i> Expert Advisors
+            </div>
+            <div class="auth-pill-item">
+              <i class="ri-pie-chart-2-fill"></i> Market Analytics
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Form Container -->
+      <div class="auth-form-side">
+        
+        <!-- Top Nav Link -->
+        <div class="auth-top-nav">
+          <a href="index.html" class="auth-back-link">
+            <i class="ri-home-4-line"></i> Back to Home
+          </a>
+          <span class="auth-section-kicker">— WELCOME BACK</span>
+        </div>
+
+        <!-- Form Header -->
+        <div class="auth-header-wrap">
+          <h2 class="auth-main-title">
+            Sign <span class="auth-highlight-word">in</span>
+          </h2>
+          <p class="auth-main-subtitle">
+            Enter your credentials below to access your real estate investor or client dashboard.
+          </p>
+        </div>
+
+        <!-- Sign In Form (Custom JavaScript Validation) -->
+        <form id="signInForm" class="auth-form" onsubmit="handleAuthSignIn(event)" novalidate>
+          
+          <!-- Username Field -->
+          <div class="auth-form-group" id="grpUsername">
+            <label for="loginUsername">USERNAME</label>
+            <div class="auth-input-wrapper">
+              <i class="ri-user-3-line auth-input-icon"></i>
+              <input type="text" id="loginUsername" class="auth-form-control" placeholder="Enter your username" autocomplete="username">
+            </div>
+            <div class="form-field-error" id="errUsername" style="display: none;"></div>
+          </div>
+
+          <!-- Select Portal Field -->
+          <div class="auth-form-group" id="grpPortal">
+            <label for="loginPortal">SELECT PORTAL</label>
+            <div class="auth-input-wrapper">
+              <i class="ri-community-line auth-input-icon"></i>
+              <select id="loginPortal" class="auth-form-control auth-select">
+                <option value="" disabled selected>Select your portal...</option>
+                <option value="buyer">Buyer</option>
+                <option value="admin">Admin</option>
+              </select>
+              <i class="ri-arrow-down-s-line auth-select-arrow"></i>
+            </div>
+            <div class="form-field-error" id="errPortal" style="display: none;"></div>
+          </div>
+
+          <!-- Email Address Field -->
+          <div class="auth-form-group" id="grpEmail">
+            <label for="loginEmail">EMAIL ADDRESS</label>
+            <div class="auth-input-wrapper">
+              <i class="ri-mail-line auth-input-icon"></i>
+              <input type="email" id="loginEmail" class="auth-form-control" placeholder="you@company.com" autocomplete="email">
+            </div>
+            <div class="form-field-error" id="errEmail" style="display: none;"></div>
+          </div>
+
+          <!-- Password Field -->
+          <div class="auth-form-group" id="grpPassword">
+            <label for="loginPassword">PASSWORD</label>
+            <div class="auth-input-wrapper">
+              <i class="ri-lock-password-line auth-input-icon"></i>
+              <input type="password" id="loginPassword" class="auth-form-control" placeholder="Min. 8 characters" autocomplete="current-password">
+              <button type="button" class="auth-pwd-toggle" onclick="togglePasswordVisibility('loginPassword', this)" aria-label="Toggle password visibility">
+                <i class="ri-eye-line"></i>
+              </button>
+            </div>
+            <div class="form-field-error" id="errPassword" style="display: none;"></div>
+
+            <!-- Password Requirements Live Checklist -->
+            <div class="pwd-requirements-box" id="pwdRequirements">
+              <div class="pwd-req-item" id="reqLength"><i class="ri-checkbox-circle-line"></i> At least 8 characters</div>
+              <div class="pwd-req-item" id="reqUpper"><i class="ri-checkbox-circle-line"></i> At least one uppercase letter (A-Z)</div>
+              <div class="pwd-req-item" id="reqLower"><i class="ri-checkbox-circle-line"></i> At least one lowercase letter (a-z)</div>
+              <div class="pwd-req-item" id="reqNumber"><i class="ri-checkbox-circle-line"></i> At least one number (0-9)</div>
+            </div>
+          </div>
+
+          <!-- Options Row -->
+          <div class="auth-options-row">
+            <label class="auth-checkbox-label">
+              <input type="checkbox" id="rememberMe" checked>
+              <span>Remember me</span>
+            </label>
+            <a href="404.html" class="auth-forgot-link">Forgot password?</a>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="auth-submit-btn" id="btnSignIn">
+            <span>SIGN IN</span>
+            <i class="ri-login-box-line"></i>
+          </button>
+
+          <!-- Footer Switch -->
+          <div class="auth-switch-prompt">
+            Don't have an account? <a href="signup.html" class="auth-switch-link">Create one free</a>
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container"></div>
+
+  <!-- Script for Auth Logic -->
+  <script>
+    function togglePasswordVisibility(inputId, btn) {
+      const input = document.getElementById(inputId);
+      const icon = btn.querySelector('i');
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.className = 'ri-eye-off-line';
+      } else {
+        input.type = 'password';
+        icon.className = 'ri-eye-line';
+      }
+    }
+
+    // Helper: Show custom error beneath field
+    function setFieldError(fieldId, errId, message) {
+      const field = document.getElementById(fieldId);
+      const errEl = document.getElementById(errId);
+      if (field) {
+        field.classList.add('input-error');
+        field.classList.remove('is-valid');
+      }
+      if (errEl) {
+        errEl.innerHTML = `<i class="ri-error-warning-fill"></i> ${message}`;
+        errEl.style.display = 'flex';
+      }
+    }
+
+    // Helper: Clear custom error
+    function clearFieldError(fieldId, errId) {
+      const field = document.getElementById(fieldId);
+      const errEl = document.getElementById(errId);
+      if (field) {
+        field.classList.remove('input-error');
+      }
+      if (errEl) {
+        errEl.style.display = 'none';
+        errEl.innerHTML = '';
+      }
+    }
+
+    // Email regex validator
+    function isValidEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
+    }
+
+    // Attach real-time input listeners to clear errors on input
+    ['loginUsername', 'loginEmail', 'loginPassword'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.addEventListener('input', () => {
+          const errId = 'err' + id.replace('login', '');
+          clearFieldError(id, errId);
+        });
+      }
+    });
+
+    const portalSelect = document.getElementById('loginPortal');
+    if (portalSelect) {
+      portalSelect.addEventListener('change', () => {
+        clearFieldError('loginPortal', 'errPortal');
+      });
+    }
+
+    // Live Password Validation Checklist
+    const pwdInput = document.getElementById('loginPassword');
+    if (pwdInput) {
+      pwdInput.addEventListener('input', () => {
+        const val = pwdInput.value;
+        const reqLength = document.getElementById('reqLength');
+        const reqUpper = document.getElementById('reqUpper');
+        const reqLower = document.getElementById('reqLower');
+        const reqNumber = document.getElementById('reqNumber');
+
+        if (reqLength) reqLength.classList.toggle('is-valid', val.length >= 8);
+        if (reqUpper) reqUpper.classList.toggle('is-valid', /[A-Z]/.test(val));
+        if (reqLower) reqLower.classList.toggle('is-valid', /[a-z]/.test(val));
+        if (reqNumber) reqNumber.classList.toggle('is-valid', /[0-9]/.test(val));
+      });
+    }
+
+    function showToast(msg, isError = false) {
+      const container = document.querySelector('.toast-container');
+      const toast = document.createElement('div');
+      toast.className = 'toast';
+      const icon = isError 
+        ? '<i class="fa-solid fa-circle-exclamation" style="color: #DC2626;"></i>' 
+        : '<i class="fa-solid fa-circle-check" style="color: #1B6F58;"></i>';
+      toast.innerHTML = `${icon} ${msg}`;
+      container.appendChild(toast);
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateY(10px)';
+        toast.style.transition = 'all 0.3s ease';
+        setTimeout(() => toast.remove(), 300);
+      }, 3500);
+    }
+
+    function handleAuthSignIn(e) {
+      e.preventDefault();
+      let isValid = true;
+
+      const usernameInput = document.getElementById('loginUsername');
+      const portalInput = document.getElementById('loginPortal');
+      const emailInput = document.getElementById('loginEmail');
+      const passwordInput = document.getElementById('loginPassword');
+
+      // 1. Username Validation
+      const usernameVal = usernameInput.value.trim();
+      if (!usernameVal) {
+        setFieldError('loginUsername', 'errUsername', 'Username is required.');
+        isValid = false;
+      } else if (usernameVal.length < 3) {
+        setFieldError('loginUsername', 'errUsername', 'Username must be at least 3 characters.');
+        isValid = false;
+      } else {
+        clearFieldError('loginUsername', 'errUsername');
+      }
+
+      // 2. Portal Validation
+      if (!portalInput.value) {
+        setFieldError('loginPortal', 'errPortal', 'Please select a portal to continue.');
+        isValid = false;
+      } else {
+        clearFieldError('loginPortal', 'errPortal');
+      }
+
+      // 3. Email Validation
+      const emailVal = emailInput.value.trim();
+      if (!emailVal) {
+        setFieldError('loginEmail', 'errEmail', 'Email address is required.');
+        isValid = false;
+      } else if (!isValidEmail(emailVal)) {
+        setFieldError('loginEmail', 'errEmail', 'Please enter a valid email address (e.g. name@company.com).');
+        isValid = false;
+      } else {
+        clearFieldError('loginEmail', 'errEmail');
+      }
+
+      // 4. Password Validation
+      const pwdVal = passwordInput.value;
+      if (!pwdVal) {
+        setFieldError('loginPassword', 'errPassword', 'Password is required.');
+        isValid = false;
+      } else if (pwdVal.length < 8) {
+        setFieldError('loginPassword', 'errPassword', 'Password must be at least 8 characters.');
+        isValid = false;
+      } else {
+        clearFieldError('loginPassword', 'errPassword');
+      }
+
+      if (!isValid) {
+        showToast('Please correct the errors in the form.', true);
+        return;
+      }
+
+      // Successful submission animation
+      const btn = document.getElementById('btnSignIn');
+      btn.innerHTML = '<i class="ri-loader-4-line ri-spin"></i> Authenticating...';
+      btn.disabled = true;
+
+      const portalVal = portalInput.value;
+      const targetDashboard = portalVal === 'admin' ? 'admin-dashboard.html' : 'buyer-dashboard.html';
+      const roleText = portalVal === 'admin' ? 'Super Admin' : 'Buyer';
+
+      // Save logged-in session data
+      const sessionData = {
+        name: usernameVal,
+        email: emailVal,
+        portal: portalVal,
+        loggedInAt: new Date().toISOString()
+      };
+      localStorage.setItem('stackly_user_session', JSON.stringify(sessionData));
+
+      setTimeout(() => {
+        showToast(`Welcome back, ${usernameVal}! Redirecting to ${roleText} Dashboard...`);
+        setTimeout(() => {
+          window.location.href = targetDashboard;
+        }, 1200);
+      }, 900);
+    }
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — Get in Touch | Stackly Real Estate</title>
+  <meta name="description" content="Connect with Stackly's executive property advisors. Visit our headquarters at MMR Complex in Salem, Tamil Nadu, call our specialists, or send an inquiry for tailored real estate advisory.">
+  
+  <link rel="icon" type="image/webp" href="assets/images/stackly.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Overpass:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Prata&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+  <link rel="stylesheet" href="css/scrollCue.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="contact-luxury-page endora-theme">
+
+  <!-- ======================================================================
+       1. Top Header Utility Bar
+       ====================================================================== -->
+  <div class="top-header-area">
+    <div class="container-fluid">
+      <div class="top-header-inner">
+        <div class="top-header-left">
+          <ul class="top-header-social-list">
+            <li><a href="404.html" class="social-link" aria-label="Facebook"><i class="ri-facebook-fill"></i></a></li>
+            <li><a href="404.html" class="social-link" aria-label="Twitter X"><i class="ri-twitter-x-line"></i></a></li>
+            <li><a href="404.html" class="social-link" aria-label="Instagram"><i class="ri-instagram-fill"></i></a></li>
+            <li><a href="404.html" class="social-link" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a></li>
+            <li><a href="404.html" class="social-link" aria-label="YouTube"><i class="ri-youtube-line"></i></a></li>
+            <li><a href="404.html" class="social-link" aria-label="Pinterest"><i class="ri-pinterest-line"></i></a></li>
+          </ul>
+          <div class="top-header-divider"></div>
+          <div class="top-header-mail">
+            <i class="ri-mail-line"></i>
+            <a href="404.html">info@stackly.com</a>
+          </div>
+        </div>
+        <div class="top-header-right">
+          <div class="top-header-call">
+            <i class="ri-phone-line"></i>
+            <a href="404.html">+91 74880 99999</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       2. Main Header & Navigation
+       ====================================================================== -->
+  <header class="site-header endora-navbar-wrap" id="siteNavbar">
+    <div class="container-fluid header-container">
+      <div class="navbar-left-group">
+        <!-- Stackly Logo -->
+        <a href="index.html" class="endora-brand-logo">
+          <img src="assets/images/stackly.webp" alt="Stackly" class="header-logo-img">
+        </a>
+
+        <!-- Search Property Field in Navbar -->
+        <form class="navbar-search-box" id="navbarSearchForm" onsubmit="event.preventDefault(); triggerNavbarSearch(this);">
+          <input type="text" id="navSearchKeyword" name="search" placeholder="Search property" autocomplete="off">
+          <button type="submit" aria-label="Search">
+            <i class="ri-search-line"></i>
+          </button>
+        </form>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="main-navigation">
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="properties.html" class="nav-link">Properties</a>
+          </li>
+          <li class="nav-item">
+            <a href="projects.html" class="nav-link">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a href="blog.html" class="nav-link">Blog</a>
+          </li>
+          <li class="nav-item active">
+            <a href="contact.html" class="nav-link">Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <div class="nav-auth-item">
+          <a href="login.html" class="nav-login-link">
+            Log In / Register
+          </a>
+        </div>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open mobile menu">
+          <i class="ri-menu-line"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="endora-brand-logo">
+        <img src="assets/images/stackly.webp" alt="Stackly" class="drawer-logo-img">
+      </a>
+      <button class="modal-close-btn" id="closeMobileDrawer"><i class="ri-close-line"></i></button>
+    </div>
+    <div class="mobile-drawer-body">
+      <ul class="mobile-menu-list">
+        <li><a href="index.html"><i class="ri-home-4-line"></i>Home</a></li>
+        <li><a href="about.html"><i class="ri-information-line"></i>About</a></li>
+        <li><a href="properties.html"><i class="ri-building-line"></i>Properties</a></li>
+        <li><a href="projects.html"><i class="ri-briefcase-line"></i>Projects</a></li>
+        <li><a href="blog.html"><i class="ri-article-line"></i>Blog</a></li>
+        <li class="active"><a href="contact.html"><i class="ri-customer-service-2-line"></i>Contact</a></li>
+      </ul>
+      <div style="margin-top: 20px;">
+        <a href="login.html" class="btn btn-primary" style="width: 100%; border-radius: 30px; background-color: #1B6F58; text-align: center; display: block; text-decoration: none; padding: 11px;">
+          <i class="ri-user-3-line"></i> Log In / Register
+        </a>
+      </div>
+      <div class="drawer-contact-card">
+        <div class="drawer-contact-item">
+          <i class="ri-mail-line"></i>
+          <a href="404.html">info@stackly.com</a>
+        </div>
+        <div class="drawer-contact-item">
+          <i class="ri-phone-line"></i>
+          <a href="404.html">+91 74880 99999</a>
+        </div>
+        <div class="drawer-social-list">
+          <a href="404.html" class="drawer-social-link" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+          <a href="404.html" class="drawer-social-link" aria-label="Twitter X"><i class="ri-twitter-x-line"></i></a>
+          <a href="404.html" class="drawer-social-link" aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
+          <a href="404.html" class="drawer-social-link" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       SECTION 1: 🏙️ CONTACT HERO — GET IN TOUCH
+       ====================================================================== -->
+  <section class="contact-hero-section">
+    <div class="contact-hero-bg-wrap">
+      <img src="assets/images/hero-contact.jpg" alt="Contact Stackly" class="contact-hero-img">
+      <div class="contact-hero-overlay"></div>
+    </div>
+
+    <div class="container contact-hero-content">
+      <div class="lux-breadcrumb-box">
+        <a href="index.html">HOME</a>
+        <span class="lux-bread-sep">/</span>
+        <span class="lux-bread-current">CONTACT US</span>
+      </div>
+
+      <span class="contact-hero-badge">WE ARE HERE TO ASSIST</span>
+      <h1 class="contact-hero-title">Get in Touch</h1>
+      <p class="contact-hero-subtitle">
+        Whether you are seeking commercial acquisitions, institutional investment decks, or bespoke private representation, our executive advisors are at your service.
+      </p>
+
+      <!-- Scroll Indicator -->
+      <a href="#contactInfoSection" class="lux-scroll-indicator" style="margin-top: 36px;" aria-label="Scroll to contact information">
+        <span class="lux-scroll-text">CONTACT CHANNELS</span>
+        <div class="lux-scroll-line"><span class="lux-scroll-dot"></span></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 2: 📍 CONTACT INFORMATION (3 Premium Cards)
+       ====================================================================== -->
+  <section class="contact-info-section" id="contactInfoSection">
+    <div class="container">
+      <div class="contact-cards-grid">
+        <!-- Card 1: Visit Our Office -->
+        <div class="contact-card-item">
+          <div class="contact-icon-circle">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <span class="contact-card-tag">HEADQUARTERS</span>
+          <h3 class="contact-card-title">Visit Our Office</h3>
+          <p class="contact-card-detail">MMR Complex, Salem - 636 003, Tamil Nadu, India</p>
+          <div class="contact-card-meta">
+            <span><i class="fa-regular fa-clock"></i> Mon – Sat: 9:00 AM – 7:00 PM</span>
+          </div>
+          <a href="404.html" class="contact-card-link">View on Map <i class="fa-solid fa-map-location-dot"></i></a>
+        </div>
+
+        <!-- Card 2: Call Our Experts -->
+        <div class="contact-card-item is-featured">
+          <div class="contact-icon-circle">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+          <span class="contact-card-tag">DIRECT HOTLINE</span>
+          <h3 class="contact-card-title">Call Our Experts</h3>
+          <p class="contact-card-detail">+91 74880 99999<br>+91 74880 88888 (Toll Free)</p>
+          <div class="contact-card-meta">
+            <span><i class="fa-solid fa-headset"></i> Immediate Broker Response</span>
+          </div>
+          <a href="404.html" class="contact-card-link">Call Now <i class="fa-solid fa-phone"></i></a>
+        </div>
+
+        <!-- Card 3: Email Our Team -->
+        <div class="contact-card-item">
+          <div class="contact-icon-circle">
+            <i class="fa-regular fa-envelope"></i>
+          </div>
+          <span class="contact-card-tag">ELECTRONIC DESK</span>
+          <h3 class="contact-card-title">Email Our Team</h3>
+          <p class="contact-card-detail">info@stackly.com<br>advisory@stackly.com</p>
+          <div class="contact-card-meta">
+            <span><i class="fa-solid fa-shield-halved"></i> 24h Guaranteed Reply</span>
+          </div>
+          <a href="404.html" class="contact-card-link">Send Email <i class="fa-solid fa-paper-plane"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 3: ✉️ SEND US A MESSAGE (Split Layout)
+       ====================================================================== -->
+  <section class="contact-form-section" id="messageSection">
+    <div class="container">
+      <div class="contact-split-grid">
+        <!-- Left Column: Story & Info -->
+        <div class="contact-intro-col">
+          <span class="lux-section-kicker">PERSONALIZED CONSULTATION</span>
+          <h2 class="contact-intro-heading">Let’s Talk About Your Next Property.</h2>
+          <p class="contact-intro-text">
+            Whether you are looking to acquire a landmark commercial asset, invest in an off-market master development, or find a signature private residence, our executive advisors provide confidential, data-driven counsel.
+          </p>
+
+          <div class="contact-intro-image-wrap">
+            <img src="assets/images/city-ny.webp" alt="Stackly Executive Advisory" class="contact-intro-img">
+            <div class="contact-img-badge">
+              <span class="contact-badge-title">Confidential Fiduciary Advisory</span>
+              <span class="contact-badge-sub">Trusted by 500+ Family Offices & Enterprises</span>
+            </div>
+          </div>
+
+          <div class="contact-direct-badges">
+            <div class="contact-badge-item">
+              <i class="fa-brands fa-whatsapp"></i>
+              <div>
+                <strong>WhatsApp Advisory</strong>
+                <span>+1 (234) 567-890</span>
+              </div>
+            </div>
+            <div class="contact-badge-item">
+              <i class="fa-solid fa-building-circle-check"></i>
+              <div>
+                <strong>Escrow Legal Support</strong>
+                <span>legal@stackly.com</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Premium Form -->
+        <div class="contact-form-card">
+          <div class="contact-form-header">
+            <h3 class="contact-form-title">Send Us a Message</h3>
+            <p class="contact-form-sub">Fill out your requirements below and an executive advisor will respond within 24 hours.</p>
+          </div>
+
+          <form id="contactInquiryForm" onsubmit="handleContactFormSubmit(event)" novalidate>
+            <div class="contact-fields-grid">
+              <!-- Full Name -->
+              <div class="contact-input-group">
+                <label for="contactName">Full Name *</label>
+                <input type="text" id="contactName" class="contact-form-control" placeholder="e.g. John Doe">
+                <div class="form-field-error" id="errContactName" style="display: none;"></div>
+              </div>
+
+              <!-- Email Address -->
+              <div class="contact-input-group">
+                <label for="contactEmail">Email Address *</label>
+                <input type="email" id="contactEmail" class="contact-form-control" placeholder="name@example.com">
+                <div class="form-field-error" id="errContactEmail" style="display: none;"></div>
+              </div>
+
+              <!-- Phone Number -->
+              <div class="contact-input-group">
+                <label for="contactPhone">Phone Number</label>
+                <input type="tel" id="contactPhone" class="contact-form-control" placeholder="+1 (555) 000-0000">
+                <div class="form-field-error" id="errContactPhone" style="display: none;"></div>
+              </div>
+
+              <!-- Property Interest -->
+              <div class="contact-input-group">
+                <label for="contactInterest">Property Interest ▾</label>
+                <select id="contactInterest" class="contact-form-control">
+                  <option value="commercial-office">Commercial Office Towers</option>
+                  <option value="luxury-villa">Luxury Villa / Penthouse</option>
+                  <option value="medical-hub">Medical & Life Sciences Hub</option>
+                  <option value="logistics-park">Industrial & Logistics Center</option>
+                  <option value="master-development">Master-Planned Land Development</option>
+                  <option value="general-inquiry">General Brokerage Inquiry</option>
+                </select>
+              </div>
+
+              <!-- Message -->
+              <div class="contact-input-group full-width">
+                <label for="contactMessage">Message *</label>
+                <textarea id="contactMessage" class="contact-form-control" rows="4" placeholder="Tell us about your property goals, timeline, and preferred locations..."></textarea>
+                <div class="form-field-error" id="errContactMessage" style="display: none;"></div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-contact-submit">
+              <span>Send Message</span>
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 4: 🗺️ FIND OUR OFFICE (Clean Architectural Map)
+       ====================================================================== -->
+  <section class="contact-map-section" id="mapSection">
+    <div class="container">
+      <div class="lux-section-header-center" style="margin-bottom: 35px;">
+        <span class="lux-section-kicker">PHYSICAL PRESENCE</span>
+        <h2 class="lux-section-title">Find Our Office</h2>
+        <p class="lux-section-sub">Conveniently situated at MMR Complex, Salem - 636 003, Tamil Nadu, India.</p>
+      </div>
+
+      <div class="contact-map-container">
+        <!-- Interactive Google Map Embed for MMR Complex, Salem -->
+        <iframe 
+          class="contact-map-iframe"
+          src="https://maps.google.com/maps?q=MMR+Complex,+Salem+-+636003,+Tamil+Nadu,+India&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Stackly Real Estate - MMR Complex, Salem">
+        </iframe>
+
+        <!-- Surrounding Landmarks (Salem) -->
+        <div class="contact-landmark landmark-1"><i class="fa-solid fa-plane-departure"></i> Salem Airport (25 Min)</div>
+        <div class="contact-landmark landmark-2"><i class="fa-solid fa-train"></i> Salem Jn Railway Station (10 Min)</div>
+        <div class="contact-landmark landmark-3"><i class="fa-solid fa-bus"></i> Salem New Bus Stand (8 Min)</div>
+
+        <!-- Floating Overlay Card -->
+        <div class="contact-map-overlay-card">
+          <span class="contact-map-card-tag">GLOBAL HEADQUARTERS</span>
+          <h4 class="contact-map-card-title">Stackly Real Estate Group</h4>
+          <p class="contact-map-card-addr"><i class="fa-solid fa-location-dot"></i> MMR Complex, Salem - 636 003, Tamil Nadu, India</p>
+          <div class="contact-map-card-hours">
+            <div><span>Mon – Fri:</span> <strong>9:00 AM – 7:00 PM</strong></div>
+            <div><span>Saturday:</span> <strong>10:00 AM – 5:00 PM</strong></div>
+          </div>
+          <a href="https://maps.google.com/?q=MMR+Complex,+Salem+-+636003,+Tamil+Nadu,+India" target="_blank" rel="noopener" class="btn btn-primary" style="width: 100%; padding: 12px 20px; font-size: 13px;">
+            Get Directions <i class="fa-solid fa-diamond-turn-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 5: 🤝 WHY CONNECT WITH STACKLY? (4 Horizontal Features)
+       ====================================================================== -->
+  <section class="contact-why-section">
+    <div class="container">
+      <div class="lux-section-header-center">
+        <span class="lux-section-kicker">THE STACKLY PROMISE</span>
+        <h2 class="lux-section-title">Why Connect With Stackly?</h2>
+        <p class="lux-section-sub">A fiduciary relationship built on transparency, market intelligence, and dedicated support.</p>
+      </div>
+
+      <div class="contact-why-grid">
+        <!-- Feature 1 -->
+        <div class="contact-why-card">
+          <div class="contact-why-num">01</div>
+          <h3 class="contact-why-title">Expert Guidance</h3>
+          <p class="contact-why-desc">Get advice from experienced property professionals with 15+ years of transaction mastery.</p>
+          <div class="contact-why-line"></div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="contact-why-card">
+          <div class="contact-why-num">02</div>
+          <h3 class="contact-why-title">Personalized Service</h3>
+          <p class="contact-why-desc">Customized acquisition strategies tailored to your exact investment parameters and lifestyle goals.</p>
+          <div class="contact-why-line"></div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="contact-why-card">
+          <div class="contact-why-num">03</div>
+          <h3 class="contact-why-title">Verified Opportunities</h3>
+          <p class="contact-why-desc">Explore carefully audited properties with clean title deeds, physical checks, and zero hidden clauses.</p>
+          <div class="contact-why-line"></div>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="contact-why-card">
+          <div class="contact-why-num">04</div>
+          <h3 class="contact-why-title">End-to-End Support</h3>
+          <p class="contact-why-desc">Full fiduciary guidance from asset discovery and legal contract negotiation through escrow closing.</p>
+          <div class="contact-why-line"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 6: 🏡 FINAL CTA — START YOUR PROPERTY JOURNEY
+       ====================================================================== -->
+  <section class="contact-final-cta-section">
+    <div class="contact-final-bg-wrap">
+      <img src="assets/images/banner-loan.webp" alt="Start Your Property Journey" class="contact-final-img">
+      <div class="contact-final-overlay"></div>
+    </div>
+
+    <div class="container contact-final-content">
+      <span class="contact-final-kicker">COMMENCE YOUR ACQUISITION</span>
+      <h2 class="contact-final-headline">Ready to Find Your Next Address?</h2>
+      <p class="contact-final-lead">
+        Tell us what you're looking for and our property specialists will help you find the right opportunity.
+      </p>
+
+      <div class="contact-final-actions">
+        <a href="properties.html" class="btn btn-primary" style="padding: 16px 36px; font-size: 14px;">Explore Properties <i class="fa-solid fa-house-chimney"></i></a>
+        <a href="404.html" class="btn btn-white" style="padding: 16px 36px; font-size: 14px;">Schedule a Consultation <i class="fa-solid fa-calendar-check"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rich Footer -->
+  <footer class="site-footer" id="footerSection">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <a href="index.html">
+              <img src="assets/images/stackly.webp" alt="Stackly Real Estate">
+            </a>
+          </div>
+          <p class="footer-about-text">
+            Stackly is the premier real estate portal for finding commercial offices, luxury leisure spaces, warehouses, and prime investment properties nationwide.
+          </p>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>MMR Complex, Salem - 636 003, Tamil Nadu, India</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <a href="404.html" style="color: inherit; text-decoration: none;">+91 74880 99999</a>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-regular fa-envelope"></i>
+            <a href="404.html" style="color: inherit; text-decoration: none;">info@stackly.com</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">REAL ESTATE EXPRESS</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="properties.html">Properties</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">REAL ESTATE COURSES</h4>
+          <ul class="footer-links-list">
+            <li><a href="404.html">Get My License</a></li>
+            <li><a href="404.html">Upgrade My License</a></li>
+            <li><a href="404.html">Continuing Education</a></li>
+            <li><a href="404.html">Exam Prep Master</a></li>
+            <li><a href="404.html">Appraisal License</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">NEWSLETTER</h4>
+          <p style="color: #A0A5AE; font-size: 13px; margin-bottom: 14px;">
+            Subscribe to our weekly market briefing and exclusive investment opportunities.
+          </p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); handleNewsletterSubmit(this);" novalidate>
+            <input type="email" class="newsletter-input" placeholder="Your Email address">
+            <button type="submit" class="newsletter-btn">Subscribe</button>
+          </form>
+          <div class="footer-socials">
+            <a href="404.html" class="footer-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>Copyright &copy; 2026 Stackly. All Rights Reserved.</div>
+        <div class="footer-bottom-links">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Terms</a>
+          <a href="404.html">Safety</a>
+          <a href="404.html">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="btn-back-to-top" id="backToTopBtn" title="Back to top" aria-label="Back to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <!-- Consultation Inquire Modal -->
+  <div class="modal-backdrop" id="loanModal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" onclick="closeAllModals()"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-header">
+        <h3 class="modal-title">Schedule a Consultation</h3>
+        <p style="font-size: 14px; color: #7D7D84;">Book a private session with a senior real estate advisor</p>
+      </div>
+      <form onsubmit="event.preventDefault(); handleConsultationModalSubmit(this);" novalidate>
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" class="form-control modal-name" placeholder="John Doe">
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" class="form-control modal-email" placeholder="name@domain.com">
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" class="form-control modal-phone" placeholder="+1 (555) 000-0000">
+        </div>
+        <div class="form-group">
+          <label>Preferred Contact Time</label>
+          <select class="form-control">
+            <option>Morning (9:00 AM – 12:00 PM)</option>
+            <option>Afternoon (1:00 PM – 4:00 PM)</option>
+            <option>Evening (5:00 PM – 7:00 PM)</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Confirm Consultation</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Sign In Modal -->
+  <div class="modal-backdrop" id="signinModal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" onclick="closeAllModals()"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-header">
+        <h3 class="modal-title">Sign In</h3>
+        <p style="font-size: 14px; color: #7D7D84;">Access your Stackly dashboard and saved properties</p>
+      </div>
+      <form onsubmit="event.preventDefault(); handleModalSignIn(this);" novalidate>
+        <div class="form-group">
+          <label>Username or Email Address</label>
+          <input type="text" class="form-control modal-user" placeholder="Enter username or email">
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" class="form-control modal-pwd" placeholder="Enter password">
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Sign In</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Register Modal -->
+  <div class="modal-backdrop" id="registerModal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" onclick="closeAllModals()"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-header">
+        <h3 class="modal-title">Register Account</h3>
+        <p style="font-size: 14px; color: #7D7D84;">Create a free Stackly account today</p>
+      </div>
+      <form onsubmit="event.preventDefault(); handleModalRegister(this);" novalidate>
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" class="form-control modal-reg-name" placeholder="e.g. John Doe">
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" class="form-control modal-reg-email" placeholder="name@example.com">
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Create Account</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ScrollCue & Application JavaScript -->
+  <script src="js/scrollCue.min.js"></script>
+  <script src="js/app.js"></script>
+
+  <!-- Contact Form JavaScript Validation -->
+  <script>
+    function setFieldError(fieldId, errId, message) {
+      const field = document.getElementById(fieldId);
+      const errEl = document.getElementById(errId);
+      if (field) {
+        field.classList.add('input-error');
+      }
+      if (errEl) {
+        errEl.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> ${message}`;
+        errEl.style.display = 'flex';
+      }
+    }
+
+    function clearFieldError(fieldId, errId) {
+      const field = document.getElementById(fieldId);
+      const errEl = document.getElementById(errId);
+      if (field) {
+        field.classList.remove('input-error');
+      }
+      if (errEl) {
+        errEl.style.display = 'none';
+        errEl.innerHTML = '';
+      }
+    }
+
+    ['contactName', 'contactEmail', 'contactPhone', 'contactMessage'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.addEventListener('input', () => {
+          const errId = 'err' + id.charAt(0).toUpperCase() + id.slice(1);
+          clearFieldError(id, errId);
+        });
+      }
+    });
+
+    function handleContactFormSubmit(e) {
+      e.preventDefault();
+      let isValid = true;
+
+      const name = document.getElementById('contactName').value.trim();
+      const email = document.getElementById('contactEmail').value.trim();
+      const phone = document.getElementById('contactPhone').value.trim();
+      const message = document.getElementById('contactMessage').value.trim();
+
+      // 1. Full Name
+      if (!name) {
+        setFieldError('contactName', 'errContactName', 'Please enter your full name.');
+        isValid = false;
+      } else if (name.length < 2) {
+        setFieldError('contactName', 'errContactName', 'Name must be at least 2 characters.');
+        isValid = false;
+      } else {
+        clearFieldError('contactName', 'errContactName');
+      }
+
+      // 2. Email Address
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email) {
+        setFieldError('contactEmail', 'errContactEmail', 'Please enter your email address.');
+        isValid = false;
+      } else if (!emailRegex.test(email)) {
+        setFieldError('contactEmail', 'errContactEmail', 'Please enter a valid email address (e.g. name@domain.com).');
+        isValid = false;
+      } else {
+        clearFieldError('contactEmail', 'errContactEmail');
+      }
+
+      // 3. Message
+      if (!message) {
+        setFieldError('contactMessage', 'errContactMessage', 'Please enter your inquiry message.');
+        isValid = false;
+      } else if (message.length < 10) {
+        setFieldError('contactMessage', 'errContactMessage', 'Message must be at least 10 characters.');
+        isValid = false;
+      } else {
+        clearFieldError('contactMessage', 'errContactMessage');
+      }
+
+      if (!isValid) {
+        showToast('Please correct the highlighted errors in the form.');
+        return;
+      }
+
+      window.location.href = '404.html';
+    }
+  </script>
+</body>
+</html>

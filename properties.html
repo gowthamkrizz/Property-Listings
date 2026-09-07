@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Properties & Real Estate Marketplace | Stackly</title>
+  <meta name="description" content="Find a place that feels like home. Explore over 500+ verified luxury villas, modern apartments, penthouses, commercial spaces, and premium land with Stackly.">
+  
+  <link rel="icon" type="image/webp" href="assets/images/stackly.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Overpass:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Prata&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+  <link rel="stylesheet" href="css/scrollCue.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="properties-marketplace-page endora-theme">
+
+  <!-- ======================================================================
+       1. Top Header Utility Bar
+       ====================================================================== -->
+  <div class="top-header-area">
+    <div class="container-fluid">
+      <div class="top-header-inner">
+        <div class="top-header-left">
+          <ul class="top-header-social-list">
+            <li><a href="404.html" class="social-link" aria-label="Facebook"><i class="ri-facebook-fill"></i></a></li>
+            <li><a href="404.html" class="social-link" aria-label="Twitter X"><i class="ri-twitter-x-line"></i></a></li>
+            <li><a href="404.html" class="social-link" aria-label="Instagram"><i class="ri-instagram-fill"></i></a></li>
+            <li><a href="404.html" class="social-link" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a></li>
+            <li><a href="404.html" class="social-link" aria-label="YouTube"><i class="ri-youtube-line"></i></a></li>
+            <li><a href="404.html" class="social-link" aria-label="Pinterest"><i class="ri-pinterest-line"></i></a></li>
+          </ul>
+          <div class="top-header-divider"></div>
+          <div class="top-header-mail">
+            <i class="ri-mail-line"></i>
+            <a href="404.html">info@stackly.com</a>
+          </div>
+        </div>
+        <div class="top-header-right">
+          <div class="top-header-call">
+            <i class="ri-phone-line"></i>
+            <a href="404.html">+91 74880 99999</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       2. Main Header & Navigation
+       ====================================================================== -->
+  <header class="site-header endora-navbar-wrap" id="siteNavbar">
+    <div class="container-fluid header-container">
+      <div class="navbar-left-group">
+        <!-- Stackly Logo -->
+        <a href="index.html" class="endora-brand-logo">
+          <img src="assets/images/stackly.webp" alt="Stackly" class="header-logo-img">
+        </a>
+
+        <!-- Search Property Field in Navbar -->
+        <form class="navbar-search-box" id="navbarSearchForm" onsubmit="event.preventDefault(); triggerNavbarSearch(this);">
+          <input type="text" id="navSearchKeyword" name="search" placeholder="Search property" autocomplete="off">
+          <button type="submit" aria-label="Search">
+            <i class="ri-search-line"></i>
+          </button>
+        </form>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="main-navigation">
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About</a>
+          </li>
+          <li class="nav-item active">
+            <a href="properties.html" class="nav-link">Properties</a>
+          </li>
+          <li class="nav-item">
+            <a href="projects.html" class="nav-link">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a href="blog.html" class="nav-link">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <div class="nav-auth-item">
+          <a href="login.html" class="nav-login-link">
+            Log In / Register
+          </a>
+        </div>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open mobile menu">
+          <i class="ri-menu-line"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="endora-brand-logo">
+        <img src="assets/images/stackly.webp" alt="Stackly" class="drawer-logo-img">
+      </a>
+      <button class="modal-close-btn" id="closeMobileDrawer"><i class="ri-close-line"></i></button>
+    </div>
+    <div class="mobile-drawer-body">
+      <ul class="mobile-menu-list">
+        <li><a href="index.html"><i class="ri-home-4-line"></i>Home</a></li>
+        <li><a href="about.html"><i class="ri-information-line"></i>About</a></li>
+        <li class="active"><a href="properties.html"><i class="ri-building-line"></i>Properties</a></li>
+        <li><a href="projects.html"><i class="ri-briefcase-line"></i>Projects</a></li>
+        <li><a href="blog.html"><i class="ri-article-line"></i>Blog</a></li>
+        <li><a href="contact.html"><i class="ri-customer-service-2-line"></i>Contact</a></li>
+      </ul>
+      <div style="margin-top: 20px;">
+        <a href="login.html" class="btn btn-primary" style="width: 100%; border-radius: 30px; background-color: #1B6F58; text-align: center; display: block; text-decoration: none; padding: 11px;">
+          <i class="ri-user-3-line"></i> Log In / Register
+        </a>
+      </div>
+      <div class="drawer-contact-card">
+        <div class="drawer-contact-item">
+          <i class="ri-mail-line"></i>
+          <a href="404.html">info@stackly.com</a>
+        </div>
+        <div class="drawer-contact-item">
+          <i class="ri-phone-line"></i>
+          <a href="404.html">+91 74880 99999</a>
+        </div>
+        <div class="drawer-social-list">
+          <a href="404.html" class="drawer-social-link" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+          <a href="404.html" class="drawer-social-link" aria-label="Twitter X"><i class="ri-twitter-x-line"></i></a>
+          <a href="404.html" class="drawer-social-link" aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
+          <a href="404.html" class="drawer-social-link" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       SECTION 1: 🏙️ PROPERTIES HERO
+       ====================================================================== -->
+  <section class="prop-hero-section">
+    <div class="prop-hero-bg-wrap">
+      <img src="assets/images/hero-properties.jpg" alt="Luxury Real Estate" class="prop-hero-img">
+      <div class="prop-hero-overlay"></div>
+    </div>
+
+    <div class="container prop-hero-content">
+      <div class="lux-breadcrumb-box">
+        <a href="index.html">HOME</a>
+        <span class="lux-bread-sep">→</span>
+        <span class="lux-bread-current">PROPERTIES</span>
+      </div>
+
+      <span class="prop-hero-badge">EXPLORE OUR PROPERTIES</span>
+      <h1 class="prop-hero-title">Find a Place That Feels<br>Like Home.</h1>
+      <p class="prop-hero-subtitle">
+        Explore thousands of verified luxury villas, modern apartments, penthouses, commercial spaces, and premium land investments.
+      </p>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 2: 🔎 ADVANCED FLOATING PROPERTY SEARCH
+       ====================================================================== -->
+  <section class="prop-search-section">
+    <div class="container">
+      <div class="prop-search-floating-panel">
+        <form id="propPageSearchForm" onsubmit="event.preventDefault(); applyPropertyPageFilter();">
+          <div class="prop-search-grid">
+            <!-- Location -->
+            <div class="prop-field-box">
+              <label><i class="fa-solid fa-location-dot"></i> Location</label>
+              <select id="propLocationFilter" class="prop-select">
+                <option value="all">All Locations</option>
+                <option value="mumbai">Mumbai</option>
+                <option value="bangalore">Bangalore</option>
+                <option value="chennai">Chennai</option>
+                <option value="hyderabad">Hyderabad</option>
+                <option value="pune">Pune</option>
+                <option value="dubai">Dubai</option>
+                <option value="united-states">United States</option>
+              </select>
+            </div>
+
+            <!-- Property Type -->
+            <div class="prop-field-box">
+              <label><i class="fa-solid fa-building"></i> Property Type</label>
+              <select id="propTypeFilter" class="prop-select">
+                <option value="all">All Property Types</option>
+                <option value="apartment">Modern Apartment</option>
+                <option value="villa">Luxury Villa</option>
+                <option value="penthouse">Penthouse</option>
+                <option value="office">Corporate Office</option>
+                <option value="commercial">Commercial Space</option>
+                <option value="land">Premium Land</option>
+              </select>
+            </div>
+
+            <!-- Purpose -->
+            <div class="prop-field-box">
+              <label><i class="fa-solid fa-tag"></i> Purpose</label>
+              <select id="propPurposeFilter" class="prop-select">
+                <option value="all">Buy or Rent</option>
+                <option value="sale">For Sale</option>
+                <option value="rent">For Rent</option>
+              </select>
+            </div>
+
+            <!-- Price Range -->
+            <div class="prop-field-box">
+              <label><i class="fa-solid fa-wallet"></i> Price Range</label>
+              <select id="propPriceFilter" class="prop-select">
+                <option value="all">Any Price</option>
+                <option value="500000">Under ₹50 Lakhs / $500k</option>
+                <option value="1500000">₹50L - ₹1.5 Cr / $1.5M</option>
+                <option value="3000000">₹1.5 Cr - ₹3 Cr / $3M</option>
+                <option value="5000000">Luxury (₹3 Cr+ / $3M+)</option>
+              </select>
+            </div>
+
+            <!-- Search Button -->
+            <div class="prop-search-btn-box">
+              <button type="submit" class="btn btn-prop-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <span>Search</span>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 3: 🏠 PROPERTY LISTINGS DIRECTORY
+       ====================================================================== -->
+  <section class="prop-listings-section" id="listingsSection">
+    <div class="container">
+      <div class="prop-listings-header">
+        <div>
+          <span class="lux-section-kicker">CURATED INVENTORY</span>
+          <h2 class="lux-section-title" style="margin-bottom: 4px;">Explore Our Properties</h2>
+          <span class="prop-count-label"><strong id="propCountDisplay">6</strong> Properties Available</span>
+        </div>
+
+        <div class="prop-header-controls">
+          <!-- Filter Tabs -->
+          <div class="prop-type-tabs">
+            <button class="prop-tab-pill active" onclick="filterByPurpose('all', this)">All</button>
+            <button class="prop-tab-pill" onclick="filterByPurpose('sale', this)">For Sale</button>
+            <button class="prop-tab-pill" onclick="filterByPurpose('rent', this)">For Rent</button>
+          </div>
+
+          <!-- Sort -->
+          <div class="prop-sort-wrap">
+            <label>Sort:</label>
+            <select class="prop-sort-select" onchange="handleSortChange(this.value)">
+              <option value="featured">Featured First</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="area">Area: Largest First</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Property Grid (3 Columns) -->
+      <div class="properties-grid" id="propertiesGrid">
+        <!-- Rendered dynamically by js/app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 4: ✨ FEATURED PROPERTIES (Large Horizontal Cards Slider)
+       ====================================================================== -->
+  <section class="prop-featured-showcase-section">
+    <div class="container">
+      <div class="lux-section-header-center">
+        <span class="lux-section-kicker" style="color: #6868EB;">EXCLUSIVE HIGHLIGHTS</span>
+        <h2 class="lux-section-title">Featured Properties</h2>
+        <p class="lux-section-sub">A handpicked collection of architectural masterpieces and trophy investment assets.</p>
+      </div>
+
+      <div class="prop-featured-cards-grid">
+        <!-- Featured Card 1 -->
+        <div class="prop-horiz-card">
+          <div class="prop-horiz-img-wrap">
+            <img src="assets/images/prop-3.webp" alt="The Grand Resort & Leisure Center">
+            <span class="prop-featured-badge"><i class="fa-solid fa-star"></i> FEATURED PROPERTY</span>
+          </div>
+          <div class="prop-horiz-body">
+            <div class="prop-horiz-loc"><i class="fa-solid fa-location-dot"></i> San Diego Coastal Strip</div>
+            <h3 class="prop-horiz-title">The Grand Resort & Waterfront Center</h3>
+            <div class="prop-horiz-price">₹18.50 Cr <span>/ $2,250,000</span></div>
+            <p class="prop-horiz-desc">
+              Prime luxury leisure and resort property with private waterfront terrace, panoramic marina views, 8 master suites, and pool.
+            </p>
+            <div class="prop-horiz-specs">
+              <span><i class="fa-solid fa-bed"></i> 8 Beds</span>
+              <span><i class="fa-solid fa-bath"></i> 6 Baths</span>
+              <span><i class="fa-solid fa-vector-square"></i> 5,600 Sq Ft</span>
+            </div>
+            <button class="btn btn-primary" onclick="openQuickView(3)">Explore Property <i class="fa-solid fa-house-chimney"></i></button>
+          </div>
+        </div>
+
+        <!-- Featured Card 2 -->
+        <div class="prop-horiz-card">
+          <div class="prop-horiz-img-wrap">
+            <img src="assets/images/prop-1.webp" alt="The Architectural Masterpiece">
+            <span class="prop-featured-badge"><i class="fa-solid fa-star"></i> FEATURED PROPERTY</span>
+          </div>
+          <div class="prop-horiz-body">
+            <div class="prop-horiz-loc"><i class="fa-solid fa-location-dot"></i> Bangalore Tech Corridor</div>
+            <h3 class="prop-horiz-title">Pacific Modern Medical & Executive Hub</h3>
+            <div class="prop-horiz-price">₹10.25 Cr <span>/ $1,250,000</span></div>
+            <p class="prop-horiz-desc">
+              High-yield commercial hub equipped with clinical suites, conference wings, patient elevators, and 45 parking bays.
+            </p>
+            <div class="prop-horiz-specs">
+              <span><i class="fa-solid fa-bed"></i> 4 Suites</span>
+              <span><i class="fa-solid fa-bath"></i> 3 Baths</span>
+              <span><i class="fa-solid fa-vector-square"></i> 2,400 Sq Ft</span>
+            </div>
+            <button class="btn btn-primary" onclick="openQuickView(1)">Explore Property <i class="fa-solid fa-house-chimney"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 5: 📍 EXPLORE PROPERTIES BY LOCATION (Cinematic Destination Showcase)
+       ====================================================================== -->
+  <section class="prop-locations-section" id="propLocationsSection">
+    <!-- Architectural Grid & Coordinate Lines Background -->
+    <div class="prop-dest-bg-decor">
+      <div class="prop-dest-coord-tag">LAT 13.0827° N / LONG 80.2707° E — METRO MATRIX</div>
+      <div class="prop-dest-grid-line prop-dest-line-v1"></div>
+      <div class="prop-dest-grid-line prop-dest-line-v2"></div>
+      <!-- SVG Connecting Journey Line -->
+      <svg class="prop-dest-route-svg" viewBox="0 0 1200 400" fill="none" preserveAspectRatio="none">
+        <path class="prop-dest-route-path" d="M 120,200 Q 380,80 620,220 T 1100,160" stroke="rgba(27, 111, 88, 0.35)" stroke-width="1.5" />
+      </svg>
+    </div>
+
+    <div class="container" style="position: relative; z-index: 2;">
+      <div class="lux-section-header-center prop-dest-heading-anim">
+        <span class="lux-section-kicker"><i class="fa-solid fa-location-crosshairs"></i> PRIME DESTINATIONS</span>
+        <h2 class="lux-section-title">Explore Properties by Location</h2>
+        <p class="lux-section-sub">Discover high-performing properties in top-tier metropolitan corridors.</p>
+      </div>
+
+      <div class="prop-destinations-layout">
+        <!-- Featured Dominant Destination (Left: Chennai) -->
+        <div class="prop-dest-featured-col">
+          <div class="prop-dest-card prop-dest-card-featured prop-dest-anim-card" onclick="filterByCityName('chennai')" data-city="chennai">
+            <div class="prop-dest-spotlight"></div>
+            <div class="prop-dest-img-wrap">
+              <img src="assets/images/city-us.webp" alt="Chennai Properties" class="prop-dest-img">
+            </div>
+            <div class="prop-dest-badge-row">
+              <span class="prop-dest-idx">01 / 06</span>
+              <span class="prop-dest-pill-badge"><i class="fa-solid fa-star"></i> FEATURED CORRIDOR</span>
+            </div>
+            <div class="prop-dest-overlay">
+              <div class="prop-dest-coords"><i class="fa-solid fa-compass"></i> 13.0827° N, 80.2707° E</div>
+              <h3 class="prop-dest-title">Chennai</h3>
+              <div class="prop-dest-count-wrap">
+                <span class="prop-dest-count"><strong class="dest-counter" data-target="28">0</strong> Properties Available</span>
+                <span class="prop-dest-status-badge">HIGH DEMAND</span>
+              </div>
+              <div class="prop-dest-tags">Tech Parks • Coastal Commercial • OMR Corridor</div>
+              <div class="prop-dest-action">
+                <span class="prop-dest-link">Explore Properties <i class="fa-solid fa-arrow-right-long"></i></span>
+                <span class="prop-dest-pin-icon"><i class="fa-solid fa-location-dot"></i></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Supporting Destinations Grid (Right: Bangalore, Hyderabad, Mumbai, Dubai, Pune) -->
+        <div class="prop-dest-supporting-grid">
+          <!-- City 2: Bangalore -->
+          <div class="prop-dest-card prop-dest-card-compact prop-dest-anim-card" onclick="filterByCityName('bangalore')" data-city="bangalore">
+            <div class="prop-dest-img-wrap">
+              <img src="assets/images/city-ca.webp" alt="Bangalore Properties" class="prop-dest-img">
+            </div>
+            <div class="prop-dest-badge-row">
+              <span class="prop-dest-idx">02 / 06</span>
+              <span class="prop-dest-pill-badge">SILICON HUB</span>
+            </div>
+            <div class="prop-dest-overlay">
+              <h3 class="prop-dest-title">Bangalore</h3>
+              <span class="prop-dest-count"><strong class="dest-counter" data-target="35">0</strong> Properties Available</span>
+              <div class="prop-dest-action">
+                <span class="prop-dest-link">Explore <i class="fa-solid fa-arrow-right-long"></i></span>
+                <span class="prop-dest-pin-icon"><i class="fa-solid fa-location-dot"></i></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- City 3: Hyderabad -->
+          <div class="prop-dest-card prop-dest-card-compact prop-dest-anim-card" onclick="filterByCityName('hyderabad')" data-city="hyderabad">
+            <div class="prop-dest-img-wrap">
+              <img src="assets/images/city-ny.webp" alt="Hyderabad Properties" class="prop-dest-img">
+            </div>
+            <div class="prop-dest-badge-row">
+              <span class="prop-dest-idx">03 / 06</span>
+              <span class="prop-dest-pill-badge">HITECH CITY</span>
+            </div>
+            <div class="prop-dest-overlay">
+              <h3 class="prop-dest-title">Hyderabad</h3>
+              <span class="prop-dest-count"><strong class="dest-counter" data-target="22">0</strong> Properties Available</span>
+              <div class="prop-dest-action">
+                <span class="prop-dest-link">Explore <i class="fa-solid fa-arrow-right-long"></i></span>
+                <span class="prop-dest-pin-icon"><i class="fa-solid fa-location-dot"></i></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- City 4: Mumbai -->
+          <div class="prop-dest-card prop-dest-card-compact prop-dest-anim-card" onclick="filterByCityName('mumbai')" data-city="mumbai">
+            <div class="prop-dest-img-wrap">
+              <img src="assets/images/city-vegas.webp" alt="Mumbai Properties" class="prop-dest-img">
+            </div>
+            <div class="prop-dest-badge-row">
+              <span class="prop-dest-idx">04 / 06</span>
+              <span class="prop-dest-pill-badge">FINANCIAL HUB</span>
+            </div>
+            <div class="prop-dest-overlay">
+              <h3 class="prop-dest-title">Mumbai</h3>
+              <span class="prop-dest-count"><strong class="dest-counter" data-target="40">0</strong> Properties Available</span>
+              <div class="prop-dest-action">
+                <span class="prop-dest-link">Explore <i class="fa-solid fa-arrow-right-long"></i></span>
+                <span class="prop-dest-pin-icon"><i class="fa-solid fa-location-dot"></i></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- City 5: Dubai -->
+          <div class="prop-dest-card prop-dest-card-compact prop-dest-anim-card" onclick="filterByCityName('dubai')" data-city="dubai">
+            <div class="prop-dest-img-wrap">
+              <img src="assets/images/prop-3.webp" alt="Dubai Properties" class="prop-dest-img">
+            </div>
+            <div class="prop-dest-badge-row">
+              <span class="prop-dest-idx">05 / 06</span>
+              <span class="prop-dest-pill-badge">GLOBAL LUXURY</span>
+            </div>
+            <div class="prop-dest-overlay">
+              <h3 class="prop-dest-title">Dubai</h3>
+              <span class="prop-dest-count"><strong class="dest-counter" data-target="18">0</strong> Properties Available</span>
+              <div class="prop-dest-action">
+                <span class="prop-dest-link">Explore <i class="fa-solid fa-arrow-right-long"></i></span>
+                <span class="prop-dest-pin-icon"><i class="fa-solid fa-location-dot"></i></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- City 6: Pune -->
+          <div class="prop-dest-card prop-dest-card-compact prop-dest-anim-card" onclick="filterByCityName('pune')" data-city="pune">
+            <div class="prop-dest-img-wrap">
+              <img src="assets/images/prop-1.webp" alt="Pune Properties" class="prop-dest-img">
+            </div>
+            <div class="prop-dest-badge-row">
+              <span class="prop-dest-idx">06 / 06</span>
+              <span class="prop-dest-pill-badge">GROWTH SECTOR</span>
+            </div>
+            <div class="prop-dest-overlay">
+              <h3 class="prop-dest-title">Pune</h3>
+              <span class="prop-dest-count"><strong class="dest-counter" data-target="16">0</strong> Properties Available</span>
+              <div class="prop-dest-action">
+                <span class="prop-dest-link">Explore <i class="fa-solid fa-arrow-right-long"></i></span>
+                <span class="prop-dest-pin-icon"><i class="fa-solid fa-location-dot"></i></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 6: 🏡 BROWSE BY PROPERTY TYPE (Editorial Asymmetric Bento Layout)
+       ====================================================================== -->
+  <section class="prop-types-section" id="assetCategoriesSection">
+    <div class="container">
+      
+      <!-- Section Header -->
+      <div class="lux-section-header-center" data-cue="fadeIn">
+        <span class="lux-section-kicker">ASSET CATEGORIES</span>
+        <h2 class="lux-section-title">Browse by Property Type</h2>
+        <p class="lux-section-sub">Curated institutional & residential asset classes engineered for capital growth and lifestyle excellence.</p>
+      </div>
+
+      <!-- Horizontal Category Navigation / Filter Bar -->
+      <div class="prop-cat-filter-nav" data-cue="fadeIn">
+        <button class="prop-cat-filter-pill active" onclick="filterCategoryGrid('all', this)">
+          <i class="fa-solid fa-layer-group"></i> All Categories <span class="cat-pill-count">149</span>
+        </button>
+        <button class="prop-cat-filter-pill" onclick="filterCategoryGrid('residential', this)">
+          <i class="fa-solid fa-gem"></i> Luxury Residences <span class="cat-pill-count">32</span>
+        </button>
+        <button class="prop-cat-filter-pill" onclick="filterCategoryGrid('penthouses', this)">
+          <i class="fa-solid fa-crown"></i> Penthouses <span class="cat-pill-count">15</span>
+        </button>
+        <button class="prop-cat-filter-pill" onclick="filterCategoryGrid('apartments', this)">
+          <i class="fa-solid fa-building"></i> Urban Apartments <span class="cat-pill-count">48</span>
+        </button>
+        <button class="prop-cat-filter-pill" onclick="filterCategoryGrid('waterfront', this)">
+          <i class="fa-solid fa-water"></i> Waterfront Homes <span class="cat-pill-count">18</span>
+        </button>
+        <button class="prop-cat-filter-pill" onclick="filterCategoryGrid('commercial', this)">
+          <i class="fa-solid fa-briefcase"></i> Commercial Hubs <span class="cat-pill-count">24</span>
+        </button>
+        <button class="prop-cat-filter-pill" onclick="filterCategoryGrid('land', this)">
+          <i class="fa-solid fa-mountain-sun"></i> Investment Land <span class="cat-pill-count">12</span>
+        </button>
+      </div>
+
+      <!-- Asymmetric Editorial Bento Grid -->
+      <div class="prop-bento-grid" id="propBentoGrid">
+        
+        <!-- CARD 1: Featured Dominant Flagship (Luxury Residences) - Spans 7 cols -->
+        <div class="prop-bento-card card-featured" data-cat="residential" onclick="filterByCatType('hotel', 'Luxury Residences')">
+          <div class="prop-bento-img-wrap">
+            <img src="assets/images/prop-4.webp" alt="Luxury Residences" class="bento-parallax-img" loading="lazy">
+            <div class="prop-bento-gradient-overlay"></div>
+            <div class="featured-glow-sweep"></div>
+          </div>
+
+          <!-- Floating Badges -->
+          <div class="prop-bento-floating-top">
+            <span class="prop-bento-flagship-tag"><i class="fa-solid fa-star"></i> FEATURED FLAGSHIP</span>
+            <span class="prop-bento-stat-badge"><i class="fa-solid fa-gem"></i> 32 Properties</span>
+          </div>
+
+          <!-- Card Content Overlay -->
+          <div class="prop-bento-content">
+            <div class="prop-bento-main-info">
+              <div class="prop-bento-loc"><i class="fa-solid fa-location-dot"></i> Beverly Hills, Palm Beach & Goa</div>
+              <h3 class="prop-bento-title">Luxury Residences</h3>
+              <p class="prop-bento-desc">Gated architectural estates, private gardens, and turnkey trophy compounds built for generations.</p>
+              
+              <!-- Micro-Investment Grid -->
+              <div class="prop-bento-micro-metrics">
+                <div class="micro-metric-item">
+                  <span class="micro-metric-label">STARTING AT</span>
+                  <span class="micro-metric-val price-highlight">$1.45M</span>
+                </div>
+                <div class="micro-metric-item">
+                  <span class="micro-metric-label">PROJECTED ROI</span>
+                  <span class="micro-metric-val roi-highlight"><i class="fa-solid fa-arrow-trend-up"></i> +11.4% / yr</span>
+                </div>
+                <div class="micro-metric-item">
+                  <span class="micro-metric-label">AVAILABILITY</span>
+                  <span class="micro-metric-val status-avail">Ready for Handover</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="prop-bento-action-bar">
+              <span class="prop-bento-action-text">Explore Residences</span>
+              <span class="prop-bento-action-circle"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2: Signature Penthouses - Spans 5 cols -->
+        <div class="prop-bento-card card-tall" data-cat="penthouses" onclick="filterByCatType('hotel', 'Signature Penthouses')">
+          <div class="prop-bento-img-wrap">
+            <img src="assets/images/city-ny.webp" alt="Signature Penthouses" class="bento-parallax-img" loading="lazy">
+            <div class="prop-bento-gradient-overlay"></div>
+          </div>
+
+          <div class="prop-bento-floating-top">
+            <span class="prop-bento-cat-tag">TROPHY ASSET</span>
+            <span class="prop-bento-stat-badge"><i class="fa-solid fa-crown"></i> 15 Suites</span>
+          </div>
+
+          <div class="prop-bento-content">
+            <div class="prop-bento-main-info">
+              <div class="prop-bento-loc"><i class="fa-solid fa-location-dot"></i> Manhattan, Dubai & Marine Drive</div>
+              <h3 class="prop-bento-title">Signature Penthouses</h3>
+              <p class="prop-bento-desc">Duplex sky-residences featuring private heated plunge pools and 360° unobstructed city vistas.</p>
+              
+              <div class="prop-bento-micro-metrics">
+                <div class="micro-metric-item">
+                  <span class="micro-metric-label">PRICE FROM</span>
+                  <span class="micro-metric-val price-highlight">$3.20M</span>
+                </div>
+                <div class="micro-metric-item">
+                  <span class="micro-metric-label">CAPITAL GROWTH</span>
+                  <span class="micro-metric-val roi-highlight"><i class="fa-solid fa-arrow-trend-up"></i> +12.8%</span>
+                </div>
+                <div class="micro-metric-item">
+                  <span class="micro-metric-label">STATUS</span>
+                  <span class="micro-metric-val status-exclusive">Private Allocation</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="prop-bento-action-bar">
+              <span class="prop-bento-action-text">View Penthouses</span>
+              <span class="prop-bento-action-circle"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3: Urban Apartments - Spans 4 cols -->
+        <div class="prop-bento-card card-col-4" data-cat="apartments" onclick="filterByCatType('offices', 'Urban Apartments')">
+          <div class="prop-bento-img-wrap">
+            <img src="assets/images/prop-1.webp" alt="Urban Apartments" class="bento-parallax-img" loading="lazy">
+            <div class="prop-bento-gradient-overlay"></div>
+          </div>
+
+          <div class="prop-bento-floating-top">
+            <span class="prop-bento-cat-tag">METROPOLITAN</span>
+            <span class="prop-bento-stat-badge"><i class="fa-solid fa-building"></i> 48 Condos</span>
+          </div>
+
+          <div class="prop-bento-content">
+            <div class="prop-bento-main-info">
+              <div class="prop-bento-loc"><i class="fa-solid fa-location-dot"></i> Financial & Tech Districts</div>
+              <h3 class="prop-bento-title">Urban Apartments</h3>
+              <p class="prop-bento-desc">High-spec smart condominiums with concierge wellness lounges and coworking suites.</p>
+              
+              <div class="prop-bento-micro-metrics compact">
+                <div class="micro-metric-item">
+                  <span class="micro-metric-label">FROM</span>
+                  <span class="micro-metric-val price-highlight">$420k</span>
+                </div>
+                <div class="micro-metric-item">
+                  <span class="micro-metric-label">RENTAL YIELD</span>
+                  <span class="micro-metric-val roi-highlight"><i class="fa-solid fa-arrow-trend-up"></i> +8.5%</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="prop-bento-action-bar">
+              <span class="prop-bento-action-text">Explore Condos</span>
+              <span class="prop-bento-action-circle"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 4: Waterfront Homes - Spans 4 cols -->
+        <div class="prop-bento-card card-col-4" data-cat="waterfront" onclick="filterByCatType('hotel', 'Waterfront Homes')">
+          <div class="prop-bento-img-wrap">
+            <img src="assets/images/prop-3.webp" alt="Waterfront Homes" class="bento-parallax-img" loading="lazy">
+            <div class="prop-bento-gradient-overlay"></div>
+          </div>
+
+          <div class="prop-bento-floating-top">
+            <span class="prop-bento-cat-tag">COASTAL HAVEN</span>
+            <span class="prop-bento-stat-badge"><i class="fa-solid fa-water"></i> 18 Waterfront</span>
+          </div>
+
+          <div class="prop-bento-content">
+            <div class="prop-bento-main-info">
+              <div class="prop-bento-loc"><i class="fa-solid fa-location-dot"></i> Miami Beach & Coastal Haven</div>
+              <h3 class="prop-bento-title">Waterfront Homes</h3>
+              <p class="prop-bento-desc">Direct oceanfront access, private deep-water moorings, and expansive sunset decks.</p>
+              
+              <div class="prop-bento-micro-metrics compact">
+                <div class="micro-metric-item">
+                  <span class="micro-metric-label">FROM</span>
+                  <span class="micro-metric-val price-highlight">$2.10M</span>
+                </div>
+                <div class="micro-metric-item">
+                  <span class="micro-metric-label">GROWTH</span>
+                  <span class="micro-metric-val roi-highlight"><i class="fa-solid fa-arrow-trend-up"></i> +9.8%</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="prop-bento-action-bar">
+              <span class="prop-bento-action-text">Explore Waterfront</span>
+              <span class="prop-bento-action-circle"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 5: Commercial Hubs - Spans 4 cols -->
+        <div class="prop-bento-card card-col-4" data-cat="commercial" onclick="filterByCatType('retail', 'Commercial Hubs')">
+          <div class="prop-bento-img-wrap">
+            <img src="assets/images/prop-2.webp" alt="Commercial Hubs" class="bento-parallax-img" loading="lazy">
+            <div class="prop-bento-gradient-overlay"></div>
+          </div>
+
+          <div class="prop-bento-floating-top">
+            <span class="prop-bento-cat-tag">INSTITUTIONAL</span>
+            <span class="prop-bento-stat-badge"><i class="fa-solid fa-briefcase"></i> 24 Hubs</span>
+          </div>
+
+          <div class="prop-bento-content">
+            <div class="prop-bento-main-info">
+              <div class="prop-bento-loc"><i class="fa-solid fa-location-dot"></i> Prime Central Business Corridors</div>
+              <h3 class="prop-bento-title">Commercial Hubs</h3>
+              <p class="prop-bento-desc">Grade-A retail complexes, tech parks, and long-lease institutional office spaces.</p>
+              
+              <div class="prop-bento-micro-metrics compact">
+                <div class="micro-metric-item">
+                  <span class="micro-metric-label">FROM</span>
+                  <span class="micro-metric-val price-highlight">$890k</span>
+                </div>
+                <div class="micro-metric-item">
+                  <span class="micro-metric-label">CAP RATE</span>
+                  <span class="micro-metric-val roi-highlight"><i class="fa-solid fa-arrow-trend-up"></i> +14.2%</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="prop-bento-action-bar">
+              <span class="prop-bento-action-text">Explore Commercial</span>
+              <span class="prop-bento-action-circle"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 6: Investment Land (Panoramic Wide Spotlight Card) - Spans 12 cols -->
+        <div class="prop-bento-card card-wide" data-cat="land" onclick="filterByCatType('industrial', 'Investment Land')">
+          <div class="prop-bento-img-wrap">
+            <img src="assets/images/prop-6.webp" alt="Investment Land" class="bento-parallax-img" loading="lazy">
+            <div class="prop-bento-gradient-overlay horizontal"></div>
+          </div>
+
+          <div class="prop-bento-floating-top">
+            <span class="prop-bento-cat-tag">DEVELOPMENT PLOTS</span>
+            <span class="prop-bento-stat-badge"><i class="fa-solid fa-layer-group"></i> 12 Strategic Parcels</span>
+          </div>
+
+          <div class="prop-bento-content wide-layout">
+            <div class="prop-bento-main-info">
+              <div class="prop-bento-loc"><i class="fa-solid fa-location-dot"></i> Express Corridors, SEZ Zones & Suburbs</div>
+              <h3 class="prop-bento-title">Investment Land</h3>
+              <p class="prop-bento-desc">Prime master-planned residential layouts, agricultural farm plots, and verified industrial expansion parcels with complete legal clear titles.</p>
+            </div>
+
+            <div class="prop-bento-wide-right">
+              <div class="prop-bento-micro-metrics wide-metrics">
+                <div class="micro-metric-item">
+                  <span class="micro-metric-label">STARTING FROM</span>
+                  <span class="micro-metric-val price-highlight">$650k</span>
+                </div>
+                <div class="micro-metric-item">
+                  <span class="micro-metric-label">5-YR LAND CAGR</span>
+                  <span class="micro-metric-val roi-highlight"><i class="fa-solid fa-arrow-trend-up"></i> +16.5%</span>
+                </div>
+                <div class="micro-metric-item">
+                  <span class="micro-metric-label">DOCUMENTATION</span>
+                  <span class="micro-metric-val status-avail">Clear Title 100%</span>
+                </div>
+              </div>
+
+              <div class="prop-bento-action-bar wide-action">
+                <span class="prop-bento-action-text">Explore Land Plots</span>
+                <span class="prop-bento-action-circle"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Refined CTA Row -->
+      <div class="prop-cat-bottom-cta" data-cue="fadeIn">
+        <div class="prop-cat-cta-inner">
+          <div class="prop-cat-cta-text">
+            <h4 class="prop-cat-cta-heading">Seeking Off-Market Portfolios or Custom Allocations?</h4>
+            <p class="prop-cat-cta-sub">Our private advisory desk curates exclusive off-market commercial and residential portfolios worldwide.</p>
+          </div>
+          <a href="#listingsSection" class="btn-editorial-explore" onclick="showToast('Loading full property catalog...');">
+            <span>View All Properties</span>
+            <span class="btn-arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <section class="prop-trust-section">
+    <div class="container">
+      <div class="prop-trust-box">
+        <div class="lux-section-header-center" style="margin-bottom: 40px;">
+          <span class="lux-section-kicker" style="color: #6868EB;">THE STACKLY ADVANTAGE</span>
+          <h2 class="lux-section-title">Why Choose Stackly</h2>
+        </div>
+
+        <div class="prop-trust-stats-grid">
+          <!-- Stat 1 -->
+          <div class="prop-trust-item">
+            <div class="prop-trust-num" data-target="15">0</div>
+            <div class="prop-trust-suffix">+</div>
+            <div class="prop-trust-label">Years of Experience</div>
+          </div>
+
+          <!-- Stat 2 -->
+          <div class="prop-trust-item">
+            <div class="prop-trust-num" data-target="500">0</div>
+            <div class="prop-trust-suffix">+</div>
+            <div class="prop-trust-label">Properties Listed</div>
+          </div>
+
+          <!-- Stat 3 -->
+          <div class="prop-trust-item">
+            <div class="prop-trust-num" data-target="50">0</div>
+            <div class="prop-trust-suffix">+</div>
+            <div class="prop-trust-label">Prime Locations</div>
+          </div>
+
+          <!-- Stat 4 -->
+          <div class="prop-trust-item">
+            <div class="prop-trust-num" data-target="98">0</div>
+            <div class="prop-trust-suffix">%</div>
+            <div class="prop-trust-label">Client Satisfaction</div>
+          </div>
+        </div>
+
+        <p class="prop-trust-statement">
+          “From finding the right address to making it yours, Stackly makes property decisions simpler.”
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 8: 🤝 FINAL PROPERTY CTA
+       ====================================================================== -->
+  <section class="prop-final-cta-section">
+    <div class="prop-final-bg-wrap">
+      <img src="assets/images/banner-bg.jpg" alt="Luxury Real Estate" class="prop-final-img">
+      <div class="prop-final-overlay"></div>
+    </div>
+
+    <div class="container prop-final-content">
+      <span class="prop-final-kicker">DISCOVER EXCEPTIONAL LIVING</span>
+      <h2 class="prop-final-headline">Your Next Address Is Waiting.</h2>
+      <p class="prop-final-lead">
+        Discover exceptional properties in locations that inspire better living and smarter investments.
+      </p>
+
+      <div class="prop-final-actions">
+        <a href="#listingsSection" class="btn btn-primary" style="padding: 16px 36px; font-size: 14px;">Explore Properties <i class="fa-solid fa-house-circle-check"></i></a>
+        <a href="404.html" class="btn btn-white" style="padding: 16px 36px; font-size: 14px;">Talk to an Expert <i class="fa-solid fa-phone"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rich Footer -->
+  <footer class="site-footer" id="footerSection">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <a href="index.html">
+              <img src="assets/images/stackly.webp" alt="Stackly Real Estate">
+            </a>
+          </div>
+          <p class="footer-about-text">
+            Stackly is the premier real estate portal for finding commercial offices, luxury leisure spaces, warehouses, and prime investment properties nationwide.
+          </p>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>MMR Complex, Salem - 636 003, Tamil Nadu, India</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <a href="404.html" style="color: inherit; text-decoration: none;">+91 74880 99999</a>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-regular fa-envelope"></i>
+            <a href="404.html" style="color: inherit; text-decoration: none;">info@stackly.com</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">REAL ESTATE EXPRESS</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="properties.html">Properties</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">REAL ESTATE COURSES</h4>
+          <ul class="footer-links-list">
+            <li><a href="404.html">Get My License</a></li>
+            <li><a href="404.html">Upgrade My License</a></li>
+            <li><a href="404.html">Continuing Education</a></li>
+            <li><a href="404.html">Exam Prep Master</a></li>
+            <li><a href="404.html">Appraisal License</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">NEWSLETTER</h4>
+          <p style="color: #A0A5AE; font-size: 13px; margin-bottom: 14px;">
+            Subscribe to our weekly market briefing and exclusive investment opportunities.
+          </p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); handleNewsletterSubmit(this);" novalidate>
+            <input type="email" class="newsletter-input" placeholder="Your Email address">
+            <button type="submit" class="newsletter-btn">Subscribe</button>
+          </form>
+          <div class="footer-socials">
+            <a href="404.html" class="footer-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>Copyright &copy; 2026 Stackly. All Rights Reserved.</div>
+        <div class="footer-bottom-links">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Terms</a>
+          <a href="404.html">Safety</a>
+          <a href="404.html">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="btn-back-to-top" id="backToTopBtn" title="Back to top" aria-label="Back to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <!-- Quick View Modal Lightbox -->
+  <div class="modal-backdrop" id="quickViewModal">
+    <div class="modal-dialog modal-dialog-large">
+      <button class="modal-close-btn" onclick="closeAllModals()"><i class="fa-solid fa-xmark"></i></button>
+      <div id="quickViewModalBody"></div>
+    </div>
+  </div>
+
+  <!-- Sign In Modal -->
+  <div class="modal-backdrop" id="signinModal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" onclick="closeAllModals()"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-header">
+        <h3 class="modal-title">Sign In</h3>
+        <p style="font-size: 14px; color: #7D7D84;">Access your Stackly dashboard and saved properties</p>
+      </div>
+      <form onsubmit="event.preventDefault(); handleModalSignIn(this);" novalidate>
+        <div class="form-group">
+          <label>Username or Email Address</label>
+          <input type="text" class="form-control modal-user" placeholder="Enter username or email">
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" class="form-control modal-pwd" placeholder="Enter password">
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; font-size: 13px;">
+          <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+            <input type="checkbox" style="accent-color: var(--primary);"> Remember Me
+          </label>
+          <a href="#reset" onclick="openModal('forgotModal'); return false;" style="color: var(--primary);">Forgot password?</a>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Sign In</button>
+        <div style="text-align: center; margin-top: 20px; font-size: 13px; color: #7D7D84;">
+          Don't have an account yet? <a href="#register" onclick="openModal('registerModal'); return false;" style="color: var(--primary); font-weight: 600;">Register</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Register Modal -->
+  <div class="modal-backdrop" id="registerModal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" onclick="closeAllModals()"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-header">
+        <h3 class="modal-title">Register Account</h3>
+        <p style="font-size: 14px; color: #7D7D84;">Create a free Stackly account today</p>
+      </div>
+      <form onsubmit="event.preventDefault(); handleModalRegister(this);" novalidate>
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" class="form-control modal-reg-name" placeholder="e.g. John Doe">
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" class="form-control modal-reg-email" placeholder="name@example.com">
+        </div>
+        <div class="form-group">
+          <label>Account Role</label>
+          <select class="form-control">
+            <option value="buyer">Property Buyer / Investor</option>
+            <option value="agent">Licensed Real Estate Agent</option>
+            <option value="owner">Property Owner / Landlord</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" class="form-control" placeholder="Create a secure password">
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Create Account</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ScrollCue & Application JavaScript -->
+  <script src="js/scrollCue.min.js"></script>
+  <script src="js/app.js"></script>
+  
+  <script>
+    // Properties Page Hero Search Filter & 404 Redirection
+    window.applyPropertyPageFilter = () => {
+      const locSelect = document.getElementById('propLocationFilter');
+      const typeSelect = document.getElementById('propTypeFilter');
+      const purposeSelect = document.getElementById('propPurposeFilter');
+      const priceSelect = document.getElementById('propPriceFilter');
+
+      const loc = locSelect ? locSelect.value : 'all';
+      const type = typeSelect ? typeSelect.value : 'all';
+      const purpose = purposeSelect ? purposeSelect.value : 'all';
+      const price = priceSelect ? priceSelect.value : 'all';
+
+      // Clear previous error styling
+      [locSelect, typeSelect, purposeSelect, priceSelect].forEach(sel => {
+        if (sel) sel.classList.remove('input-error');
+      });
+
+      let hasError = false;
+
+      if (loc === 'all') {
+        if (locSelect) locSelect.classList.add('input-error');
+        hasError = true;
+      }
+      if (type === 'all') {
+        if (typeSelect) typeSelect.classList.add('input-error');
+        hasError = true;
+      }
+      if (purpose === 'all') {
+        if (purposeSelect) purposeSelect.classList.add('input-error');
+        hasError = true;
+      }
+      if (price === 'all') {
+        if (priceSelect) priceSelect.classList.add('input-error');
+        hasError = true;
+      }
+
+      if (hasError) {
+        showToast('Please select all search details (Location, Property Type, Purpose, and Price Range).', true);
+        return;
+      }
+
+      // If all 4 details are selected, redirect to 404 error page
+      window.location.href = '404.html';
+    };
+
+    // Auto-remove error outline when user changes dropdown option
+    ['propLocationFilter', 'propTypeFilter', 'propPurposeFilter', 'propPriceFilter'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.addEventListener('change', () => {
+          if (el.value !== 'all') {
+            el.classList.remove('input-error');
+          }
+        });
+      }
+    });
+
+    window.filterByPurpose = (purpose, btn) => {
+      document.querySelectorAll('.prop-tab-pill').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      if (typeof window.applyFeaturedTabFilter === 'function') {
+        window.applyFeaturedTabFilter(purpose);
+      }
+    };
+
+    window.filterByCityName = (city) => {
+      window.location.href = '404.html';
+    };
+
+    window.filterByCatType = (cat, label) => {
+      window.location.href = '404.html';
+    };
+
+    // Horizontal Filter Bar for Asymmetric Bento Grid
+    window.filterCategoryGrid = (filterKey, btn) => {
+      // Update active state on filter pills
+      document.querySelectorAll('.prop-cat-filter-pill').forEach(pill => pill.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+
+      const cards = document.querySelectorAll('.prop-bento-card');
+      cards.forEach((card, index) => {
+        const cat = card.getAttribute('data-cat');
+        if (filterKey === 'all' || cat === filterKey) {
+          card.style.display = 'flex';
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(16px) scale(0.96)';
+          setTimeout(() => {
+            card.style.transition = 'opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1)';
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0) scale(1)';
+          }, index * 60);
+        } else {
+          card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(12px) scale(0.95)';
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 300);
+        }
+      });
+    };
+
+    // Subtle 3D Mouse Parallax on Bento Cards
+    document.addEventListener('DOMContentLoaded', () => {
+      const bentoCards = document.querySelectorAll('.prop-bento-card');
+      
+      bentoCards.forEach(card => {
+        const img = card.querySelector('.bento-parallax-img');
+        if (!img) return;
+
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+          
+          const moveX = (x / rect.width) * 12;
+          const moveY = (y / rect.height) * 12;
+          
+          img.style.transform = `scale(1.1) translate(${moveX}px, ${moveY}px)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+          img.style.transform = 'scale(1.02) translate(0px, 0px)';
+        });
+      });
+
+      // Animated Counters for Section 7
+      const statNums = document.querySelectorAll('.prop-trust-num');
+      let statsAnimated = false;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !statsAnimated) {
+            statsAnimated = true;
+            statNums.forEach(num => {
+              const target = parseInt(num.getAttribute('data-target'));
+              const duration = 2000;
+              const stepTime = 30;
+              const steps = duration / stepTime;
+              const increment = target / steps;
+              let current = 0;
+
+              const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                  num.textContent = target;
+                  clearInterval(timer);
+                } else {
+                  num.textContent = Math.floor(current);
+                }
+              }, stepTime);
+            });
+          }
+        });
+      }, { threshold: 0.3 });
+
+      const trustSection = document.querySelector('.prop-trust-section');
+      if (trustSection) observer.observe(trustSection);
+    });
+  </script>
+
+  <!-- GSAP & ScrollTrigger Animation Engine -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Cinematic Destination Showcase Motion Engine -->
+  <script>
+    (function initDestinationShowcase() {
+      function start() {
+        if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+          setTimeout(start, 50);
+          return;
+        }
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        const destSection = document.getElementById('propLocationsSection');
+        const destHeading = document.querySelector('.prop-dest-heading-anim');
+        const featuredCard = document.querySelector('.prop-dest-card-featured');
+        const compactCards = gsap.utils.toArray('.prop-dest-card-compact');
+        const destCards = gsap.utils.toArray('.prop-dest-anim-card');
+        const destImages = gsap.utils.toArray('.prop-dest-img');
+        const counters = document.querySelectorAll('.dest-counter');
+
+        if (destSection) {
+          // 1. Heading Coordinate Reveal
+          if (destHeading) {
+            gsap.fromTo(destHeading,
+              { opacity: 0, y: 35 },
+              {
+                opacity: 1,
+                y: 0,
+                duration: 0.9,
+                ease: "power3.out",
+                scrollTrigger: {
+                  trigger: destSection,
+                  start: "top 82%",
+                  once: true
+                }
+              }
+            );
+          }
+
+          // 2. Sequential Destination Cards Reveal Timeline
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: ".prop-destinations-layout",
+              start: "top 80%",
+              once: true,
+              onEnter: () => {
+                // Animate availability number counters
+                counters.forEach(counter => {
+                  const target = parseInt(counter.getAttribute('data-target'), 10) || 0;
+                  const duration = 1.6;
+                  const obj = { val: 0 };
+                  gsap.to(obj, {
+                    val: target,
+                    duration: duration,
+                    ease: "power2.out",
+                    onUpdate: () => {
+                      counter.textContent = Math.floor(obj.val);
+                    }
+                  });
+                });
+              }
+            }
+          });
+
+          if (featuredCard) {
+            tl.fromTo(featuredCard,
+              { opacity: 0, y: 40, clipPath: "inset(0% 100% 0% 0%)" },
+              { opacity: 1, y: 0, clipPath: "inset(0% 0% 0% 0%)", duration: 1.0, ease: "power3.out" }
+            );
+          }
+
+          if (compactCards.length) {
+            tl.fromTo(compactCards,
+              { opacity: 0, y: 30, clipPath: "inset(0% 100% 0% 0%)" },
+              { opacity: 1, y: 0, clipPath: "inset(0% 0% 0% 0%)", duration: 0.8, stagger: 0.14, ease: "power3.out" },
+              "-=0.6"
+            );
+          }
+
+          // 3. Slow Scroll Parallax on Images
+          destImages.forEach((img) => {
+            gsap.to(img, {
+              yPercent: 8,
+              ease: "none",
+              scrollTrigger: {
+                trigger: img.closest('.prop-dest-card'),
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1.2
+              }
+            });
+          });
+
+          // 4. Spotlight Cursor Tracker on Featured Card
+          if (featuredCard) {
+            featuredCard.addEventListener('mousemove', (e) => {
+              const rect = featuredCard.getBoundingClientRect();
+              const x = e.clientX - rect.left;
+              const y = e.clientY - rect.top;
+              featuredCard.style.setProperty('--mouse-x', `${x}px`);
+              featuredCard.style.setProperty('--mouse-y', `${y}px`);
+            });
+          }
+
+          // 5. Active destination card focus / subtle receding effect on sibling hover
+          destCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+              destCards.forEach(c => {
+                if (c !== card) c.style.opacity = '0.82';
+              });
+            });
+            card.addEventListener('mouseleave', () => {
+              destCards.forEach(c => {
+                c.style.opacity = '1';
+              });
+            });
+          });
+        }
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', start);
+      } else {
+        start();
+      }
+      window.addEventListener('load', () => {
+        if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+      });
+    })();
+  </script>
+</body>
+</html>

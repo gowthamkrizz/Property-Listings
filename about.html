@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — Building More Than Properties | Stackly</title>
+  <meta name="description" content="Stackly is a premier real estate firm dedicated to thoughtful design, exceptional quality, prime locations, and enduring long-term value.">
+  
+  <link rel="icon" type="image/webp" href="assets/images/stackly.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Overpass:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Prata&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+  <link rel="stylesheet" href="css/scrollCue.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="luxury-about-page endora-theme">
+
+  <!-- ======================================================================
+       1. Top Header Utility Bar
+       ====================================================================== -->
+  <div class="top-header-area">
+    <div class="container-fluid">
+      <div class="top-header-inner">
+        <div class="top-header-left">
+          <ul class="top-header-social-list">
+            <li><a href="404.html" class="social-link" aria-label="Facebook"><i class="ri-facebook-fill"></i></a></li>
+            <li><a href="404.html" class="social-link" aria-label="Twitter X"><i class="ri-twitter-x-line"></i></a></li>
+            <li><a href="404.html" class="social-link" aria-label="Instagram"><i class="ri-instagram-fill"></i></a></li>
+            <li><a href="404.html" class="social-link" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a></li>
+            <li><a href="404.html" class="social-link" aria-label="YouTube"><i class="ri-youtube-line"></i></a></li>
+            <li><a href="404.html" class="social-link" aria-label="Pinterest"><i class="ri-pinterest-line"></i></a></li>
+          </ul>
+          <div class="top-header-divider"></div>
+          <div class="top-header-mail">
+            <i class="ri-mail-line"></i>
+            <a href="404.html">info@stackly.com</a>
+          </div>
+        </div>
+        <div class="top-header-right">
+          <div class="top-header-call">
+            <i class="ri-phone-line"></i>
+            <a href="404.html">+91 74880 99999</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       2. Main Header & Navigation
+       ====================================================================== -->
+  <header class="site-header endora-navbar-wrap" id="siteNavbar">
+    <div class="container-fluid header-container">
+      <div class="navbar-left-group">
+        <!-- Stackly Logo -->
+        <a href="index.html" class="endora-brand-logo">
+          <img src="assets/images/stackly.webp" alt="Stackly" class="header-logo-img">
+        </a>
+
+        <!-- Search Property Field in Navbar -->
+        <form class="navbar-search-box" id="navbarSearchForm" onsubmit="event.preventDefault(); triggerNavbarSearch(this);">
+          <input type="text" id="navSearchKeyword" name="search" placeholder="Search property" autocomplete="off">
+          <button type="submit" aria-label="Search">
+            <i class="ri-search-line"></i>
+          </button>
+        </form>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="main-navigation">
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a href="about.html" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="properties.html" class="nav-link">Properties</a>
+          </li>
+          <li class="nav-item">
+            <a href="projects.html" class="nav-link">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a href="blog.html" class="nav-link">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <div class="nav-auth-item">
+          <a href="login.html" class="nav-login-link">
+            Log In / Register
+          </a>
+        </div>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open mobile menu">
+          <i class="ri-menu-line"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="endora-brand-logo">
+        <img src="assets/images/stackly.webp" alt="Stackly" class="drawer-logo-img">
+      </a>
+      <button class="modal-close-btn" id="closeMobileDrawer"><i class="ri-close-line"></i></button>
+    </div>
+    <div class="mobile-drawer-body">
+      <ul class="mobile-menu-list">
+        <li><a href="index.html"><i class="ri-home-4-line"></i>Home</a></li>
+        <li class="active"><a href="about.html"><i class="ri-information-line"></i>About</a></li>
+        <li><a href="properties.html"><i class="ri-building-line"></i>Properties</a></li>
+        <li><a href="projects.html"><i class="ri-briefcase-line"></i>Projects</a></li>
+        <li><a href="blog.html"><i class="ri-article-line"></i>Blog</a></li>
+        <li><a href="contact.html"><i class="ri-customer-service-2-line"></i>Contact</a></li>
+      </ul>
+      <div style="margin-top: 20px;">
+        <a href="login.html" class="btn btn-primary" style="width: 100%; border-radius: 30px; background-color: #1B6F58; text-align: center; display: block; text-decoration: none; padding: 11px;">
+          <i class="ri-user-3-line"></i> Log In / Register
+        </a>
+      </div>
+      <div class="drawer-contact-card">
+        <div class="drawer-contact-item">
+          <i class="ri-mail-line"></i>
+          <a href="404.html">info@stackly.com</a>
+        </div>
+        <div class="drawer-contact-item">
+          <i class="ri-phone-line"></i>
+          <a href="404.html">+91 74880 99999</a>
+        </div>
+        <div class="drawer-social-list">
+          <a href="404.html" class="drawer-social-link" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+          <a href="404.html" class="drawer-social-link" aria-label="Twitter X"><i class="ri-twitter-x-line"></i></a>
+          <a href="404.html" class="drawer-social-link" aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
+          <a href="404.html" class="drawer-social-link" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       1. ABOUT HERO — “Building More Than Properties”
+       ====================================================================== -->
+  <section class="lux-hero-section">
+    <div class="lux-hero-bg-wrap">
+      <img src="assets/images/hero-banner.webp" alt="Luxury Architectural Real Estate" class="lux-hero-img">
+      <div class="lux-hero-overlay"></div>
+    </div>
+    
+    <div class="container lux-hero-content-wrap">
+      <div class="lux-breadcrumb-box">
+        <a href="index.html">HOME</a>
+        <span class="lux-bread-sep">/</span>
+        <span class="lux-bread-current">ABOUT US</span>
+      </div>
+
+      <span class="lux-hero-tag">PIONEERING ARCHITECTURAL EXCELLENCE</span>
+      <h1 class="lux-hero-headline">Building More Than<br>Properties.</h1>
+      
+      <p class="lux-hero-lead">
+        Stackly crafts and curates spaces that elevate urban living, commercial enterprise, and enduring architectural legacy. We unite discerning buyers, visionary developers, and timeless aesthetics.
+      </p>
+
+      <div class="lux-hero-actions">
+        <a href="404.html" class="btn btn-lux-gold">Discover Our Story <i class="fa-solid fa-compass"></i></a>
+        <a href="404.html" class="btn btn-lux-outline-white">Explore Portfolio</a>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <a href="#ourStory" class="lux-scroll-indicator" aria-label="Scroll to story">
+        <span class="lux-scroll-text">SCROLL DOWN</span>
+        <div class="lux-scroll-line"><span class="lux-scroll-dot"></span></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       2. OUR STORY — The Journey
+       ====================================================================== -->
+  <section class="lux-story-section" id="ourStory">
+    <div class="container">
+      <div class="lux-story-grid">
+        <!-- Story Image Column -->
+        <div class="lux-story-media-col">
+          <div class="lux-story-img-frame">
+            <img src="assets/images/prop-1.webp" alt="Architectural Heritage" class="lux-story-img">
+            <div class="lux-story-badge">
+              <span class="lux-badge-year">EST. 2011</span>
+              <span class="lux-badge-caption">15 Years of Integrity</span>
+            </div>
+          </div>
+          <div class="lux-quote-card">
+            <i class="fa-solid fa-quote-left lux-quote-icon"></i>
+            <p class="lux-quote-text">“Architecture is the learned game, correct and magnificent, of forms assembled in the light.”</p>
+            <span class="lux-quote-author">— Stackly Design Collective</span>
+          </div>
+        </div>
+
+        <!-- Story Content Column -->
+        <div class="lux-story-content-col">
+          <span class="lux-section-kicker">OUR HERITAGE</span>
+          <h2 class="lux-section-title">A Decade and a Half of Defining Modern Spaces</h2>
+          
+          <p class="lux-story-paragraph">
+            Founded with an uncompromising belief that real estate should be an authentic expression of human aspiration, Stackly began as a boutique advisory firm in 2011. Over the last fifteen years, we have evolved into a multi-market real estate institution known for architectural rigor, transparent transactions, and unmatched market foresight.
+          </p>
+          <p class="lux-story-paragraph">
+            From iconic high-rise commercial headquarters and industrial logistics corridors to coastal residential sanctuaries, every property in our portfolio undergoes exhaustive structural, legal, and financial scrutiny before receiving the Stackly seal of verification.
+          </p>
+
+          <!-- Key Metrics Ribbon -->
+          <div class="lux-heritage-stats">
+            <div class="lux-hstat-item">
+              <span class="lux-hstat-num">₹1,200+ Cr</span>
+              <span class="lux-hstat-label">Assets Transacted</span>
+            </div>
+            <div class="lux-hstat-item">
+              <span class="lux-hstat-num">99.4%</span>
+              <span class="lux-hstat-label">Client Retention</span>
+            </div>
+            <div class="lux-hstat-item">
+              <span class="lux-hstat-num">15+ Yrs</span>
+              <span class="lux-hstat-label">Market Excellence</span>
+            </div>
+          </div>
+
+          <!-- 3 Core Heritage Pillars -->
+          <div class="lux-heritage-pillars">
+            <div class="lux-pillar-box">
+              <div class="lux-pillar-icon"><i class="fa-solid fa-shield-halved"></i></div>
+              <div>
+                <h5 class="lux-pillar-title">100% Verified Title Due Diligence</h5>
+                <p class="lux-pillar-desc">Stringent 30-year legal audit, encumbrance verification, and physical inspection on every asset.</p>
+              </div>
+            </div>
+
+            <div class="lux-pillar-box">
+              <div class="lux-pillar-icon"><i class="fa-solid fa-chart-pie"></i></div>
+              <div>
+                <h5 class="lux-pillar-title">Predictive Capital Growth Analytics</h5>
+                <p class="lux-pillar-desc">Institutional yield modeling, demographic trend forecasting, and high-ROI location mapping.</p>
+              </div>
+            </div>
+
+            <div class="lux-pillar-box">
+              <div class="lux-pillar-icon"><i class="fa-solid fa-handshake-angle"></i></div>
+              <div>
+                <h5 class="lux-pillar-title">Dedicated Fiduciary Advisory</h5>
+                <p class="lux-pillar-desc">Single-point private representation from discovery and valuation through escrow settlement and handover.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Milestone Timeline -->
+          <div class="lux-timeline">
+            <div class="lux-timeline-item">
+              <div class="lux-timeline-dot"></div>
+              <div class="lux-timeline-year">2011</div>
+              <div class="lux-timeline-info">
+                <h4>The Foundation</h4>
+                <p>Launched with a focused portfolio of prime boutique commercial real estate assets and private advisory desks.</p>
+              </div>
+            </div>
+
+            <div class="lux-timeline-item">
+              <div class="lux-timeline-dot"></div>
+              <div class="lux-timeline-year">2016</div>
+              <div class="lux-timeline-info">
+                <h4>Regional Expansion</h4>
+                <p>Expanded operations into key metropolitan commercial hubs, luxury residential corridors, and tech corridors.</p>
+              </div>
+            </div>
+
+            <div class="lux-timeline-item">
+              <div class="lux-timeline-dot"></div>
+              <div class="lux-timeline-year">2021</div>
+              <div class="lux-timeline-info">
+                <h4>Institutional Milestone</h4>
+                <p>Surpassed ₹500+ Cr in verified transacted asset volume and established our flagship institutional estates division.</p>
+              </div>
+            </div>
+
+            <div class="lux-timeline-item">
+              <div class="lux-timeline-dot"></div>
+              <div class="lux-timeline-year">2026</div>
+              <div class="lux-timeline-info">
+                <h4>Sustainable Tomorrow</h4>
+                <p>Pioneering LEED-certified smart buildings, carbon-neutral logistics parks, and AI-assisted property evaluation.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action CTA -->
+          <div class="lux-heritage-actions">
+            <a href="properties.html" class="btn btn-primary" style="padding: 14px 28px; font-size: 13.5px;">Explore Verified Properties <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="contact.html" class="btn btn-white" style="padding: 14px 28px; font-size: 13.5px; border: 1px solid var(--border-color); color: var(--heading-color);">Connect With Advisors <i class="fa-solid fa-phone"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       3. OUR PHILOSOPHY — Spaces With Purpose
+       ====================================================================== -->
+  <section class="lux-philosophy-section">
+    <div class="container">
+      <div class="lux-section-header-center">
+        <span class="lux-section-kicker">OUR PHILOSOPHY</span>
+        <h2 class="lux-section-title">Spaces With Purpose</h2>
+        <p class="lux-section-sub">We believe that great spaces shape human potential, foster prosperity, and stand resilient across generations.</p>
+      </div>
+
+      <div class="lux-philosophy-grid">
+        <!-- Principle 1 -->
+        <div class="lux-phil-card">
+          <div class="lux-phil-num">01</div>
+          <div class="lux-phil-icon"><i class="fa-solid fa-pen-ruler"></i></div>
+          <h3 class="lux-phil-title">Thoughtful Design</h3>
+          <p class="lux-phil-desc">
+            We prioritize human-centric flow, natural daylight optimization, and seamless integration between interior sophistication and organic landscape.
+          </p>
+          <div class="lux-phil-line"></div>
+        </div>
+
+        <!-- Principle 2 -->
+        <div class="lux-phil-card">
+          <div class="lux-phil-num">02</div>
+          <div class="lux-phil-icon"><i class="fa-solid fa-gem"></i></div>
+          <h3 class="lux-phil-title">Exceptional Quality</h3>
+          <p class="lux-phil-desc">
+            Uncompromising structural engineering, premium sustainable materials, and rigorous zero-defect multi-stage quality assurance protocols.
+          </p>
+          <div class="lux-phil-line"></div>
+        </div>
+
+        <!-- Principle 3 -->
+        <div class="lux-phil-card">
+          <div class="lux-phil-num">03</div>
+          <div class="lux-phil-icon"><i class="fa-solid fa-compass-drafting"></i></div>
+          <h3 class="lux-phil-title">Prime Locations</h3>
+          <p class="lux-phil-desc">
+            Secured exclusively within high-growth transit corridors, prestigious cultural districts, and coveted waterfront and business epicenters.
+          </p>
+          <div class="lux-phil-line"></div>
+        </div>
+
+        <!-- Principle 4 -->
+        <div class="lux-phil-card">
+          <div class="lux-phil-num">04</div>
+          <div class="lux-phil-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <h3 class="lux-phil-title">Long-Term Value</h3>
+          <p class="lux-phil-desc">
+            Every asset is curated for resilient capital appreciation, sustainable cap rates, and generational wealth preservation through economic cycles.
+          </p>
+          <div class="lux-phil-line"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       4. WHAT SETS US APART
+       ====================================================================== -->
+  <section class="lux-apart-section">
+    <div class="container">
+      <div class="lux-apart-layout">
+        <div class="lux-apart-intro">
+          <span class="lux-section-kicker">THE STACKLY STANDARD</span>
+          <h2 class="lux-section-title">What Sets Us Apart</h2>
+          <p class="lux-apart-desc">
+            In an industry often clouded by opacity, Stackly stands on an uncompromising foundation of empirical data, architectural integrity, and client advocacy.
+          </p>
+          <div class="lux-apart-cta-box">
+            <span class="lux-apart-cta-text">Looking for private property placement?</span>
+            <a href="404.html" class="btn btn-lux-gold">Schedule Private Consultation</a>
+          </div>
+        </div>
+
+        <div class="lux-apart-cards-grid">
+          <!-- Card 1 -->
+          <div class="lux-apart-card">
+            <div class="lux-apart-header">
+              <span class="lux-apart-idx">01</span>
+              <span class="lux-apart-tag">MARKET EXPERTISE</span>
+            </div>
+            <h3 class="lux-apart-card-title">Institutional Precision</h3>
+            <p class="lux-apart-card-text">
+              Proprietary demographic analytics, zoning intelligence, and localized yield projections ensure every recommendation is backed by real-world data.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="lux-apart-card">
+            <div class="lux-apart-header">
+              <span class="lux-apart-idx">02</span>
+              <span class="lux-apart-tag">TRANSPARENT PROCESS</span>
+            </div>
+            <h3 class="lux-apart-card-title">Zero Hidden Clauses</h3>
+            <p class="lux-apart-card-text">
+              Comprehensive title audits, fully insured escrow management, and clear transparent fee structures with complete fiduciary transparency.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="lux-apart-card">
+            <div class="lux-apart-header">
+              <span class="lux-apart-idx">03</span>
+              <span class="lux-apart-tag">QUALITY CONSTRUCTION</span>
+            </div>
+            <h3 class="lux-apart-card-title">Architectural Vetting</h3>
+            <p class="lux-apart-card-text">
+              Independent physical engineering reviews, HVAC environmental assessments, and compliance audits for total structural confidence.
+            </p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="lux-apart-card">
+            <div class="lux-apart-header">
+              <span class="lux-apart-idx">04</span>
+              <span class="lux-apart-tag">PRIME LOCATIONS</span>
+            </div>
+            <h3 class="lux-apart-card-title">Unrivaled Access</h3>
+            <p class="lux-apart-card-text">
+              Exclusive off-market inventory and priority relationships with leading master developers across America's most dynamic urban hubs.
+            </p>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="lux-apart-card" style="grid-column: span 2;">
+            <div class="lux-apart-header">
+              <span class="lux-apart-idx">05</span>
+              <span class="lux-apart-tag">PERSONALIZED SERVICE</span>
+            </div>
+            <h3 class="lux-apart-card-title">White-Glove Private Advisory</h3>
+            <p class="lux-apart-card-text">
+              Direct access to dedicated senior partners, discreet off-market transactions, customized financial modeling, and end-to-end relocation management tailored to family offices and enterprises.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       5. PORTFOLIO SHOWCASE (Our Areas of Expertise)
+       ====================================================================== -->
+  <section class="lux-expertise-section" id="expertiseSection">
+    <div class="container">
+      <div class="lux-expertise-header">
+        <div>
+          <span class="lux-section-kicker">PORTFOLIO SPECTRUM</span>
+          <h2 class="lux-section-title">Our Areas of Expertise</h2>
+        </div>
+        <div class="lux-expertise-controls">
+          <button class="lux-ctrl-btn" id="slideLeftBtn" aria-label="Scroll left"><i class="fa-solid fa-chevron-left"></i></button>
+          <button class="lux-ctrl-btn" id="slideRightBtn" aria-label="Scroll right"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Horizontal Scroll Showcase Track -->
+    <div class="lux-track-wrapper" id="expertiseTrackWrap">
+      <div class="lux-track-inner" id="expertiseTrack">
+        <!-- Item 1 -->
+        <div class="lux-track-card">
+          <div class="lux-track-img-wrap">
+            <img src="assets/images/prop-2.webp" alt="Commercial Office Towers" class="lux-track-img">
+          </div>
+          <div class="lux-track-overlay">
+            <span class="lux-track-cat">COMMERCIAL</span>
+            <h3 class="lux-track-title">Office Towers & Business Parks</h3>
+            <p class="lux-track-desc">AAA-grade corporate headquarters equipped with next-generation smart infrastructure.</p>
+            <a href="404.html" class="lux-track-link">Explore Commercial <i class="fa-solid fa-chevron-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="lux-track-card">
+          <div class="lux-track-img-wrap">
+            <img src="assets/images/prop-3.webp" alt="Luxury Hospitality & Leisure" class="lux-track-img">
+          </div>
+          <div class="lux-track-overlay">
+            <span class="lux-track-cat">HOSPITALITY</span>
+            <h3 class="lux-track-title">Boutique Hotels & Leisure</h3>
+            <p class="lux-track-desc">World-class hospitality assets and resort estates in premier travel destinations.</p>
+            <a href="404.html" class="lux-track-link">Explore Leisure <i class="fa-solid fa-chevron-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="lux-track-card">
+          <div class="lux-track-img-wrap">
+            <img src="assets/images/city-ny.webp" alt="Residential Penthouses" class="lux-track-img">
+          </div>
+          <div class="lux-track-overlay">
+            <span class="lux-track-cat">LUXURY HOMES</span>
+            <h3 class="lux-track-title">Signature Penthouses & Villas</h3>
+            <p class="lux-track-desc">Bespoke residential estates designed by celebrated global architects.</p>
+            <a href="404.html" class="lux-track-link">Explore Residences <i class="fa-solid fa-chevron-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="lux-track-card">
+          <div class="lux-track-img-wrap">
+            <img src="assets/images/prop-5.webp" alt="Medical & Consulting Hubs" class="lux-track-img">
+          </div>
+          <div class="lux-track-overlay">
+            <span class="lux-track-cat">HEALTHCARE</span>
+            <h3 class="lux-track-title">Medical & Surgical Facilities</h3>
+            <p class="lux-track-desc">Purpose-built clinical and life-sciences suites engineered for institutional healthcare.</p>
+            <a href="404.html" class="lux-track-link">Explore Medical <i class="fa-solid fa-chevron-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="lux-track-card">
+          <div class="lux-track-img-wrap">
+            <img src="assets/images/prop-6.webp" alt="Industrial & Land Development" class="lux-track-img">
+          </div>
+          <div class="lux-track-overlay">
+            <span class="lux-track-cat">LOGISTICS</span>
+            <h3 class="lux-track-title">Industrial & Land Development</h3>
+            <p class="lux-track-desc">High-clearance modern logistics centers and master-planned land parcels.</p>
+            <a href="404.html" class="lux-track-link">Explore Logistics <i class="fa-solid fa-chevron-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="lux-track-progress-wrap">
+      <div class="lux-track-progress-bar" id="expertiseProgressBar"></div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       6. NUMBERS THAT DEFINE US
+       ====================================================================== -->
+  <section class="lux-numbers-section">
+    <div class="lux-numbers-bg-pattern"></div>
+    <div class="container" style="position: relative; z-index: 2;">
+      <div class="lux-section-header-center">
+        <span class="lux-section-kicker" style="color: #C5A869;">SCALE & IMPACT</span>
+        <h2 class="lux-section-title" style="color: #FFFFFF;">Numbers That Define Us</h2>
+        <p class="lux-section-sub" style="color: #A0A5AE;">A quantifiable legacy of precision, scale, and uncompromising performance.</p>
+      </div>
+
+      <div class="lux-stats-grid">
+        <!-- Stat 1 -->
+        <div class="lux-stat-item">
+          <div class="lux-stat-num" data-target="15">0</div>
+          <div class="lux-stat-suffix">+</div>
+          <div class="lux-stat-label">Years of Industry Leadership</div>
+          <div class="lux-stat-sub">Continuously managing prime commercial transactions since 2011.</div>
+        </div>
+
+        <!-- Stat 2 -->
+        <div class="lux-stat-item">
+          <div class="lux-stat-num" data-target="120">0</div>
+          <div class="lux-stat-suffix">+</div>
+          <div class="lux-stat-label">Properties Delivered</div>
+          <div class="lux-stat-sub">Signature developments completed on schedule and under budget.</div>
+        </div>
+
+        <!-- Stat 3 -->
+        <div class="lux-stat-item">
+          <div class="lux-stat-num" data-target="25">0</div>
+          <div class="lux-stat-suffix">+</div>
+          <div class="lux-stat-label">Prime Regional Locations</div>
+          <div class="lux-stat-sub">Strategic assets across the highest-yielding national markets.</div>
+        </div>
+
+        <!-- Stat 4 -->
+        <div class="lux-stat-item">
+          <div class="lux-stat-num" data-target="98">0</div>
+          <div class="lux-stat-suffix">%</div>
+          <div class="lux-stat-label">Client Satisfaction</div>
+          <div class="lux-stat-sub">Independently verified institutional and private client retention.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       7. OUR PEOPLE & PARTNERSHIPS (Executive Leadership)
+       ====================================================================== -->
+  <section class="lux-team-section" id="executiveTeamSection">
+    <!-- Subtle Architectural Ambient Details -->
+    <div class="lux-team-bg-lines">
+      <div class="lux-team-line lux-line-1"></div>
+      <div class="lux-team-line lux-line-2"></div>
+      <div class="lux-team-line lux-line-3"></div>
+    </div>
+
+    <div class="container" style="position: relative; z-index: 2;">
+      <div class="lux-section-header-center lux-team-header-anim">
+        <span class="lux-section-kicker">EXECUTIVE LEADERSHIP</span>
+        <h2 class="lux-section-title lux-editorial-heading">The Minds Behind Stackly</h2>
+        <p class="lux-section-sub">A team of seasoned real estate veterans, financial strategists, and architectural specialists.</p>
+      </div>
+
+      <div class="lux-team-grid lux-editorial-grid">
+        <!-- Member 1 -->
+        <div class="lux-team-card lux-editorial-card" data-idx="01">
+          <div class="lux-team-card-glow"></div>
+          <div class="lux-team-photo-wrap">
+            <span class="lux-team-number">01 / 04</span>
+            <img src="assets/images/agent-1.webp" alt="Meliodas Long" class="lux-team-photo">
+            <div class="lux-team-overlay-info">
+              <p class="lux-team-bio">18+ years leading institutional acquisitions and capital market syndication across prime commercial towers.</p>
+              <div class="lux-team-socials">
+                <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="404.html" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="lux-team-content">
+            <div class="lux-team-meta">
+              <span class="lux-team-role">Chief Executive & Founder</span>
+              <h3 class="lux-team-name">Meliodas Long</h3>
+              <p class="lux-team-expertise">Capital Markets & Acquisitions</p>
+            </div>
+            <div class="lux-team-accent-line"></div>
+          </div>
+        </div>
+
+        <!-- Member 2 -->
+        <div class="lux-team-card lux-editorial-card" data-idx="02">
+          <div class="lux-team-card-glow"></div>
+          <div class="lux-team-photo-wrap">
+            <span class="lux-team-number">02 / 04</span>
+            <img src="assets/images/agent-2.webp" alt="Peter Parker" class="lux-team-photo">
+            <div class="lux-team-overlay-info">
+              <p class="lux-team-bio">Specialist in commercial zoning, master logistics developments, and high-yield factory acquisitions.</p>
+              <div class="lux-team-socials">
+                <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="404.html" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="lux-team-content">
+            <div class="lux-team-meta">
+              <span class="lux-team-role">Director of Commercial Assets</span>
+              <h3 class="lux-team-name">Peter Parker</h3>
+              <p class="lux-team-expertise">Logistics & Master Zoning</p>
+            </div>
+            <div class="lux-team-accent-line"></div>
+          </div>
+        </div>
+
+        <!-- Member 3 -->
+        <div class="lux-team-card lux-editorial-card" data-idx="03">
+          <div class="lux-team-card-glow"></div>
+          <div class="lux-team-photo-wrap">
+            <span class="lux-team-number">03 / 04</span>
+            <img src="assets/images/agent-3.webp" alt="Tony Stark" class="lux-team-photo">
+            <div class="lux-team-overlay-info">
+              <p class="lux-team-bio">Advising global private family offices and venture funds on landmark hospitality and trophy residences.</p>
+              <div class="lux-team-socials">
+                <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="404.html" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="lux-team-content">
+            <div class="lux-team-meta">
+              <span class="lux-team-role">Managing Investment Partner</span>
+              <h3 class="lux-team-name">Tony Stark</h3>
+              <p class="lux-team-expertise">Private Family Office Advisory</p>
+            </div>
+            <div class="lux-team-accent-line"></div>
+          </div>
+        </div>
+
+        <!-- Member 4 -->
+        <div class="lux-team-card lux-editorial-card" data-idx="04">
+          <div class="lux-team-card-glow"></div>
+          <div class="lux-team-photo-wrap">
+            <span class="lux-team-number">04 / 04</span>
+            <img src="assets/images/agent-4.webp" alt="Dilliama Nelissa" class="lux-team-photo">
+            <div class="lux-team-overlay-info">
+              <p class="lux-team-bio">Leading medical real estate compliance, clinic acquisitions, and healthcare facilities development.</p>
+              <div class="lux-team-socials">
+                <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="404.html" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="lux-team-content">
+            <div class="lux-team-meta">
+              <span class="lux-team-role">Principal Healthcare & Leisure</span>
+              <h3 class="lux-team-name">Dilliama Nelissa</h3>
+              <p class="lux-team-expertise">Life Sciences & Clinical Assets</p>
+            </div>
+            <div class="lux-team-accent-line"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Institutional Partners Showcase -->
+      <div class="lux-partners-strip">
+        <span class="lux-partners-label">STRATEGIC ARCHITECTURAL & INSTITUTIONAL PARTNERS</span>
+        <div class="brands-marquee-slider" style="margin-top: 28px;">
+          <div class="brands-marquee-track">
+            <!-- Set 1 -->
+            <div class="brand-item"><img src="assets/images/brand-1.webp" alt="Institutional Partner 1"></div>
+            <div class="brand-item"><img src="assets/images/brand-2.webp" alt="Institutional Partner 2"></div>
+            <div class="brand-item"><img src="assets/images/brand-3.webp" alt="Institutional Partner 3"></div>
+            <div class="brand-item"><img src="assets/images/brand-4.webp" alt="Institutional Partner 4"></div>
+            <div class="brand-item"><img src="assets/images/brand-5.webp" alt="Institutional Partner 5"></div>
+            <div class="brand-item"><img src="assets/images/brand-6.webp" alt="Institutional Partner 6"></div>
+            <!-- Set 2 (Duplicate for seamless infinite marquee) -->
+            <div class="brand-item"><img src="assets/images/brand-1.webp" alt="Institutional Partner 1"></div>
+            <div class="brand-item"><img src="assets/images/brand-2.webp" alt="Institutional Partner 2"></div>
+            <div class="brand-item"><img src="assets/images/brand-3.webp" alt="Institutional Partner 3"></div>
+            <div class="brand-item"><img src="assets/images/brand-4.webp" alt="Institutional Partner 4"></div>
+            <div class="brand-item"><img src="assets/images/brand-5.webp" alt="Institutional Partner 5"></div>
+            <div class="brand-item"><img src="assets/images/brand-6.webp" alt="Institutional Partner 6"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       8. CLOSING CTA — Your Next Address Starts Here
+       ====================================================================== -->
+  <section class="lux-closing-cta-section">
+    <div class="lux-closing-bg-wrap">
+      <img src="assets/images/banner-loan.webp" alt="Luxury Architectural Estate" class="lux-closing-img">
+      <div class="lux-closing-overlay"></div>
+    </div>
+
+    <div class="container lux-closing-content">
+      <span class="lux-closing-kicker">YOUR NEXT CHAPTER BEGINS</span>
+      <h2 class="lux-closing-headline">Let’s Find the Place That Feels Like Yours.</h2>
+      <p class="lux-closing-lead">
+        Whether acquiring a signature corporate headquarters or seeking an off-market private residence, our executive advisors are ready to guide your vision.
+      </p>
+
+      <div class="lux-closing-actions">
+        <a href="properties.html" class="btn btn-lux-gold-solid">Explore Properties <i class="fa-solid fa-house-chimney"></i></a>
+        <a href="404.html" class="btn btn-lux-white-solid">Talk to Our Team <i class="fa-solid fa-phone"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rich Footer -->
+  <footer class="site-footer" id="footerSection">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <a href="index.html">
+              <img src="assets/images/stackly.webp" alt="Stackly Real Estate">
+            </a>
+          </div>
+          <p class="footer-about-text">
+            Stackly is the premier real estate portal for finding commercial offices, luxury leisure spaces, warehouses, and prime investment properties nationwide.
+          </p>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>MMR Complex, Salem - 636 003, Tamil Nadu, India</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <a href="404.html" style="color: inherit; text-decoration: none;">+91 74880 99999</a>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-regular fa-envelope"></i>
+            <a href="404.html" style="color: inherit; text-decoration: none;">info@stackly.com</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">REAL ESTATE EXPRESS</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="properties.html">Properties</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">REAL ESTATE COURSES</h4>
+          <ul class="footer-links-list">
+            <li><a href="404.html">Get My License</a></li>
+            <li><a href="404.html">Upgrade My License</a></li>
+            <li><a href="404.html">Continuing Education</a></li>
+            <li><a href="404.html">Exam Prep Master</a></li>
+            <li><a href="404.html">Appraisal License</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">NEWSLETTER</h4>
+          <p style="color: #A0A5AE; font-size: 13px; margin-bottom: 14px;">
+            Subscribe to our weekly market briefing and exclusive investment opportunities.
+          </p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); handleNewsletterSubmit(this);" novalidate>
+            <input type="email" class="newsletter-input" placeholder="Your Email address">
+            <button type="submit" class="newsletter-btn">Subscribe</button>
+          </form>
+          <div class="footer-socials">
+            <a href="404.html" class="footer-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>Copyright &copy; 2026 Stackly. All Rights Reserved.</div>
+        <div class="footer-bottom-links">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Terms</a>
+          <a href="404.html">Safety</a>
+          <a href="404.html">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="btn-back-to-top" id="backToTopBtn" title="Back to top" aria-label="Back to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <!-- Sign In Modal -->
+  <div class="modal-backdrop" id="signinModal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" onclick="closeAllModals()"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-header">
+        <h3 class="modal-title">Sign In</h3>
+        <p style="font-size: 14px; color: #7D7D84;">Access your Stackly dashboard and saved properties</p>
+      </div>
+      <form onsubmit="event.preventDefault(); handleModalSignIn(this);" novalidate>
+        <div class="form-group">
+          <label>Username or Email Address</label>
+          <input type="text" class="form-control modal-user" placeholder="Enter username or email">
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" class="form-control modal-pwd" placeholder="Enter password">
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; font-size: 13px;">
+          <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+            <input type="checkbox" style="accent-color: #6868EB;"> Remember Me
+          </label>
+          <a href="#reset" onclick="openModal('forgotModal'); return false;" style="color: #6868EB;">Forgot password?</a>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Sign In</button>
+        <div style="text-align: center; margin-top: 20px; font-size: 13px; color: #7D7D84;">
+          Don't have an account yet? <a href="#register" onclick="openModal('registerModal'); return false;" style="color: #6868EB; font-weight: 600;">Register</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Register Modal -->
+  <div class="modal-backdrop" id="registerModal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" onclick="closeAllModals()"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-header">
+        <h3 class="modal-title">Register Account</h3>
+        <p style="font-size: 14px; color: #7D7D84;">Create a free Stackly account today</p>
+      </div>
+      <form onsubmit="event.preventDefault(); handleModalRegister(this);" novalidate>
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" class="form-control modal-reg-name" placeholder="e.g. John Doe">
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" class="form-control modal-reg-email" placeholder="name@example.com">
+        </div>
+        <div class="form-group">
+          <label>Account Role</label>
+          <select class="form-control">
+            <option value="buyer">Property Buyer / Investor</option>
+            <option value="agent">Licensed Real Estate Agent</option>
+            <option value="owner">Property Owner / Landlord</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" class="form-control" placeholder="Create a secure password">
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Create Account</button>
+        <div style="text-align: center; margin-top: 20px; font-size: 13px; color: #7D7D84;">
+          Already have an account? <a href="#signin" onclick="openModal('signinModal'); return false;" style="color: var(--primary); font-weight: 600;">Sign In</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ScrollCue & Application JavaScript -->
+  <script src="js/scrollCue.min.js"></script>
+  <script src="js/app.js"></script>
+  
+  <!-- GSAP & ScrollTrigger Engine -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
+  <!-- Interactive Animation & GSAP Horizontal Scroll Engine for Luxury About Page -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Animated Stats Counter (Intersection Observer)
+      const statNums = document.querySelectorAll('.lux-stat-num');
+      let statsAnimated = false;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !statsAnimated) {
+            statsAnimated = true;
+            statNums.forEach(num => {
+              const target = parseInt(num.getAttribute('data-target'));
+              const duration = 2000;
+              const stepTime = 30;
+              const steps = duration / stepTime;
+              const increment = target / steps;
+              let current = 0;
+
+              const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                  num.textContent = target;
+                  clearInterval(timer);
+                } else {
+                  num.textContent = Math.floor(current);
+                }
+              }, stepTime);
+            });
+          }
+        });
+      }, { threshold: 0.3 });
+
+      const statsSection = document.querySelector('.lux-numbers-section');
+      if (statsSection) observer.observe(statsSection);
+
+      // 2. High-Performance Portfolio Spectrum Showcase Slider
+      const trackWrap = document.getElementById('expertiseTrackWrap');
+      const trackInner = document.getElementById('expertiseTrack');
+      const progressBar = document.getElementById('expertiseProgressBar');
+      const leftBtn = document.getElementById('slideLeftBtn');
+      const rightBtn = document.getElementById('slideRightBtn');
+
+      if (trackWrap && trackInner) {
+        const updateProgressBar = () => {
+          if (!progressBar) return;
+          const maxScroll = trackWrap.scrollWidth - trackWrap.clientWidth;
+          const progress = maxScroll > 0 ? (trackWrap.scrollLeft / maxScroll) * 100 : 0;
+          progressBar.style.width = `${Math.min(100, Math.max(0, progress))}%`;
+        };
+
+        trackWrap.addEventListener('scroll', updateProgressBar, { passive: true });
+        window.addEventListener('resize', updateProgressBar);
+        setTimeout(updateProgressBar, 100);
+
+        const getScrollStep = () => {
+          const card = trackInner.querySelector('.lux-track-card');
+          if (card) {
+            return card.offsetWidth + 28; // Card width + gap
+          }
+          return 378;
+        };
+
+        if (leftBtn) {
+          leftBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            trackWrap.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+          });
+        }
+
+        if (rightBtn) {
+          rightBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            trackWrap.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+          });
+        }
+
+        // Mouse Drag to Scroll
+        let isDown = false;
+        let startX, scrollLeftVal;
+
+        trackWrap.addEventListener('mousedown', (e) => {
+          isDown = true;
+          trackWrap.classList.add('is-dragging');
+          startX = e.pageX - trackWrap.offsetLeft;
+          scrollLeftVal = trackWrap.scrollLeft;
+        });
+
+        window.addEventListener('mouseup', () => {
+          if (isDown) {
+            isDown = false;
+            trackWrap.classList.remove('is-dragging');
+          }
+        });
+
+        trackWrap.addEventListener('mousemove', (e) => {
+          if (!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - trackWrap.offsetLeft;
+          const walk = (x - startX) * 1.5;
+          trackWrap.scrollLeft = scrollLeftVal - walk;
+          updateProgressBar();
+        });
+      }
+
+      // 3. Luxury Editorial Executive Leadership Animations (GSAP + ScrollTrigger)
+      if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        const teamSection = document.getElementById('executiveTeamSection');
+        const teamCards = gsap.utils.toArray('.lux-editorial-card');
+        const teamHeader = document.querySelector('.lux-team-header-anim');
+        const teamPhotos = gsap.utils.toArray('.lux-editorial-card .lux-team-photo');
+
+        if (teamSection && teamCards.length) {
+          // A. Section Heading Reveal (Fade Up + Letter Spacing Reveal)
+          if (teamHeader) {
+            gsap.fromTo(teamHeader, 
+              { opacity: 0, y: 35, letterSpacing: "2px" },
+              {
+                opacity: 1,
+                y: 0,
+                letterSpacing: "normal",
+                duration: 1.0,
+                ease: "power3.out",
+                scrollTrigger: {
+                  trigger: teamSection,
+                  start: "top 80%",
+                  once: true
+                }
+              }
+            );
+          }
+
+          // B. Magazine-Style Staggered Clip-Path Entrance
+          gsap.fromTo(teamCards,
+            {
+              clipPath: "inset(12% 0% 12% 0% round 14px)",
+              opacity: 0,
+              y: 50,
+              scale: 0.96
+            },
+            {
+              clipPath: "inset(0% 0% 0% 0% round 14px)",
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              duration: 1.0,
+              stagger: 0.16,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: ".lux-editorial-grid",
+                start: "top 82%",
+                once: true
+              }
+            }
+          );
+
+          // C. Image entrance subtle scale (1.08 -> 1)
+          gsap.fromTo(teamPhotos,
+            { scale: 1.08 },
+            {
+              scale: 1,
+              duration: 1.2,
+              stagger: 0.16,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: ".lux-editorial-grid",
+                start: "top 82%",
+                once: true
+              }
+            }
+          );
+
+          // D. Subtle Parallax for Photos on Scroll
+          teamPhotos.forEach((photo) => {
+            gsap.to(photo, {
+              yPercent: 8,
+              ease: "none",
+              scrollTrigger: {
+                trigger: photo.closest('.lux-editorial-card'),
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1.2
+              }
+            });
+          });
+
+          // E. Cursor-Following Glow Sheen Tracker
+          teamCards.forEach((card) => {
+            card.addEventListener('mousemove', (e) => {
+              const rect = card.getBoundingClientRect();
+              const x = e.clientX - rect.left;
+              const y = e.clientY - rect.top;
+              card.style.setProperty('--mouse-x', `${x}px`);
+              card.style.setProperty('--mouse-y', `${y}px`);
+            });
+          });
+        }
+      }
+    });
+  </script>
+</body>
+</html>

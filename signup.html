@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account | Stackly Real Estate Platform</title>
+  <meta name="description" content="Join Stackly Real Estate Platform to discover verified property listings, evaluate investment yields, and collaborate with expert advisors.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/webp" href="assets/images/stackly.webp">
+
+  <!-- Google Fonts: Inter & Josefin Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome 6 Icons & Remix Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-page-body">
+
+  <div class="auth-page-container">
+    <div class="auth-card-wrapper">
+      
+      <!-- Left Visual Card -->
+      <div class="auth-side-banner">
+        <div class="auth-banner-bg" style="background-image: url('assets/images/hero-projects.jpg');"></div>
+        <div class="auth-banner-overlay"></div>
+        
+        <div class="auth-banner-content">
+          <!-- Stackly Logo -->
+          <a href="index.html" class="auth-brand-logo">
+            <img src="assets/images/stackly.webp" alt="Stackly" class="auth-logo-img">
+          </a>
+
+          <!-- Pill Badge -->
+          <div class="auth-kicker-badge">
+            <i class="ri-user-add-line"></i> JOIN OUR NETWORK
+          </div>
+
+          <!-- Main Heading -->
+          <h1 class="auth-banner-title">
+            Begin your <span class="auth-highlight-text">property journey</span>
+          </h1>
+
+          <!-- Description -->
+          <p class="auth-banner-desc">
+            Join thousands of property investors, homeowners, and licensed agents who rely on Stackly to discover premium listings, evaluate property yield, and access top-tier advisory.
+          </p>
+
+          <!-- 3 Feature Badges -->
+          <div class="auth-feature-pills">
+            <div class="auth-pill-item">
+              <i class="ri-shake-hands-line"></i> Free Consultation
+            </div>
+            <div class="auth-pill-item">
+              <i class="ri-search-eye-line"></i> Curated Listings
+            </div>
+            <div class="auth-pill-item">
+              <i class="ri-line-chart-line"></i> Real-time Yields
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Form Container -->
+      <div class="auth-form-side">
+        
+        <!-- Top Nav Link -->
+        <div class="auth-top-nav">
+          <a href="index.html" class="auth-back-link">
+            <i class="ri-home-4-line"></i> Back to Home
+          </a>
+          <span class="auth-section-kicker">— CREATE ACCOUNT</span>
+        </div>
+
+        <!-- Form Header -->
+        <div class="auth-header-wrap">
+          <h2 class="auth-main-title">
+            Sign <span class="auth-highlight-word">up</span>
+          </h2>
+          <p class="auth-main-subtitle">
+            Fill in your details below to get started with Stackly Real Estate Platform.
+          </p>
+        </div>
+
+        <!-- Sign Up Form (Custom JavaScript Validation) -->
+        <form id="signUpForm" class="auth-form" onsubmit="handleAuthSignUp(event)" novalidate>
+          
+          <!-- Name Row (2 Columns) -->
+          <div class="auth-form-row">
+            <div class="auth-form-group">
+              <label for="regFirstName">FIRST NAME *</label>
+              <div class="auth-input-wrapper">
+                <i class="ri-user-3-line auth-input-icon"></i>
+                <input type="text" id="regFirstName" class="auth-form-control" placeholder="John" autocomplete="given-name">
+              </div>
+              <div class="form-field-error" id="errRegFirstName" style="display: none;"></div>
+            </div>
+
+            <div class="auth-form-group">
+              <label for="regLastName">LAST NAME *</label>
+              <div class="auth-input-wrapper">
+                <i class="ri-user-3-line auth-input-icon"></i>
+                <input type="text" id="regLastName" class="auth-form-control" placeholder="Doe" autocomplete="family-name">
+              </div>
+              <div class="form-field-error" id="errRegLastName" style="display: none;"></div>
+            </div>
+          </div>
+
+          <!-- Email Address Field -->
+          <div class="auth-form-group">
+            <label for="regEmail">EMAIL ADDRESS *</label>
+            <div class="auth-input-wrapper">
+              <i class="ri-mail-line auth-input-icon"></i>
+              <input type="email" id="regEmail" class="auth-form-control" placeholder="you@example.com" autocomplete="email">
+            </div>
+            <div class="form-field-error" id="errRegEmail" style="display: none;"></div>
+          </div>
+
+          <!-- Phone Number Field -->
+          <div class="auth-form-group">
+            <label for="regPhone">PHONE NUMBER (OPTIONAL)</label>
+            <div class="auth-input-wrapper">
+              <i class="ri-phone-line auth-input-icon"></i>
+              <input type="tel" id="regPhone" class="auth-form-control" placeholder="+1 (555) 000-0000" autocomplete="tel">
+            </div>
+          </div>
+
+          <!-- Select Portal Field -->
+          <div class="auth-form-group">
+            <label for="regPortal">SELECT PORTAL *</label>
+            <div class="auth-input-wrapper">
+              <i class="ri-community-line auth-input-icon"></i>
+              <select id="regPortal" class="auth-form-control auth-select">
+                <option value="" disabled selected>Select your portal...</option>
+                <option value="buyer">Buyer</option>
+                <option value="admin">Admin</option>
+              </select>
+              <i class="ri-arrow-down-s-line auth-select-arrow"></i>
+            </div>
+            <div class="form-field-error" id="errRegPortal" style="display: none;"></div>
+          </div>
+
+          <!-- Password Field -->
+          <div class="auth-form-group">
+            <label for="regPassword">PASSWORD *</label>
+            <div class="auth-input-wrapper">
+              <i class="ri-lock-password-line auth-input-icon"></i>
+              <input type="password" id="regPassword" class="auth-form-control" placeholder="Min. 8 characters" autocomplete="new-password">
+              <button type="button" class="auth-pwd-toggle" onclick="togglePasswordVisibility('regPassword', this)" aria-label="Toggle password visibility">
+                <i class="ri-eye-line"></i>
+              </button>
+            </div>
+            <div class="form-field-error" id="errRegPassword" style="display: none;"></div>
+
+            <!-- Password Requirements Live Checklist -->
+            <div class="pwd-requirements-box" id="regPwdRequirements">
+              <div class="pwd-req-item" id="regReqLength"><i class="ri-checkbox-circle-line"></i> At least 8 characters</div>
+              <div class="pwd-req-item" id="regReqUpper"><i class="ri-checkbox-circle-line"></i> At least one uppercase letter (A-Z)</div>
+              <div class="pwd-req-item" id="regReqLower"><i class="ri-checkbox-circle-line"></i> At least one lowercase letter (a-z)</div>
+              <div class="pwd-req-item" id="regReqNumber"><i class="ri-checkbox-circle-line"></i> At least one number (0-9)</div>
+            </div>
+          </div>
+
+          <!-- Confirm Password Field -->
+          <div class="auth-form-group">
+            <label for="regConfirmPassword">CONFIRM PASSWORD *</label>
+            <div class="auth-input-wrapper">
+              <i class="ri-lock-password-line auth-input-icon"></i>
+              <input type="password" id="regConfirmPassword" class="auth-form-control" placeholder="Re-enter your password" autocomplete="new-password">
+              <button type="button" class="auth-pwd-toggle" onclick="togglePasswordVisibility('regConfirmPassword', this)" aria-label="Toggle password visibility">
+                <i class="ri-eye-line"></i>
+              </button>
+            </div>
+            <div class="form-field-error" id="errRegConfirmPassword" style="display: none;"></div>
+            <div id="pwdMatchStatus" class="pwd-match-text"></div>
+          </div>
+
+          <!-- Terms Checkbox -->
+          <div class="auth-options-row" style="margin-bottom: 8px;">
+            <label class="auth-checkbox-label" id="lblAgreeTerms">
+              <input type="checkbox" id="agreeTerms">
+              <span>I agree to the <a href="404.html" class="auth-inline-link">Terms of Service</a> & <a href="404.html" class="auth-inline-link">Privacy Policy</a></span>
+            </label>
+          </div>
+          <div class="form-field-error" id="errAgreeTerms" style="display: none; margin-bottom: 14px;"></div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="auth-submit-btn" id="btnSignUp">
+            <span>CREATE ACCOUNT</span>
+            <i class="ri-user-add-line"></i>
+          </button>
+
+          <!-- Footer Switch -->
+          <div class="auth-switch-prompt">
+            Already have an account? <a href="login.html" class="auth-switch-link">Sign in here</a>
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container"></div>
+
+  <!-- Script for Sign Up Logic -->
+  <script>
+    function togglePasswordVisibility(inputId, btn) {
+      const input = document.getElementById(inputId);
+      const icon = btn.querySelector('i');
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.className = 'ri-eye-off-line';
+      } else {
+        input.type = 'password';
+        icon.className = 'ri-eye-line';
+      }
+    }
+
+    // Custom Error Helpers
+    function setFieldError(fieldId, errId, message) {
+      const field = document.getElementById(fieldId);
+      const errEl = document.getElementById(errId);
+      if (field && field.classList) {
+        field.classList.add('input-error');
+        field.classList.remove('is-valid');
+      }
+      if (errEl) {
+        errEl.innerHTML = `<i class="ri-error-warning-fill"></i> ${message}`;
+        errEl.style.display = 'flex';
+      }
+    }
+
+    function clearFieldError(fieldId, errId) {
+      const field = document.getElementById(fieldId);
+      const errEl = document.getElementById(errId);
+      if (field && field.classList) {
+        field.classList.remove('input-error');
+      }
+      if (errEl) {
+        errEl.style.display = 'none';
+        errEl.innerHTML = '';
+      }
+    }
+
+    function isValidEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
+    }
+
+    // Attach clear error listeners
+    ['regFirstName', 'regLastName', 'regEmail', 'regPassword', 'regConfirmPassword'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.addEventListener('input', () => {
+          const errId = 'err' + id.charAt(0).toUpperCase() + id.slice(1);
+          clearFieldError(id, errId);
+        });
+      }
+    });
+
+    const regPortalEl = document.getElementById('regPortal');
+    if (regPortalEl) {
+      regPortalEl.addEventListener('change', () => clearFieldError('regPortal', 'errRegPortal'));
+    }
+
+    const agreeTermsEl = document.getElementById('agreeTerms');
+    if (agreeTermsEl) {
+      agreeTermsEl.addEventListener('change', () => clearFieldError('agreeTerms', 'errAgreeTerms'));
+    }
+
+    // Live Password Validation Checklist
+    const regPwdInput = document.getElementById('regPassword');
+    const regConfirmPwdInput = document.getElementById('regConfirmPassword');
+    const matchStatusEl = document.getElementById('pwdMatchStatus');
+
+    if (regPwdInput) {
+      regPwdInput.addEventListener('input', () => {
+        const val = regPwdInput.value;
+        document.getElementById('regReqLength')?.classList.toggle('is-valid', val.length >= 8);
+        document.getElementById('regReqUpper')?.classList.toggle('is-valid', /[A-Z]/.test(val));
+        document.getElementById('regReqLower')?.classList.toggle('is-valid', /[a-z]/.test(val));
+        document.getElementById('regReqNumber')?.classList.toggle('is-valid', /[0-9]/.test(val));
+        validateMatch();
+      });
+    }
+
+    if (regConfirmPwdInput) {
+      regConfirmPwdInput.addEventListener('input', validateMatch);
+    }
+
+    function validateMatch() {
+      if (!regConfirmPwdInput || !regPwdInput) return;
+      const p1 = regPwdInput.value;
+      const p2 = regConfirmPwdInput.value;
+      if (!p2) {
+        matchStatusEl.textContent = '';
+        matchStatusEl.className = 'pwd-match-text';
+      } else if (p1 === p2) {
+        matchStatusEl.textContent = '✓ Passwords match';
+        matchStatusEl.className = 'pwd-match-text is-match';
+        clearFieldError('regConfirmPassword', 'errRegConfirmPassword');
+      } else {
+        matchStatusEl.textContent = '✕ Passwords do not match';
+        matchStatusEl.className = 'pwd-match-text is-mismatch';
+      }
+    }
+
+    function showToast(msg, isError = false) {
+      const container = document.querySelector('.toast-container');
+      const toast = document.createElement('div');
+      toast.className = 'toast';
+      const icon = isError 
+        ? '<i class="fa-solid fa-circle-exclamation" style="color: #DC2626;"></i>' 
+        : '<i class="fa-solid fa-circle-check" style="color: #1B6F58;"></i>';
+      toast.innerHTML = `${icon} ${msg}`;
+      container.appendChild(toast);
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateY(10px)';
+        toast.style.transition = 'all 0.3s ease';
+        setTimeout(() => toast.remove(), 300);
+      }, 3500);
+    }
+
+    function handleAuthSignUp(e) {
+      e.preventDefault();
+      let isValid = true;
+
+      const fName = document.getElementById('regFirstName').value.trim();
+      const lName = document.getElementById('regLastName').value.trim();
+      const email = document.getElementById('regEmail').value.trim();
+      const portal = document.getElementById('regPortal').value;
+      const p1 = regPwdInput.value;
+      const p2 = regConfirmPwdInput.value;
+      const terms = document.getElementById('agreeTerms').checked;
+
+      // 1. First Name
+      if (!fName) {
+        setFieldError('regFirstName', 'errRegFirstName', 'First name is required.');
+        isValid = false;
+      } else {
+        clearFieldError('regFirstName', 'errRegFirstName');
+      }
+
+      // 2. Last Name
+      if (!lName) {
+        setFieldError('regLastName', 'errRegLastName', 'Last name is required.');
+        isValid = false;
+      } else {
+        clearFieldError('regLastName', 'errRegLastName');
+      }
+
+      // 3. Email
+      if (!email) {
+        setFieldError('regEmail', 'errRegEmail', 'Email address is required.');
+        isValid = false;
+      } else if (!isValidEmail(email)) {
+        setFieldError('regEmail', 'errRegEmail', 'Please enter a valid email address.');
+        isValid = false;
+      } else {
+        clearFieldError('regEmail', 'errRegEmail');
+      }
+
+      // 4. Portal
+      if (!portal) {
+        setFieldError('regPortal', 'errRegPortal', 'Please select a portal to continue.');
+        isValid = false;
+      } else {
+        clearFieldError('regPortal', 'errRegPortal');
+      }
+
+      // 5. Password Security Criteria
+      const isStrongPwd = p1.length >= 8 && /[A-Z]/.test(p1) && /[a-z]/.test(p1) && /[0-9]/.test(p1);
+      if (!p1) {
+        setFieldError('regPassword', 'errRegPassword', 'Password is required.');
+        isValid = false;
+      } else if (!isStrongPwd) {
+        setFieldError('regPassword', 'errRegPassword', 'Password must satisfy all 4 criteria below.');
+        isValid = false;
+      } else {
+        clearFieldError('regPassword', 'errRegPassword');
+      }
+
+      // 6. Confirm Password
+      if (!p2) {
+        setFieldError('regConfirmPassword', 'errRegConfirmPassword', 'Please confirm your password.');
+        isValid = false;
+      } else if (p1 !== p2) {
+        setFieldError('regConfirmPassword', 'errRegConfirmPassword', 'Passwords do not match.');
+        isValid = false;
+      } else {
+        clearFieldError('regConfirmPassword', 'errRegConfirmPassword');
+      }
+
+      // 7. Terms & Conditions
+      if (!terms) {
+        setFieldError('agreeTerms', 'errAgreeTerms', 'You must agree to the Terms of Service & Privacy Policy.');
+        isValid = false;
+      } else {
+        clearFieldError('agreeTerms', 'errAgreeTerms');
+      }
+
+      if (!isValid) {
+        showToast('Please correct the highlighted fields.', true);
+        return;
+      }
+
+      const btn = document.getElementById('btnSignUp');
+      btn.innerHTML = '<i class="ri-loader-4-line ri-spin"></i> Creating Account...';
+      btn.disabled = true;
+
+      const fullName = `${fName} ${lName}`.trim() || fName;
+
+      // Save user session / signup details
+      const sessionData = {
+        name: fullName,
+        email: email,
+        portal: portal,
+        loggedInAt: new Date().toISOString()
+      };
+      localStorage.setItem('stackly_user_session', JSON.stringify(sessionData));
+
+      setTimeout(() => {
+        showToast(`Account created successfully for ${fName}! Redirecting to login...`);
+        setTimeout(() => {
+          window.location.href = 'login.html';
+        }, 1200);
+      }, 1000);
+    }
+  </script>
+</body>
+</html>

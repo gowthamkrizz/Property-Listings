@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Advance Search – Stackly Commercial Real Estate</title>
+  <meta name="description" content="Stackly is the #1 place for commercial and luxury residential real estate. Explore thousands of verified properties for sale and rent across the country.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/webp" href="assets/images/stackly.webp">
+
+  <!-- Google Fonts: Inter & Josefin Sans & Overpass & Prata -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Overpass:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,400&family=Prata&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome 6 Icons & Remix Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+
+  <!-- scrollCue CSS for animations -->
+  <link rel="stylesheet" href="css/scrollCue.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="endora-theme">
+
+  <!-- ======================================================================
+       1. Top Header Utility Bar (Matching Screenshot)
+       ====================================================================== -->
+  <div class="top-header-area">
+    <div class="container-fluid">
+      <div class="top-header-inner">
+        <div class="top-header-left">
+          <ul class="top-header-social-list">
+            <li><a href="404.html" class="social-link" aria-label="Facebook"><i class="ri-facebook-fill"></i></a></li>
+            <li><a href="404.html" class="social-link" aria-label="Twitter X"><i class="ri-twitter-x-line"></i></a></li>
+            <li><a href="404.html" class="social-link" aria-label="Instagram"><i class="ri-instagram-fill"></i></a></li>
+            <li><a href="404.html" class="social-link" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a></li>
+            <li><a href="404.html" class="social-link" aria-label="YouTube"><i class="ri-youtube-line"></i></a></li>
+            <li><a href="404.html" class="social-link" aria-label="Pinterest"><i class="ri-pinterest-line"></i></a></li>
+          </ul>
+          <div class="top-header-divider"></div>
+          <div class="top-header-mail">
+            <i class="ri-mail-line"></i>
+            <a href="404.html">info@stackly.com</a>
+          </div>
+        </div>
+        <div class="top-header-right">
+          <div class="top-header-call">
+            <i class="ri-phone-line"></i>
+            <a href="404.html">+91 74880 99999</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       2. Main Header & Navigation (Matching Screenshot)
+       ====================================================================== -->
+  <header class="site-header endora-navbar-wrap" id="siteNavbar">
+    <div class="container-fluid header-container">
+      <div class="navbar-left-group">
+        <!-- Stackly Logo -->
+        <a href="index.html" class="endora-brand-logo">
+          <img src="assets/images/stackly.webp" alt="Stackly" class="header-logo-img">
+        </a>
+
+        <!-- Search Property Field in Navbar -->
+        <form class="navbar-search-box" id="navbarSearchForm" onsubmit="event.preventDefault(); triggerNavbarSearch(this);">
+          <input type="text" id="navSearchKeyword" placeholder="Search property" autocomplete="off">
+          <button type="submit" aria-label="Search">
+            <i class="ri-search-line"></i>
+          </button>
+        </form>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="main-navigation">
+        <ul class="nav-menu">
+          <li class="nav-item active">
+            <a href="index.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="properties.html" class="nav-link">Properties</a>
+          </li>
+          <li class="nav-item">
+            <a href="projects.html" class="nav-link">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a href="blog.html" class="nav-link">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <div class="nav-auth-item">
+          <a href="login.html" class="nav-login-link">
+            Log In / Register
+          </a>
+        </div>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open mobile menu">
+          <i class="ri-menu-line"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======================================================================
+       3. Mobile Off-Canvas Drawer
+       ====================================================================== -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="endora-brand-logo">
+        <img src="assets/images/stackly.webp" alt="Stackly" class="drawer-logo-img">
+      </a>
+      <button class="modal-close-btn" id="closeMobileDrawer"><i class="ri-close-line"></i></button>
+    </div>
+    <div class="mobile-drawer-body">
+      <ul class="mobile-menu-list">
+        <li class="active"><a href="index.html"><i class="ri-home-4-line" style="margin-right: 8px;"></i>Home</a></li>
+        <li><a href="about.html"><i class="ri-information-line" style="margin-right: 8px;"></i>About</a></li>
+        <li><a href="properties.html"><i class="ri-building-line" style="margin-right: 8px;"></i>Properties</a></li>
+        <li><a href="projects.html"><i class="ri-briefcase-line" style="margin-right: 8px;"></i>Projects</a></li>
+        <li><a href="blog.html"><i class="ri-article-line" style="margin-right: 8px;"></i>Blog</a></li>
+        <li><a href="contact.html"><i class="ri-customer-service-2-line" style="margin-right: 8px;"></i>Contact</a></li>
+      </ul>
+      <div style="margin-top: 20px;">
+        <a href="login.html" class="btn btn-primary" style="width: 100%; border-radius: 30px; background-color: #1B6F58; text-align: center; display: block; text-decoration: none; padding: 11px;">
+          <i class="ri-user-3-line"></i> Log In / Register
+        </a>
+      </div>
+      <div class="drawer-contact-card">
+        <div class="drawer-contact-item">
+          <i class="ri-mail-line"></i>
+          <a href="404.html">info@stackly.com</a>
+        </div>
+        <div class="drawer-contact-item">
+          <i class="ri-phone-line"></i>
+          <a href="404.html">+91 74880 99999</a>
+        </div>
+        <div class="drawer-social-list">
+          <a href="404.html" class="drawer-social-link" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+          <a href="404.html" class="drawer-social-link" aria-label="Twitter X"><i class="ri-twitter-x-line"></i></a>
+          <a href="404.html" class="drawer-social-link" aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
+          <a href="404.html" class="drawer-social-link" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       4. Real Estate Banner Area (Hero Section Exactly Matching Screenshot)
+       ====================================================================== -->
+  <section class="real-estate-banner-area">
+    <div class="banner-bg-layer"></div>
+    <div class="container banner-container">
+      <div class="banner-flex-wrap">
+        <div class="real-estate-banner-content">
+          <!-- Subtitle Badge with Animation -->
+          <span class="sub" data-cue="slideInUp" data-duration="600">Tales From The Real Estate Frontier</span>
+
+          <!-- Main Title with Animation -->
+          <h1 data-cue="slideInUp" data-duration="750" data-delay="100">Exploring Unique<br>Homes In Market</h1>
+
+          <!-- Frosted Glass Search Card Container with Animation -->
+          <div class="search-info-tabs" data-cue="slideInUp" data-duration="900" data-delay="200">
+            <!-- Sell / Rent / Invest Tabs -->
+            <ul class="nav-tabs-endora" id="heroNavTabs" role="tablist">
+              <li class="nav-item">
+                <button type="button" class="nav-link active" data-tab="sale" id="tabSell">Sell</button>
+              </li>
+              <li class="nav-item">
+                <button type="button" class="nav-link" data-tab="rent" id="tabRent">Rent</button>
+              </li>
+              <li class="nav-item">
+                <button type="button" class="nav-link" data-tab="invest" id="tabInvest">Invest</button>
+              </li>
+            </ul>
+
+            <!-- Tab Content / Search Form -->
+            <div class="tab-content">
+              <form class="b-search-form" id="heroSearchForm" onsubmit="event.preventDefault(); applyHeroSearch();">
+                <div class="search-form-grid">
+                  <!-- Looking For -->
+                  <div class="form-group form-group-looking">
+                    <label for="searchLookingFor">Looking For</label>
+                    <input type="text" id="searchLookingFor" name="q" class="form-control" placeholder="Property type" autocomplete="off">
+                  </div>
+
+                  <!-- Location Dropdown -->
+                  <div class="form-group form-group-location">
+                    <label for="searchLocation">Location</label>
+                    <div class="custom-select-wrapper">
+                      <select id="searchLocation" name="in_loc" class="form-select form-control">
+                        <option value="">All cities</option>
+                        <option value="detroit">Detroit, USA</option>
+                        <option value="london">London, UK</option>
+                        <option value="malibu">Malibu</option>
+                        <option value="marseille">Marseille, France</option>
+                        <option value="milan">Milan, Italy</option>
+                        <option value="toronto">Toronto City, Canada</option>
+                        <option value="california">California</option>
+                        <option value="new-york">New York</option>
+                        <option value="san-diego">San Diego</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <!-- Your Price -->
+                  <div class="form-group form-group-price">
+                    <label for="searchPrice">Your price</label>
+                    <input type="text" id="searchPrice" name="price" class="form-control" placeholder="Max Price" autocomplete="off">
+                  </div>
+
+                  <!-- Search Properly Button -->
+                  <div class="form-group form-group-btn">
+                    <button type="submit" class="default-btn btn-search-properly" id="btnSearchProperly">
+                      <i class="ri-search-2-line"></i>
+                      <span>Search Properly</span>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- End Frosted Glass Search Card -->
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       5. Explore by Property Type
+       ====================================================================== -->
+  <section class="property-types-section" id="propertyTypesSection">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">Categories</span>
+        <h2 class="section-title">Explore by property type</h2>
+        <p class="section-desc">Browse through our curated categories tailored for commercial ventures and investments.</p>
+      </div>
+
+      <div class="types-grid">
+        <!-- 1. Medical & Consulting -->
+        <div class="type-card" onclick="filterByCategory('medical')">
+          <div class="type-icon-box">
+            <img src="assets/images/type-medical.webp" alt="Medical & Consulting">
+          </div>
+          <h4 class="type-title">Medical & Consulting</h4>
+          <span class="type-count">12 Properties</span>
+        </div>
+
+        <!-- 2. Hotel & Leisure -->
+        <div class="type-card" onclick="filterByCategory('hotel')">
+          <div class="type-icon-box">
+            <img src="assets/images/type-hotel.webp" alt="Hotel & Leisure">
+          </div>
+          <h4 class="type-title">Hotel & Leisure</h4>
+          <span class="type-count">18 Properties</span>
+        </div>
+
+        <!-- 3. Offices -->
+        <div class="type-card" onclick="filterByCategory('offices')">
+          <div class="type-icon-box">
+            <img src="assets/images/type-office.webp" alt="Offices">
+          </div>
+          <h4 class="type-title">Offices</h4>
+          <span class="type-count">24 Properties</span>
+        </div>
+
+        <!-- 4. Shop & Retail -->
+        <div class="type-card" onclick="filterByCategory('retail')">
+          <div class="type-icon-box">
+            <img src="assets/images/type-retail.webp" alt="Shop & Retail">
+          </div>
+          <h4 class="type-title">Shop & Retail</h4>
+          <span class="type-count">16 Properties</span>
+        </div>
+
+        <!-- 5. Factory & Industrial -->
+        <div class="type-card" onclick="filterByCategory('industrial')">
+          <div class="type-icon-box">
+            <img src="assets/images/type-industrial.webp" alt="Factory & Industrial">
+          </div>
+          <h4 class="type-title">Factory & Industrial</h4>
+          <span class="type-count">9 Properties</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       6. Featured Properties Section
+       ====================================================================== -->
+  <section class="featured-section" id="featuredPropertiesSection">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">Exclusive Listings</span>
+        <h2 class="section-title">Featured Properties</h2>
+        <p class="section-desc">Hand-picked commercial listings with prime market potential and verified documentation.</p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="featured-filter-tabs">
+        <button class="filter-pill active" data-filter="all" onclick="applyFeaturedTabFilter('all')">All Properties</button>
+        <button class="filter-pill" data-filter="sale" onclick="applyFeaturedTabFilter('sale')">For Sale</button>
+        <button class="filter-pill" data-filter="rent" onclick="applyFeaturedTabFilter('rent')">For Rent</button>
+      </div>
+
+      <!-- Dynamic Properties Grid -->
+      <div class="properties-grid" id="propertiesGrid">
+        <!-- Rendered by js/app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       7. Explore Neighborhoods / Cities
+       ====================================================================== -->
+  <section class="neighborhoods-section" id="neighborhoodsSection">
+    <div class="container">
+      <div class="neighborhoods-layout">
+        <!-- Highlight Card -->
+        <div class="neighborhood-highlight-card">
+          <div class="highlight-content">
+            <span class="highlight-badge">Prime Locations</span>
+            <h2 class="highlight-title">Explore Neighborhoods</h2>
+            <p class="highlight-desc">The neighborhoods best suited to your business lifestyle and the top-performing agents who know them best.</p>
+            <div class="highlight-stats">+1,300 Available Properties</div>
+          </div>
+          <button class="btn btn-primary" onclick="window.location.href='404.html'">
+            EXPLORE ALL <i class="fa-solid fa-city"></i>
+          </button>
+        </div>
+
+        <!-- 2x2 Cities Grid -->
+        <div class="cities-grid">
+          <!-- 1. United States -->
+          <div class="city-card" onclick="window.location.href='404.html'" style="cursor: pointer;">
+            <img src="assets/images/city-us.webp" alt="United States">
+            <div class="city-card-overlay">
+              <h3 class="city-card-name">United States</h3>
+              <span class="city-listing-count">25 Properties Available</span>
+            </div>
+          </div>
+
+          <!-- 2. California -->
+          <div class="city-card" onclick="window.location.href='404.html'" style="cursor: pointer;">
+            <img src="assets/images/city-ca.webp" alt="California">
+            <div class="city-card-overlay">
+              <h3 class="city-card-name">California</h3>
+              <span class="city-listing-count">3 Properties Available</span>
+            </div>
+          </div>
+
+          <!-- 3. San Diego -->
+          <div class="city-card" onclick="window.location.href='404.html'" style="cursor: pointer;">
+            <img src="assets/images/city-vegas.webp" alt="San Diego">
+            <div class="city-card-overlay">
+              <h3 class="city-card-name">San Diego</h3>
+              <span class="city-listing-count">1 Property Available</span>
+            </div>
+          </div>
+
+          <!-- 4. New York -->
+          <div class="city-card" onclick="window.location.href='404.html'" style="cursor: pointer;">
+            <img src="assets/images/city-ny.webp" alt="New York">
+            <div class="city-card-overlay">
+              <h3 class="city-card-name">New York</h3>
+              <span class="city-listing-count">10 Properties Available</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       8. Home Loan Pre-Approval Banner
+       ====================================================================== -->
+  <section class="loan-banner-section" id="loanBannerSection">
+    <div class="loan-banner-overlay"></div>
+    <div class="container">
+      <div class="loan-banner-inner">
+        <div class="loan-banner-text">
+          <h2>Need a commercial loan? Get pre-approved</h2>
+          <p>Find trusted lenders and financing partners who can help you secure competitive mortgage terms.</p>
+        </div>
+        <button class="btn btn-primary" onclick="window.location.href='404.html'">
+          GET APPROVED <i class="fa-solid fa-file-signature"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       9. Best Way to Sell or Buy (3 Steps)
+       ====================================================================== -->
+  <section class="steps-section" id="stepsSection">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">Seamless Process</span>
+        <h2 class="section-title">Best way to Sell or Buy</h2>
+        <p class="section-desc">We simplify every stage of commercial property transactions with transparent guidance.</p>
+      </div>
+
+      <div class="steps-grid">
+        <!-- Step 1 -->
+        <div class="step-card">
+          <div class="step-icon-box">
+            <img src="assets/images/icon-eval.webp" alt="Evaluate Property">
+          </div>
+          <h3 class="step-title">1. Evaluate Property</h3>
+          <p class="step-desc">If the commercial project passes initial screening, a comprehensive valuation and market yield report takes place.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step-card">
+          <div class="step-icon-box">
+            <img src="assets/images/icon-find.webp" alt="Find Agents">
+          </div>
+          <h3 class="step-title">2. Find Agents</h3>
+          <p class="step-desc">Connect with licensed, top-performing real estate advisors and brokers specialized in your exact asset class.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-card">
+          <div class="step-icon-box">
+            <img src="assets/images/icon-deal.webp" alt="Close the Deal">
+          </div>
+          <h3 class="step-title">3. Close the Deal</h3>
+          <p class="step-desc">Finalize contracts with end-to-end legal escrow, verified titles, and seamless transaction security.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       10. Stackly Agents & Team Section
+       ====================================================================== -->
+  <section class="agents-section" id="agentsSection">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">Professional Team</span>
+        <h2 class="section-title">Stackly Agents are on your side</h2>
+        <p class="section-desc">Meet our top-rated real estate brokers dedicated to finding your ideal investment property.</p>
+      </div>
+
+      <div class="agents-grid">
+        <!-- Agent 1 -->
+        <div class="agent-card">
+          <div class="agent-photo-wrap">
+            <img src="assets/images/agent-1.webp" alt="Meliodas Long">
+          </div>
+          <div class="agent-body">
+            <h3 class="agent-name">Meliodas Long</h3>
+            <div class="agent-role">Senior Broker</div>
+            <div class="agent-meta-item"><i class="fa-regular fa-envelope"></i> meliodas@stackly.com</div>
+            <div class="agent-meta-item"><i class="fa-solid fa-building"></i> 18 Active Listings</div>
+            <div class="agent-social-links">
+              <a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="404.html" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Agent 2 -->
+        <div class="agent-card">
+          <div class="agent-photo-wrap">
+            <img src="assets/images/agent-2.webp" alt="Peter Parker">
+          </div>
+          <div class="agent-body">
+            <h3 class="agent-name">Peter Parker</h3>
+            <div class="agent-role">Commercial Specialist</div>
+            <div class="agent-meta-item"><i class="fa-regular fa-envelope"></i> peter@stackly.com</div>
+            <div class="agent-meta-item"><i class="fa-solid fa-building"></i> 24 Active Listings</div>
+            <div class="agent-social-links">
+              <a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="404.html" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Agent 3 -->
+        <div class="agent-card">
+          <div class="agent-photo-wrap">
+            <img src="assets/images/agent-3.webp" alt="Tony Stark">
+          </div>
+          <div class="agent-body">
+            <h3 class="agent-name">Tony Stark</h3>
+            <div class="agent-role">Investment Advisor</div>
+            <div class="agent-meta-item"><i class="fa-regular fa-envelope"></i> tony@stackly.com</div>
+            <div class="agent-meta-item"><i class="fa-solid fa-building"></i> 30 Active Listings</div>
+            <div class="agent-social-links">
+              <a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="404.html" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Agent 4 -->
+        <div class="agent-card">
+          <div class="agent-photo-wrap">
+            <img src="assets/images/agent-4.webp" alt="Dilliama Nelissa">
+          </div>
+          <div class="agent-body">
+            <h3 class="agent-name">Dilliama Nelissa</h3>
+            <div class="agent-role">Commercial Consultant</div>
+            <div class="agent-meta-item"><i class="fa-regular fa-envelope"></i> dilliama@stackly.com</div>
+            <div class="agent-meta-item"><i class="fa-solid fa-building"></i> 15 Active Listings</div>
+            <div class="agent-social-links">
+              <a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="404.html" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       10.5 EXACT HORUS "BECOME A REAL ESTATE AGENT" BANNER SECTION
+       ====================================================================== -->
+  <section class="agent-cta-section" id="agentCtaSection">
+    <div class="container agent-cta-container">
+      <h2 class="agent-cta-title">Become a Real Estate Agent</h2>
+      <div class="agent-cta-btn-wrap">
+        <a href="404.html" class="btn-register-agent" role="button">
+          <span>Register Now</span>
+          <span class="btn-arrow-box"><i class="fa-solid fa-chevron-right"></i></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       11. Membership & Pricing Plans
+       ====================================================================== -->
+  <section class="pricing-section" id="pricingSection">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">Affordable Packages</span>
+        <h2 class="section-title">Membership Plans</h2>
+        <p class="section-desc">Select the right package to promote your properties with high visibility across our network.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Business Plan -->
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3 class="pricing-plan-name">Business</h3>
+            <div class="pricing-price">$49 <span>/month</span></div>
+          </div>
+          <div class="pricing-features">
+            <div class="pricing-feature-item"><i class="fa-solid fa-circle-check"></i> 9 Active Listings</div>
+            <div class="pricing-feature-item"><i class="fa-solid fa-circle-check"></i> 1 Year Duration</div>
+            <div class="pricing-feature-item"><i class="fa-solid fa-circle-check"></i> Status: Active</div>
+            <div class="pricing-feature-item"><i class="fa-solid fa-circle-check"></i> 3 Featured Listing Badges</div>
+            <div class="pricing-feature-item"><i class="fa-solid fa-circle-check"></i> Standard Email Support</div>
+          </div>
+          <a href="404.html" class="btn btn-outline">Buy Now</a>
+        </div>
+
+        <!-- Corporate Plan (Popular) -->
+        <div class="pricing-card is-popular">
+          <div class="pricing-popular-badge">Most Popular</div>
+          <div class="pricing-header">
+            <h3 class="pricing-plan-name">Corporate</h3>
+            <div class="pricing-price" style="color: var(--primary);">$99 <span>/month</span></div>
+          </div>
+          <div class="pricing-features">
+            <div class="pricing-feature-item"><i class="fa-solid fa-circle-check"></i> 15 Active Listings</div>
+            <div class="pricing-feature-item"><i class="fa-solid fa-circle-check"></i> 1 Year Duration</div>
+            <div class="pricing-feature-item"><i class="fa-solid fa-circle-check"></i> Status: Active</div>
+            <div class="pricing-feature-item"><i class="fa-solid fa-circle-check"></i> 8 Featured Listing Badges</div>
+            <div class="pricing-feature-item"><i class="fa-solid fa-circle-check"></i> Top Search Placement</div>
+            <div class="pricing-feature-item"><i class="fa-solid fa-circle-check"></i> Priority 24/7 Support</div>
+          </div>
+          <a href="404.html" class="btn btn-primary">Buy Now</a>
+        </div>
+
+        <!-- Enterprise Plan -->
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3 class="pricing-plan-name">Enterprise</h3>
+            <div class="pricing-price">$199 <span>/month</span></div>
+          </div>
+          <div class="pricing-features">
+            <div class="pricing-feature-item"><i class="fa-solid fa-circle-check"></i> 30 Active Listings</div>
+            <div class="pricing-feature-item"><i class="fa-solid fa-circle-check"></i> 1 Year Duration</div>
+            <div class="pricing-feature-item"><i class="fa-solid fa-circle-check"></i> Status: Active</div>
+            <div class="pricing-feature-item"><i class="fa-solid fa-circle-check"></i> Unlimited Featured Ads</div>
+            <div class="pricing-feature-item"><i class="fa-solid fa-circle-check"></i> Custom Analytics Dashboard</div>
+            <div class="pricing-feature-item"><i class="fa-solid fa-circle-check"></i> Dedicated Account Manager</div>
+          </div>
+          <a href="404.html" class="btn btn-outline">Buy Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       12. Partner / Brand Logos
+       ====================================================================== -->
+  
+  <!-- ======================================================================
+       11.5 Latest News & Blog Section (Featured Editorial Showcase)
+       ====================================================================== -->
+  <section class="blog-section blog-editorial-section" id="blogSection">
+    <!-- Subtle Architectural Background Accents -->
+    <div class="blog-bg-lines">
+      <div class="blog-line blog-line-1"></div>
+      <div class="blog-line blog-line-2"></div>
+    </div>
+
+    <div class="container" style="position: relative; z-index: 2;">
+      <div class="section-title-wrap blog-header-anim">
+        <span class="section-subtitle">News & Articles</span>
+        <h2 class="section-title blog-editorial-heading">Latest from our Blog</h2>
+        <p class="section-desc">Stay informed with the latest insights, trends, and commercial real estate market analysis.</p>
+      </div>
+
+      <div class="blog-editorial-layout">
+        <!-- 1. Dominant Featured Article (Left) -->
+        <article class="blog-lead-card blog-anim-card" data-idx="01">
+          <div class="blog-card-spotlight"></div>
+          <div class="blog-lead-thumb-wrap">
+            <span class="blog-editorial-num">01</span>
+            <div class="blog-img-reveal-wrap">
+              <img src="assets/images/prop-2.webp" alt="Commercial Real Estate Trends" class="blog-editorial-img">
+            </div>
+            <span class="blog-category-badge">Market Analysis</span>
+          </div>
+          <div class="blog-lead-body">
+            <div class="blog-meta">
+              <span><i class="fa-regular fa-calendar"></i> March 12, 2026</span>
+              <span><i class="fa-regular fa-user"></i> Stackly Research</span>
+              <span class="blog-read-time"><i class="fa-regular fa-clock"></i> 5 min read</span>
+            </div>
+            <h3 class="blog-lead-title">
+              <a href="404.html">How to Display Objects & Optimize Space for Commercial Real Estate</a>
+            </h3>
+            <p class="blog-lead-excerpt">Discover proven architectural strategies, ergonomic spatial zoning, and acoustic planning to maximize square footage productivity in modern office towers and flagship retail environments.</p>
+            
+            <!-- Editorial Highlights Box -->
+            <div class="blog-lead-highlights">
+              <div class="blog-highlight-item">
+                <i class="fa-solid fa-chart-line"></i>
+                <span><strong>+24% Spatial Efficiency</strong> via smart zoning layouts</span>
+              </div>
+              <div class="blog-highlight-item">
+                <i class="fa-solid fa-building-circle-check"></i>
+                <span><strong>Higher Retention</strong> with modular architecture</span>
+              </div>
+            </div>
+
+            <div class="blog-card-footer">
+              <span class="blog-author-tag">Lead Commercial Advisory</span>
+              <a href="404.html" class="btn-editorial-read">
+                <i class="fa-solid fa-chart-pie"></i>
+                <span>Read Article</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+            <div class="blog-progress-line"></div>
+          </div>
+        </article>
+
+        <!-- 2. Supporting Articles Stack (Right) -->
+        <div class="blog-supporting-stack">
+          <!-- Supporting Article 1 (02) -->
+          <article class="blog-compact-card blog-anim-card" data-idx="02">
+            <div class="blog-compact-thumb-wrap">
+              <span class="blog-editorial-num">02</span>
+              <div class="blog-img-reveal-wrap">
+                <img src="assets/images/city-ny.webp" alt="Urban Architecture" class="blog-editorial-img">
+              </div>
+              <span class="blog-category-badge">Investment</span>
+            </div>
+            <div class="blog-compact-body">
+              <div class="blog-meta">
+                <span><i class="fa-regular fa-calendar"></i> March 08, 2026</span>
+                <span><i class="fa-regular fa-user"></i> Peter Parker</span>
+                <span class="blog-read-time"><i class="fa-regular fa-clock"></i> 4 min read</span>
+              </div>
+              <h3 class="blog-compact-title">
+                <a href="404.html">Top 5 High-Yield Metropolitan Neighborhoods to Invest in 2026</a>
+              </h3>
+              <p class="blog-compact-excerpt">A comprehensive analysis of localized cap rates, infrastructure expansion corridors, and shifting corporate migration patterns across prime tier-1 metropolitan markets.</p>
+              <div class="blog-card-footer">
+                <span class="blog-author-tag">Commercial Assets</span>
+                <a href="404.html" class="btn-editorial-read">
+                  <i class="fa-solid fa-city"></i>
+                  <span>Read Article</span>
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+              <div class="blog-progress-line"></div>
+            </div>
+          </article>
+
+          <!-- Supporting Article 2 (03) -->
+          <article class="blog-compact-card blog-anim-card" data-idx="03">
+            <div class="blog-compact-thumb-wrap">
+              <span class="blog-editorial-num">03</span>
+              <div class="blog-img-reveal-wrap">
+                <img src="assets/images/prop-3.webp" alt="Eco Buildings" class="blog-editorial-img">
+              </div>
+              <span class="blog-category-badge">Sustainability</span>
+            </div>
+            <div class="blog-compact-body">
+              <div class="blog-meta">
+                <span><i class="fa-regular fa-calendar"></i> February 28, 2026</span>
+                <span><i class="fa-regular fa-user"></i> Meliodas Long</span>
+                <span class="blog-read-time"><i class="fa-regular fa-clock"></i> 6 min read</span>
+              </div>
+              <h3 class="blog-compact-title">
+                <a href="404.html">The Rise of Net-Zero Energy & Smart Automation in Prime Developments</a>
+              </h3>
+              <p class="blog-compact-excerpt">How institutional investors leverage LEED Platinum certifications and AI-driven microgrid automation to lower OPEX and command premium corporate leases.</p>
+              <div class="blog-card-footer">
+                <span class="blog-author-tag">Sustainable Architecture</span>
+                <a href="404.html" class="btn-editorial-read">
+                  <i class="fa-solid fa-leaf"></i>
+                  <span>Read Article</span>
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+              <div class="blog-progress-line"></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="partners-section">
+    <div class="container">
+      <div class="brands-marquee-slider">
+        <div class="brands-marquee-track">
+          <!-- Set 1 -->
+          <div class="brand-item"><img src="assets/images/brand-1.webp" alt="Partner Brand 1"></div>
+          <div class="brand-item"><img src="assets/images/brand-2.webp" alt="Partner Brand 2"></div>
+          <div class="brand-item"><img src="assets/images/brand-3.webp" alt="Partner Brand 3"></div>
+          <div class="brand-item"><img src="assets/images/brand-4.webp" alt="Partner Brand 4"></div>
+          <div class="brand-item"><img src="assets/images/brand-5.webp" alt="Partner Brand 5"></div>
+          <div class="brand-item"><img src="assets/images/brand-6.webp" alt="Partner Brand 6"></div>
+          <!-- Set 2 (Duplicate for seamless infinite marquee) -->
+          <div class="brand-item"><img src="assets/images/brand-1.webp" alt="Partner Brand 1"></div>
+          <div class="brand-item"><img src="assets/images/brand-2.webp" alt="Partner Brand 2"></div>
+          <div class="brand-item"><img src="assets/images/brand-3.webp" alt="Partner Brand 3"></div>
+          <div class="brand-item"><img src="assets/images/brand-4.webp" alt="Partner Brand 4"></div>
+          <div class="brand-item"><img src="assets/images/brand-5.webp" alt="Partner Brand 5"></div>
+          <div class="brand-item"><img src="assets/images/brand-6.webp" alt="Partner Brand 6"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       13. Bottom Call To Action Banner
+       ====================================================================== -->
+  <section class="cta-banner-section">
+    <div class="container">
+      <div class="cta-banner-inner">
+        <div class="cta-banner-text">
+          <h2>Looking to Buy a new property or Sell an existing one?</h2>
+          <p>Stackly provides an awesome, seamless solution for real estate buyers, sellers, and agents.</p>
+        </div>
+        <div class="cta-banner-btns">
+          <a href="404.html" class="btn btn-white">Browse Properties</a>
+          <a href="404.html" class="btn btn-dark">SUBMIT PROPERTY</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       14. Rich Footer
+       ====================================================================== -->
+  <footer class="site-footer" id="footerSection">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: About -->
+        <div>
+          <div class="footer-logo">
+            <a href="index.html">
+              <img src="assets/images/stackly.webp" alt="Stackly Real Estate">
+            </a>
+          </div>
+          <p class="footer-about-text">
+            Stackly is the premier real estate portal for finding commercial offices, luxury leisure spaces, warehouses, and prime investment properties nationwide.
+          </p>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>MMR Complex, Salem - 636 003, Tamil Nadu, India</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <a href="404.html" style="color: inherit; text-decoration: none;">+91 74880 99999</a>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-regular fa-envelope"></i>
+            <a href="404.html" style="color: inherit; text-decoration: none;">info@stackly.com</a>
+          </div>
+        </div>
+
+        <!-- Col 2: REAL ESTATE EXPRESS -->
+        <div>
+          <h4 class="footer-col-title">REAL ESTATE EXPRESS</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="properties.html">Properties</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: REAL ESTATE COURSES -->
+        <div>
+          <h4 class="footer-col-title">REAL ESTATE COURSES</h4>
+          <ul class="footer-links-list">
+            <li><a href="404.html">Get My License</a></li>
+            <li><a href="404.html">Upgrade My License</a></li>
+            <li><a href="404.html">Continuing Education</a></li>
+            <li><a href="404.html">Exam Prep Master</a></li>
+            <li><a href="404.html">Appraisal License</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: NEWSLETTER & SOCIALS -->
+        <div>
+          <h4 class="footer-col-title">NEWSLETTER</h4>
+          <p style="color: #A0A5AE; font-size: 13px; margin-bottom: 14px;">
+            Subscribe to our weekly market briefing and exclusive investment opportunities.
+          </p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); handleNewsletterSubmit(this);" novalidate>
+            <input type="email" class="newsletter-input" placeholder="Your Email address">
+            <button type="submit" class="newsletter-btn">Subscribe</button>
+          </form>
+          <div class="footer-socials">
+            <a href="404.html" class="footer-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div>Copyright &copy; 2026 Stackly. All Rights Reserved.</div>
+        <div class="footer-bottom-links">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Terms</a>
+          <a href="404.html">Safety</a>
+          <a href="404.html">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       14.5 Back to Top Button
+       ====================================================================== -->
+  <button class="btn-back-to-top" id="backToTopBtn" title="Back to top" aria-label="Back to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <!-- ======================================================================
+       15. Interactive Modals
+       ====================================================================== -->
+
+  <!-- Sign In Modal -->
+  <div class="modal-backdrop" id="signinModal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" onclick="closeAllModals()"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-header">
+        <h3 class="modal-title">Sign In</h3>
+        <p style="font-size: 14px; color: #7D7D84;">Access your Stackly dashboard and saved properties</p>
+      </div>
+      <form onsubmit="event.preventDefault(); handleModalSignIn(this);" novalidate>
+        <div class="form-group">
+          <label>Username or Email Address</label>
+          <input type="text" class="form-control modal-user" placeholder="Enter username or email">
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" class="form-control modal-pwd" placeholder="Enter password">
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; font-size: 13px;">
+          <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+            <input type="checkbox" style="accent-color: var(--primary);"> Remember Me
+          </label>
+          <a href="#reset" onclick="openModal('forgotModal'); return false;" style="color: var(--primary);">Forgot password?</a>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Sign In</button>
+        <div style="text-align: center; margin-top: 20px; font-size: 13px; color: #7D7D84;">
+          Don't have an account yet? <a href="#register" onclick="openModal('registerModal'); return false;" style="color: var(--primary); font-weight: 600;">Register</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Register Modal -->
+  <div class="modal-backdrop" id="registerModal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" onclick="closeAllModals()"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-header">
+        <h3 class="modal-title">Register Account</h3>
+        <p style="font-size: 14px; color: #7D7D84;">Create a free Stackly account today</p>
+      </div>
+      <form onsubmit="event.preventDefault(); handleModalRegister(this);" novalidate>
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" class="form-control modal-reg-name" placeholder="e.g. John Doe">
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" class="form-control modal-reg-email" placeholder="name@example.com">
+        </div>
+        <div class="form-group">
+          <label>Account Role</label>
+          <select class="form-control">
+            <option value="buyer">Property Buyer / Investor</option>
+            <option value="agent">Licensed Real Estate Agent</option>
+            <option value="owner">Property Owner / Landlord</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" class="form-control" placeholder="Create a secure password">
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Create Account</button>
+        <div style="text-align: center; margin-top: 20px; font-size: 13px; color: #7D7D84;">
+          Already have an account? <a href="#signin" onclick="openModal('signinModal'); return false;" style="color: var(--primary); font-weight: 600;">Sign In</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Forgot Password Modal -->
+  <div class="modal-backdrop" id="forgotModal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" onclick="closeAllModals()"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-header">
+        <h3 class="modal-title">Reset Password</h3>
+        <p style="font-size: 14px; color: #7D7D84;">Enter your email to receive a password reset link.</p>
+      </div>
+      <form onsubmit="event.preventDefault(); const inp = this.querySelector('input'); if (!inp.value.trim()) { inp.classList.add('input-error'); showToast('Please enter your email.', true); } else { inp.classList.remove('input-error'); closeAllModals(); showToast('Password reset link sent to your email.'); }" novalidate>
+        <div class="form-group">
+          <label>Username or Email Address</label>
+          <input type="email" class="form-control" placeholder="name@example.com">
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Reset Link</button>
+        <div style="text-align: center; margin-top: 20px; font-size: 13px;">
+          <a href="#signin" onclick="openModal('signinModal'); return false;" style="color: var(--primary);">Back to Sign In</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Quick View Modal Lightbox -->
+  <div class="modal-backdrop" id="quickViewModal">
+    <div class="modal-dialog modal-dialog-large">
+      <button class="modal-close-btn" onclick="closeAllModals()"><i class="fa-solid fa-xmark"></i></button>
+      <div id="quickViewModalBody">
+        <!-- Rendered dynamically by js/app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Loan Pre-Approval Modal -->
+  <div class="modal-backdrop" id="loanModal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" onclick="closeAllModals()"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-header">
+        <h3 class="modal-title">Commercial Loan Pre-Approval</h3>
+        <p style="font-size: 14px; color: #7D7D84;">Connect with our preferred mortgage and commercial lenders</p>
+      </div>
+      <form onsubmit="event.preventDefault(); handleConsultationModalSubmit(this);" novalidate>
+        <div class="form-group">
+          <label>Estimated Loan Amount</label>
+          <select class="form-control">
+            <option>$500,000 - $1,000,000</option>
+            <option>$1,000,000 - $3,000,000</option>
+            <option>$3,000,000 - $5,000,000</option>
+            <option>$5,000,000+</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Property Type</label>
+          <select class="form-control">
+            <option>Commercial Office</option>
+            <option>Hotel & Hospitality</option>
+            <option>Industrial Warehouse</option>
+            <option>Medical Facility</option>
+            <option>Retail Center</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" class="form-control modal-name" placeholder="Your Name">
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" class="form-control modal-email" placeholder="name@domain.com">
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" class="form-control modal-phone" placeholder="+1 (555) 000-0000">
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Pre-Approval Request</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ScrollCue Animation Library & Application JavaScript -->
+  <script src="js/scrollCue.min.js"></script>
+  <script src="js/app.js"></script>
+
+  <!-- GSAP & ScrollTrigger Animation Engine -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Luxury Editorial Blog & Scroll Animation Engine -->
+  <script>
+    (function initAnimations() {
+      function start() {
+        if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+          setTimeout(start, 50);
+          return;
+        }
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        const blogSection = document.getElementById('blogSection');
+        const blogHeader = document.querySelector('.blog-header-anim');
+        const featuredCard = document.querySelector('.blog-lead-card');
+        const compactCards = gsap.utils.toArray('.blog-compact-card');
+        const revealWraps = gsap.utils.toArray('.blog-img-reveal-wrap');
+        const blogImages = gsap.utils.toArray('.blog-editorial-img');
+
+        if (blogSection) {
+          // 1. Heading Reveal
+          if (blogHeader) {
+            gsap.fromTo(blogHeader,
+              { opacity: 0, y: 30 },
+              {
+                opacity: 1,
+                y: 0,
+                duration: 0.9,
+                ease: "power3.out",
+                scrollTrigger: {
+                  trigger: blogSection,
+                  start: "top 85%",
+                  once: true
+                }
+              }
+            );
+          }
+
+          // 2. Reading Hierarchy Reveal (Featured Article First, then Supporting)
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: ".blog-editorial-layout",
+              start: "top 85%",
+              once: true
+            }
+          });
+
+          if (featuredCard) {
+            tl.fromTo(featuredCard,
+              { opacity: 0, y: 35 },
+              { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }
+            );
+          }
+
+          if (compactCards.length) {
+            tl.fromTo(compactCards,
+              { opacity: 0, y: 30 },
+              { opacity: 1, y: 0, duration: 0.7, stagger: 0.15, ease: "power3.out" },
+              "-=0.4"
+            );
+          }
+
+          // 3. Masked Image Reveal (clip-path expansion)
+          revealWraps.forEach((wrap) => {
+            gsap.fromTo(wrap,
+              { clipPath: "inset(0% 100% 0% 0%)" },
+              {
+                clipPath: "inset(0% 0% 0% 0%)",
+                duration: 1.0,
+                ease: "power3.out",
+                scrollTrigger: {
+                  trigger: wrap,
+                  start: "top 88%",
+                  once: true
+                }
+              }
+            );
+          });
+
+          // 4. Subtle Parallax for Blog Images on Scroll
+          blogImages.forEach((img) => {
+            gsap.to(img, {
+              yPercent: 6,
+              ease: "none",
+              scrollTrigger: {
+                trigger: img.closest('.blog-anim-card'),
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1.2
+              }
+            });
+          });
+
+          // 5. Featured Article Spotlight Tracker
+          if (featuredCard) {
+            featuredCard.addEventListener('mousemove', (e) => {
+              const rect = featuredCard.getBoundingClientRect();
+              const x = e.clientX - rect.left;
+              const y = e.clientY - rect.top;
+              featuredCard.style.setProperty('--mouse-x', `${x}px`);
+              featuredCard.style.setProperty('--mouse-y', `${y}px`);
+            });
+          }
+        }
+
+        // Refresh triggers on full load
+        ScrollTrigger.refresh();
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', start);
+      } else {
+        start();
+      }
+      window.addEventListener('load', () => {
+        if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+      });
+    })();
+  </script>
+</body>
+</html>

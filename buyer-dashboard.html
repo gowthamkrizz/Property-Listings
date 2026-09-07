@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buyer & Investor Dashboard – Stackly Real Estate</title>
+  <meta name="description" content="Manage your saved properties, track site tour schedules, contact advisors, and calculate mortgages in your Stackly Buyer Dashboard.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/webp" href="assets/images/stackly.webp">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome 6 & Remix Icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dash-body">
+
+  <!-- Mobile Drawer Backdrop -->
+  <div class="dash-sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar(false)"></div>
+
+  <div class="dash-layout">
+    
+    <!-- SIDEBAR NAVIGATION -->
+    <aside class="dash-sidebar" id="dashSidebar">
+      <div class="dash-sidebar-header">
+        <a href="index.html" class="dash-sidebar-logo">
+          <img src="assets/images/stackly.webp" alt="Stackly">
+        </a>
+        <button type="button" class="dash-sidebar-close" onclick="toggleSidebar(false)" aria-label="Close menu">
+          <i class="ri-close-line"></i>
+        </button>
+      </div>
+
+      <div class="dash-sidebar-user">
+        <div class="dash-user-avatar" id="sidebarAvatar">JD</div>
+        <div class="dash-user-info">
+          <div class="dash-user-name" id="sidebarUserName">John Doe</div>
+          <div class="dash-user-email" id="sidebarUserEmail" style="font-size: 11.5px; color: #8EABA3; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">john.doe@stacklyinvest.com</div>
+        </div>
+      </div>
+
+      <nav class="dash-sidebar-nav">
+        <div class="dash-nav-group-title">Menu</div>
+        
+        <a class="dash-nav-item active" onclick="switchTab('overview', this)">
+          <i class="ri-dashboard-3-line"></i>
+          <span>Overview</span>
+        </a>
+
+        <a class="dash-nav-item" onclick="switchTab('saved', this)">
+          <i class="ri-heart-3-line"></i>
+          <span>Saved Properties</span>
+          <span class="dash-nav-badge" id="badgeSavedCount">6</span>
+        </a>
+
+        <a class="dash-nav-item" onclick="switchTab('tours', this)">
+          <i class="ri-calendar-event-line"></i>
+          <span>Scheduled Tours</span>
+          <span class="dash-nav-badge" style="background:#1B6F58; color:#fff;">2</span>
+        </a>
+
+        <a class="dash-nav-item" onclick="switchTab('inquiries', this)">
+          <i class="ri-chat-voice-line"></i>
+          <span>My Inquiries</span>
+          <span class="dash-nav-badge">3</span>
+        </a>
+
+        <div class="dash-nav-group-title">Finance & Tools</div>
+
+        <a class="dash-nav-item" onclick="switchTab('calculator', this)">
+          <i class="ri-calculator-line"></i>
+          <span>Mortgage Estimator</span>
+        </a>
+
+        <a class="dash-nav-item" onclick="switchTab('profile', this)">
+          <i class="ri-user-settings-line"></i>
+          <span>Buyer Criteria</span>
+        </a>
+      </nav>
+
+      <div class="dash-sidebar-footer">
+        <button type="button" class="dash-logout-btn" onclick="handleLogout()">
+          <i class="ri-logout-box-r-line"></i>
+          <span>Sign Out</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="dash-main">
+      
+      <!-- Topbar -->
+      <header class="dash-topbar">
+        <div class="dash-topbar-left">
+          <button type="button" class="dash-menu-toggle" onclick="toggleSidebar(true)" aria-label="Open sidebar">
+            <i class="ri-menu-2-line"></i>
+          </button>
+          
+          <div class="dash-search-box">
+            <i class="ri-search-line" onclick="submitSearchTo404()" title="Search"></i>
+            <input type="text" id="dashGlobalSearch" placeholder="Search saved homes, inquiries, cities..." onkeydown="if(event.key === 'Enter') submitSearchTo404()">
+          </div>
+        </div>
+
+        <div class="dash-topbar-right">
+          <div class="dash-uptime-pill" id="dashUptimePill">
+            <span class="dash-pulse-dot"></span> Cloud Systems 99.9% Uptime
+          </div>
+
+          <button type="button" class="dash-icon-btn" onclick="window.location.href='404.html'" aria-label="Notifications" title="5 New Alerts">
+            <i class="ri-notification-3-line"></i>
+            <span class="dash-notif-count">5</span>
+          </button>
+
+          <a href="404.html" class="dash-icon-btn" title="Back to Home" aria-label="Back to Home">
+            <i class="ri-home-4-fill"></i>
+          </a>
+
+          <!-- Profile Dropdown Card -->
+          <div class="dash-topbar-profile" id="topbarProfileWrap">
+            <button type="button" class="dash-topbar-avatar-btn" id="headerProfileBtn" onclick="toggleProfileDropdown(event)" aria-label="User profile">
+              <span class="dash-avatar-square" id="topbarAvatarLetter">JD</span>
+            </button>
+
+            <div class="dash-profile-dropdown" id="profileDropdown">
+              <div class="dash-profile-dd-user">
+                <div class="dash-profile-dd-name" id="dropdownUserName">John Doe</div>
+                <div class="dash-profile-dd-email" id="dropdownUserEmail">john.doe@stacklyinvest.com</div>
+              </div>
+              <div class="dash-profile-dd-divider"></div>
+              <a href="index.html" class="dash-profile-dd-item">
+                <i class="ri-home-4-fill"></i>
+                <span>Back to Home</span>
+              </a>
+              <a href="javascript:void(0);" onclick="handleLogout()" class="dash-profile-dd-item item-logout">
+                <i class="ri-logout-box-r-line"></i>
+                <span>Log out</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Dashboard Pages / Tabs Container -->
+      <div class="dash-content">
+        
+        <!-- TAB 1: OVERVIEW -->
+        <section id="tab-overview" class="dash-tab-panel active">
+          <div class="dash-page-header">
+            <div>
+              <h1 class="dash-page-title" id="welcomeHeadline">Welcome back, John! 👋</h1>
+              <p class="dash-page-subtitle">Here is an overview of your active property searches, tours, and inquiries.</p>
+            </div>
+            <div>
+              <button class="dash-quick-btn dash-quick-btn-secondary" onclick="window.location.href='404.html'">
+                <i class="ri-mail-send-line"></i> Direct Inquiry
+              </button>
+            </div>
+          </div>
+
+          <!-- KPI Stat Cards -->
+          <div class="dash-kpi-grid">
+            <div class="dash-kpi-card" onclick="window.location.href='404.html'" style="cursor: pointer;">
+              <div>
+                <div class="dash-kpi-title">Saved Properties</div>
+                <div class="dash-kpi-value" id="kpiSaved">6</div>
+                <div class="dash-kpi-trend dash-trend-up"><i class="ri-arrow-up-line"></i> 2 new this week</div>
+              </div>
+              <div class="dash-kpi-icon">
+                <i class="ri-heart-3-fill"></i>
+              </div>
+            </div>
+
+            <div class="dash-kpi-card kpi-orange" onclick="window.location.href='404.html'" style="cursor: pointer;">
+              <div>
+                <div class="dash-kpi-title">Scheduled Tours</div>
+                <div class="dash-kpi-value">2</div>
+                <div class="dash-kpi-trend dash-trend-up"><i class="ri-calendar-check-line"></i> Next: Tomorrow, 2 PM</div>
+              </div>
+              <div class="dash-kpi-icon">
+                <i class="ri-calendar-event-fill"></i>
+              </div>
+            </div>
+
+            <div class="dash-kpi-card kpi-teal" onclick="window.location.href='404.html'" style="cursor: pointer;">
+              <div>
+                <div class="dash-kpi-title">Active Inquiries</div>
+                <div class="dash-kpi-value">3</div>
+                <div class="dash-kpi-trend dash-trend-neutral"><i class="ri-time-line"></i> 1 awaiting response</div>
+              </div>
+              <div class="dash-kpi-icon">
+                <i class="ri-message-3-fill"></i>
+              </div>
+            </div>
+
+            <div class="dash-kpi-card kpi-blue" onclick="window.location.href='404.html'" style="cursor: pointer;">
+              <div>
+                <div class="dash-kpi-title">Target Budget</div>
+                <div class="dash-kpi-value">$2.4M</div>
+                <div class="dash-kpi-trend dash-trend-up"><i class="ri-shield-check-line"></i> Pre-approved</div>
+              </div>
+              <div class="dash-kpi-icon">
+                <i class="ri-money-dollar-circle-fill"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Main Overview Grid -->
+          <div class="dash-grid-2">
+            
+            <div class="dash-card">
+              <div class="dash-card-header">
+                <h3 class="dash-card-title"><i class="ri-heart-pulse-line" style="color: #1B6F58;"></i> Recently Saved Listings</h3>
+                <a href="404.html" class="dash-card-action">View All (6) &rarr;</a>
+              </div>
+
+              <div class="dash-saved-grid" id="overviewSavedGrid">
+                <!-- Card 1 -->
+                <div class="dash-property-card" id="prop-card-1">
+                  <div class="dash-property-img-wrap">
+                    <span class="badge badge-sale dash-property-tag">For Sale</span>
+                    <button class="dash-property-fav-btn" onclick="window.location.href='404.html'" title="Remove"><i class="ri-heart-fill"></i></button>
+                    <img src="assets/images/prop-1.webp" alt="Property" class="dash-property-img">
+                  </div>
+                  <div class="dash-property-body">
+                    <div class="dash-property-price">$1,450,000</div>
+                    <div class="dash-property-title">Oceanfront Contemporary Villa</div>
+                    <div class="dash-property-location"><i class="ri-map-pin-2-line"></i> Palm Beach, Florida</div>
+                    <div class="dash-property-features">
+                      <span class="dash-prop-feat-item"><i class="ri-hotel-bed-line"></i> 4 Beds</span>
+                      <span class="dash-prop-feat-item"><i class="ri-drop-line"></i> 3.5 Baths</span>
+                      <span class="dash-prop-feat-item"><i class="ri-ruler-2-line"></i> 4,200 sqft</span>
+                    </div>
+                    <div class="dash-property-actions">
+                      <button class="btn btn-primary" style="flex:1; padding: 8px 12px; font-size: 12px;" onclick="window.location.href='404.html'">Book Tour</button>
+                      <a href="404.html" class="btn btn-outline" style="padding: 8px 12px; font-size: 12px;">Details</a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="dash-property-card" id="prop-card-2">
+                  <div class="dash-property-img-wrap">
+                    <span class="badge badge-sale dash-property-tag" style="background:#528A86;">Commercial</span>
+                    <button class="dash-property-fav-btn" onclick="window.location.href='404.html'" title="Remove"><i class="ri-heart-fill"></i></button>
+                    <img src="assets/images/prop-2.webp" alt="Property" class="dash-property-img">
+                  </div>
+                  <div class="dash-property-body">
+                    <div class="dash-property-price">$2,890,000</div>
+                    <div class="dash-property-title">Skyline Corporate Tower Suite</div>
+                    <div class="dash-property-location"><i class="ri-map-pin-2-line"></i> Financial District, NY</div>
+                    <div class="dash-property-features">
+                      <span class="dash-prop-feat-item"><i class="ri-building-line"></i> Level 34</span>
+                      <span class="dash-prop-feat-item"><i class="ri-ruler-2-line"></i> 6,800 sqft</span>
+                      <span class="dash-prop-feat-item"><i class="ri-car-line"></i> 4 Pkg</span>
+                    </div>
+                    <div class="dash-property-actions">
+                      <button class="btn btn-primary" style="flex:1; padding: 8px 12px; font-size: 12px;" onclick="window.location.href='404.html'">Book Tour</button>
+                      <a href="404.html" class="btn btn-outline" style="padding: 8px 12px; font-size: 12px;">Details</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Upcoming Tours -->
+            <div>
+              <div class="dash-card">
+                <div class="dash-card-header">
+                  <h3 class="dash-card-title"><i class="ri-calendar-todo-line" style="color: #EE703D;"></i> Next Tours</h3>
+                  <a href="404.html" class="dash-card-action">All Tours &rarr;</a>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 14px;">
+                  <div style="padding: 14px; background: #F8FAF9; border-radius: 10px; border-left: 4px solid #1B6F58;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+                      <span class="dash-badge dash-badge-active"><i class="ri-check-line"></i> Confirmed</span>
+                      <span style="font-size: 12px; color: #718096; font-weight: 600;">Tomorrow &bull; 2:00 PM</span>
+                    </div>
+                    <div style="font-weight: 700; color: #0D241E; font-size: 14px;">Oceanfront Contemporary Villa</div>
+                    <div style="font-size: 12px; color: #718096; margin-top: 4px;"><i class="ri-user-star-line"></i> Agent: Michael Vance</div>
+                  </div>
+
+                  <div style="padding: 14px; background: #F8FAF9; border-radius: 10px; border-left: 4px solid #EE703D;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+                      <span class="dash-badge dash-badge-pending"><i class="ri-time-line"></i> In Review</span>
+                      <span style="font-size: 12px; color: #718096; font-weight: 600;">Sep 08 &bull; 11:30 AM</span>
+                    </div>
+                    <div style="font-weight: 700; color: #0D241E; font-size: 14px;">Grand Horizon Luxury Penthouse</div>
+                    <div style="font-size: 12px; color: #718096; margin-top: 4px;"><i class="ri-user-star-line"></i> Agent: Sarah Sterling</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quick Mortgage Card -->
+              <div class="dash-card" style="background: linear-gradient(135deg, #0D241E 0%, #1B6F58 100%); color: #FFFFFF;">
+                <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #8EABA3; font-weight: 700;">Mortgage Ready</div>
+                <h4 style="font-family: var(--font-heading); font-size: 20px; color: #FFFFFF; margin: 8px 0 12px;">Calculate Your Monthly Payments</h4>
+                <p style="font-size: 13px; color: #D5E5E0; line-height: 1.5; margin-bottom: 16px;">Estimate loan repayment terms based on current prime interest rates.</p>
+                <button class="btn btn-white" style="width: 100%; padding: 10px; font-size: 13px;" onclick="window.location.href='404.html'">
+                  Open Mortgage Calculator &rarr;
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- TAB 2: SAVED PROPERTIES -->
+        <section id="tab-saved" class="dash-tab-panel">
+          <div class="dash-page-header">
+            <div>
+              <h1 class="dash-page-title">Saved Properties Portfolio</h1>
+              <p class="dash-page-subtitle">Curated listings you have bookmarked for comparison, site tours, and acquisition.</p>
+            </div>
+            <div>
+              <a href="404.html" class="dash-quick-btn dash-quick-btn-primary">
+                <i class="ri-add-line"></i> Find More Properties
+              </a>
+            </div>
+          </div>
+
+          <div class="dash-card">
+            <div style="display: flex; gap: 10px; margin-bottom: 22px; flex-wrap: wrap;">
+              <button class="btn btn-primary" style="padding: 6px 16px; font-size: 13px;" onclick="filterSavedProperties('all', this)">All (6)</button>
+              <button class="btn btn-outline" style="padding: 6px 16px; font-size: 13px;" onclick="filterSavedProperties('villa', this)">Luxury Villas (3)</button>
+              <button class="btn btn-outline" style="padding: 6px 16px; font-size: 13px;" onclick="filterSavedProperties('commercial', this)">Commercial (2)</button>
+              <button class="btn btn-outline" style="padding: 6px 16px; font-size: 13px;" onclick="filterSavedProperties('penthouse', this)">Penthouses (1)</button>
+            </div>
+
+            <div class="dash-saved-grid" id="fullSavedGrid">
+              <!-- Item 1 -->
+              <div class="dash-property-card prop-item" data-cat="villa" id="saved-1">
+                <div class="dash-property-img-wrap">
+                  <span class="badge badge-sale dash-property-tag">For Sale</span>
+                  <button class="dash-property-fav-btn" onclick="window.location.href='404.html'"><i class="ri-heart-fill"></i></button>
+                  <img src="assets/images/prop-1.webp" alt="Property" class="dash-property-img">
+                </div>
+                <div class="dash-property-body">
+                  <div class="dash-property-price">$1,450,000</div>
+                  <div class="dash-property-title">Oceanfront Contemporary Villa</div>
+                  <div class="dash-property-location"><i class="ri-map-pin-2-line"></i> Palm Beach, Florida</div>
+                  <div class="dash-property-features">
+                    <span class="dash-prop-feat-item"><i class="ri-hotel-bed-line"></i> 4 Beds</span>
+                    <span class="dash-prop-feat-item"><i class="ri-drop-line"></i> 3.5 Baths</span>
+                    <span class="dash-prop-feat-item"><i class="ri-ruler-2-line"></i> 4,200 sqft</span>
+                  </div>
+                  <div class="dash-property-actions">
+                    <button class="btn btn-primary" style="flex:1; padding: 8px 12px; font-size: 12px;" onclick="window.location.href='404.html'">Schedule Tour</button>
+                    <button class="btn btn-outline" style="padding: 8px 12px; font-size: 12px;" onclick="window.location.href='404.html'"><i class="ri-share-forward-line"></i></button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="dash-property-card prop-item" data-cat="commercial" id="saved-2">
+                <div class="dash-property-img-wrap">
+                  <span class="badge badge-sale dash-property-tag" style="background:#528A86;">Commercial</span>
+                  <button class="dash-property-fav-btn" onclick="window.location.href='404.html'"><i class="ri-heart-fill"></i></button>
+                  <img src="assets/images/prop-2.webp" alt="Property" class="dash-property-img">
+                </div>
+                <div class="dash-property-body">
+                  <div class="dash-property-price">$2,890,000</div>
+                  <div class="dash-property-title">Skyline Corporate Tower Suite</div>
+                  <div class="dash-property-location"><i class="ri-map-pin-2-line"></i> Financial District, NY</div>
+                  <div class="dash-property-features">
+                    <span class="dash-prop-feat-item"><i class="ri-building-line"></i> Level 34</span>
+                    <span class="dash-prop-feat-item"><i class="ri-ruler-2-line"></i> 6,800 sqft</span>
+                    <span class="dash-prop-feat-item"><i class="ri-car-line"></i> 4 Pkg</span>
+                  </div>
+                  <div class="dash-property-actions">
+                    <button class="btn btn-primary" style="flex:1; padding: 8px 12px; font-size: 12px;" onclick="window.location.href='404.html'">Schedule Tour</button>
+                    <button class="btn btn-outline" style="padding: 8px 12px; font-size: 12px;" onclick="window.location.href='404.html'"><i class="ri-share-forward-line"></i></button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 3 -->
+              <div class="dash-property-card prop-item" data-cat="penthouse" id="saved-3">
+                <div class="dash-property-img-wrap">
+                  <span class="badge badge-featured dash-property-tag">Featured</span>
+                  <button class="dash-property-fav-btn" onclick="window.location.href='404.html'"><i class="ri-heart-fill"></i></button>
+                  <img src="assets/images/prop-3.webp" alt="Property" class="dash-property-img">
+                </div>
+                <div class="dash-property-body">
+                  <div class="dash-property-price">$3,400,000</div>
+                  <div class="dash-property-title">Grand Horizon Luxury Penthouse</div>
+                  <div class="dash-property-location"><i class="ri-map-pin-2-line"></i> Downtown, Miami FL</div>
+                  <div class="dash-property-features">
+                    <span class="dash-prop-feat-item"><i class="ri-hotel-bed-line"></i> 5 Beds</span>
+                    <span class="dash-prop-feat-item"><i class="ri-drop-line"></i> 5 Baths</span>
+                    <span class="dash-prop-feat-item"><i class="ri-ruler-2-line"></i> 5,600 sqft</span>
+                  </div>
+                  <div class="dash-property-actions">
+                    <button class="btn btn-primary" style="flex:1; padding: 8px 12px; font-size: 12px;" onclick="window.location.href='404.html'">Schedule Tour</button>
+                    <button class="btn btn-outline" style="padding: 8px 12px; font-size: 12px;" onclick="window.location.href='404.html'"><i class="ri-share-forward-line"></i></button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 4 -->
+              <div class="dash-property-card prop-item" data-cat="villa" id="saved-4">
+                <div class="dash-property-img-wrap">
+                  <span class="badge badge-sale dash-property-tag">For Sale</span>
+                  <button class="dash-property-fav-btn" onclick="window.location.href='404.html'"><i class="ri-heart-fill"></i></button>
+                  <img src="assets/images/prop-4.webp" alt="Property" class="dash-property-img">
+                </div>
+                <div class="dash-property-body">
+                  <div class="dash-property-price">$4,250,000</div>
+                  <div class="dash-property-title">Beverly Hills Modern Oasis</div>
+                  <div class="dash-property-location"><i class="ri-map-pin-2-line"></i> Los Angeles, CA</div>
+                  <div class="dash-property-features">
+                    <span class="dash-prop-feat-item"><i class="ri-hotel-bed-line"></i> 6 Beds</span>
+                    <span class="dash-prop-feat-item"><i class="ri-drop-line"></i> 6 Baths</span>
+                    <span class="dash-prop-feat-item"><i class="ri-ruler-2-line"></i> 7,100 sqft</span>
+                  </div>
+                  <div class="dash-property-actions">
+                    <button class="btn btn-primary" style="flex:1; padding: 8px 12px; font-size: 12px;" onclick="window.location.href='404.html'">Schedule Tour</button>
+                    <button class="btn btn-outline" style="padding: 8px 12px; font-size: 12px;" onclick="window.location.href='404.html'"><i class="ri-share-forward-line"></i></button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 5 -->
+              <div class="dash-property-card prop-item" data-cat="commercial" id="saved-5">
+                <div class="dash-property-img-wrap">
+                  <span class="badge badge-rent dash-property-tag">For Lease</span>
+                  <button class="dash-property-fav-btn" onclick="window.location.href='404.html'"><i class="ri-heart-fill"></i></button>
+                  <img src="assets/images/prop-5.webp" alt="Property" class="dash-property-img">
+                </div>
+                <div class="dash-property-body">
+                  <div class="dash-property-price">$18,500 /mo</div>
+                  <div class="dash-property-title">Prime High-Street Retail Space</div>
+                  <div class="dash-property-location"><i class="ri-map-pin-2-line"></i> Chicago, IL</div>
+                  <div class="dash-property-features">
+                    <span class="dash-prop-feat-item"><i class="ri-store-2-line"></i> Retail</span>
+                    <span class="dash-prop-feat-item"><i class="ri-ruler-2-line"></i> 3,400 sqft</span>
+                  </div>
+                  <div class="dash-property-actions">
+                    <button class="btn btn-primary" style="flex:1; padding: 8px 12px; font-size: 12px;" onclick="window.location.href='404.html'">Schedule Tour</button>
+                    <button class="btn btn-outline" style="padding: 8px 12px; font-size: 12px;" onclick="window.location.href='404.html'"><i class="ri-share-forward-line"></i></button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 6 -->
+              <div class="dash-property-card prop-item" data-cat="villa" id="saved-6">
+                <div class="dash-property-img-wrap">
+                  <span class="badge badge-sale dash-property-tag">For Sale</span>
+                  <button class="dash-property-fav-btn" onclick="window.location.href='404.html'"><i class="ri-heart-fill"></i></button>
+                  <img src="assets/images/prop-6.webp" alt="Property" class="dash-property-img">
+                </div>
+                <div class="dash-property-body">
+                  <div class="dash-property-price">$2,100,000</div>
+                  <div class="dash-property-title">Modern Minimalist Mountain Estate</div>
+                  <div class="dash-property-location"><i class="ri-map-pin-2-line"></i> Aspen, Colorado</div>
+                  <div class="dash-property-features">
+                    <span class="dash-prop-feat-item"><i class="ri-hotel-bed-line"></i> 4 Beds</span>
+                    <span class="dash-prop-feat-item"><i class="ri-drop-line"></i> 4 Baths</span>
+                    <span class="dash-prop-feat-item"><i class="ri-ruler-2-line"></i> 4,800 sqft</span>
+                  </div>
+                  <div class="dash-property-actions">
+                    <button class="btn btn-primary" style="flex:1; padding: 8px 12px; font-size: 12px;" onclick="window.location.href='404.html'">Schedule Tour</button>
+                    <button class="btn btn-outline" style="padding: 8px 12px; font-size: 12px;" onclick="window.location.href='404.html'"><i class="ri-share-forward-line"></i></button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 3: SCHEDULED TOURS -->
+        <section id="tab-tours" class="dash-tab-panel">
+          <div class="dash-page-header">
+            <div>
+              <h1 class="dash-page-title">Scheduled Property Tours</h1>
+              <p class="dash-page-subtitle">Track your upcoming guided walkthroughs and in-person luxury inspections.</p>
+            </div>
+            <div>
+              <button class="dash-quick-btn dash-quick-btn-primary" onclick="window.location.href='404.html'">
+                <i class="ri-add-line"></i> Schedule New Tour
+              </button>
+            </div>
+          </div>
+
+          <div class="dash-card">
+            <div class="dash-table-wrapper">
+              <table class="dash-table">
+                <thead>
+                  <tr>
+                    <th style="min-width: 240px; text-align: left;">Property</th>
+                    <th style="min-width: 140px; text-align: left;">Date & Time</th>
+                    <th style="min-width: 170px; text-align: left;">Assigned Specialist</th>
+                    <th style="min-width: 130px; text-align: center;">Tour Mode</th>
+                    <th style="min-width: 130px; text-align: center;">Status</th>
+                    <th style="min-width: 100px; text-align: center;">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="buyerToursTable">
+                  <tr id="tour-row-1">
+                    <td style="text-align: left;">
+                      <div class="dash-prop-cell">
+                        <img src="assets/images/prop-1.webp" alt="Property" class="dash-prop-thumb">
+                        <div>
+                          <div class="dash-prop-meta-title">Oceanfront Contemporary Villa</div>
+                          <div class="dash-prop-meta-loc"><i class="ri-map-pin-line"></i> Palm Beach, Florida</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td style="text-align: left;">
+                      <strong style="color: #0D241E;">Tomorrow, 2:00 PM</strong><br>
+                      <span style="font-size: 12px; color: #718096;">Sep 04, 2026</span>
+                    </td>
+                    <td style="text-align: left;">
+                      <div style="font-weight: 600; color: #0D241E;">Michael Vance</div>
+                      <div style="font-size: 12px; color: #718096;">Senior Luxury Advisor</div>
+                    </td>
+                    <td style="text-align: center;">
+                      <span class="dash-badge dash-badge-buyer"><i class="ri-user-follow-line"></i> In-Person</span>
+                    </td>
+                    <td style="text-align: center;">
+                      <span class="dash-badge dash-badge-active"><i class="ri-checkbox-circle-line"></i> Confirmed</span>
+                    </td>
+                    <td style="text-align: center;">
+                      <div class="dash-action-btn-group" style="justify-content: center;">
+                        <button class="dash-btn-icon" title="Reschedule" onclick="window.location.href='404.html'"><i class="ri-time-line"></i></button>
+                        <button class="dash-btn-icon btn-delete" title="Cancel Tour" onclick="window.location.href='404.html'"><i class="ri-close-line"></i></button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr id="tour-row-2">
+                    <td style="text-align: left;">
+                      <div class="dash-prop-cell">
+                        <img src="assets/images/prop-3.webp" alt="Property" class="dash-prop-thumb">
+                        <div>
+                          <div class="dash-prop-meta-title">Grand Horizon Luxury Penthouse</div>
+                          <div class="dash-prop-meta-loc"><i class="ri-map-pin-line"></i> Downtown, Miami FL</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td style="text-align: left;">
+                      <strong style="color: #0D241E;">Sep 08, 11:30 AM</strong><br>
+                      <span style="font-size: 12px; color: #718096;">Next Tuesday</span>
+                    </td>
+                    <td style="text-align: left;">
+                      <div style="font-weight: 600; color: #0D241E;">Sarah Sterling</div>
+                      <div style="font-size: 12px; color: #718096;">Commercial Director</div>
+                    </td>
+                    <td style="text-align: center;">
+                      <span class="dash-badge" style="background:#F0F4F2; color:#0D241E;"><i class="ri-video-chat-line"></i> Live 3D VR</span>
+                    </td>
+                    <td style="text-align: center;">
+                      <span class="dash-badge dash-badge-pending"><i class="ri-loader-2-line"></i> In Review</span>
+                    </td>
+                    <td style="text-align: center;">
+                      <div class="dash-action-btn-group" style="justify-content: center;">
+                        <button class="dash-btn-icon" title="Reschedule" onclick="window.location.href='404.html'"><i class="ri-time-line"></i></button>
+                        <button class="dash-btn-icon btn-delete" title="Cancel Tour" onclick="window.location.href='404.html'"><i class="ri-close-line"></i></button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 4: INQUIRIES & MESSAGES -->
+        <section id="tab-inquiries" class="dash-tab-panel">
+          <div class="dash-page-header">
+            <div>
+              <h1 class="dash-page-title">Direct Inquiries & Messages</h1>
+              <p class="dash-page-subtitle">Communicate with licensed brokers, request property disclosures, and negotiate offers.</p>
+            </div>
+            <div>
+              <button class="dash-quick-btn dash-quick-btn-primary" onclick="window.location.href='404.html'">
+                <i class="ri-send-plane-line"></i> New Property Inquiry
+              </button>
+            </div>
+          </div>
+
+          <div class="dash-card">
+            <div class="dash-table-wrapper">
+              <table class="dash-table">
+                <thead>
+                  <tr>
+                    <th style="min-width: 100px; text-align: left;">Ref ID</th>
+                    <th style="min-width: 220px; text-align: left;">Property Subject</th>
+                    <th style="min-width: 120px; text-align: left;">Inquiry Date</th>
+                    <th style="min-width: 250px; text-align: left;">Last Response</th>
+                    <th style="min-width: 130px; text-align: center;">Status</th>
+                    <th style="min-width: 120px; text-align: center;">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="buyerInquiriesTable">
+                  <tr>
+                    <td style="text-align: left;"><strong>#INQ-8821</strong></td>
+                    <td style="text-align: left;">
+                      <div style="font-weight: 700; color: #0D241E;">Oceanfront Contemporary Villa</div>
+                      <div style="font-size: 12px; color: #718096;">Escrow & Title documentation inquiry</div>
+                    </td>
+                    <td style="text-align: left; color: #4A5568;">Sep 02, 2026</td>
+                    <td style="text-align: left; color: #4A5568;">Agent Michael: <em>"Title deed verification complete. Attached draft."</em></td>
+                    <td style="text-align: center;"><span class="dash-badge dash-badge-active"><i class="ri-check-double-line"></i> Responded</span></td>
+                    <td style="text-align: center;">
+                      <button class="btn btn-outline" style="padding: 6px 14px; font-size: 12px;" onclick="window.location.href='404.html'">View Thread</button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td style="text-align: left;"><strong>#INQ-8794</strong></td>
+                    <td style="text-align: left;">
+                      <div style="font-weight: 700; color: #0D241E;">Skyline Corporate Tower Suite</div>
+                      <div style="font-size: 12px; color: #718096;">Cap rate and zoning certificates</div>
+                    </td>
+                    <td style="text-align: left; color: #4A5568;">Aug 29, 2026</td>
+                    <td style="text-align: left; color: #4A5568;">Under review with institutional underwriting team.</td>
+                    <td style="text-align: center;"><span class="dash-badge dash-badge-pending"><i class="ri-time-line"></i> In Review</span></td>
+                    <td style="text-align: center;">
+                      <button class="btn btn-outline" style="padding: 6px 14px; font-size: 12px;" onclick="window.location.href='404.html'">View Thread</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 5: MORTGAGE CALCULATOR -->
+        <section id="tab-calculator" class="dash-tab-panel">
+          <div class="dash-page-header">
+            <div>
+              <h1 class="dash-page-title">Mortgage & Financing Estimator</h1>
+              <p class="dash-page-subtitle">Estimate monthly repayments, interest breakdown, and amortization plans.</p>
+            </div>
+          </div>
+
+          <div class="dash-grid-1-1">
+            
+            <div class="dash-card">
+              <h3 class="dash-card-title" style="margin-bottom: 20px;"><i class="ri-calculator-line" style="color: #1B6F58;"></i> Loan Parameters</h3>
+              
+              <div class="dash-form-group">
+                <label class="dash-form-label">Property Purchase Price ($)</label>
+                <input type="number" id="calcPrice" class="dash-form-control" value="1500000" step="10000" oninput="calculateMortgage()">
+              </div>
+
+              <div class="dash-form-row">
+                <div class="dash-form-group">
+                  <label class="dash-form-label">Down Payment ($)</label>
+                  <input type="number" id="calcDown" class="dash-form-control" value="300000" step="5000" oninput="calculateMortgage()">
+                </div>
+                <div class="dash-form-group">
+                  <label class="dash-form-label">Interest Rate (%)</label>
+                  <input type="number" id="calcRate" class="dash-form-control" value="6.5" step="0.1" oninput="calculateMortgage()">
+                </div>
+              </div>
+
+              <div class="dash-form-group">
+                <label class="dash-form-label">Loan Term (Years)</label>
+                <select id="calcTerm" class="dash-form-control" onchange="calculateMortgage()">
+                  <option value="30" selected>30 Years Fixed</option>
+                  <option value="20">20 Years Fixed</option>
+                  <option value="15">15 Years Fixed</option>
+                  <option value="10">10 Years Fixed</option>
+                </select>
+              </div>
+
+              <div class="dash-form-group">
+                <label class="dash-form-label">Annual Property Tax Estimate ($)</label>
+                <input type="number" id="calcTax" class="dash-form-control" value="12000" step="500" oninput="calculateMortgage()">
+              </div>
+
+              <button class="btn btn-primary" style="width: 100%;" onclick="window.location.href='404.html'">Recalculate Payments</button>
+            </div>
+
+            <div class="dash-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <h3 class="dash-card-title" style="margin-bottom: 20px;"><i class="ri-pie-chart-line" style="color: #EE703D;"></i> Monthly Payment Breakdown</h3>
+                
+                <div style="background: #F4F8F6; padding: 24px; border-radius: 14px; text-align: center; margin-bottom: 24px; border: 1px solid #D5E5DF;">
+                  <div style="font-size: 13px; text-transform: uppercase; color: #718096; font-weight: 700; letter-spacing: 0.8px;">Estimated Monthly Total</div>
+                  <div id="calcMonthlyTotal" style="font-family: var(--font-heading); font-size: 42px; font-weight: 700; color: #1B6F58; margin: 8px 0;">$8,585</div>
+                  <div style="font-size: 12px; color: #718096;">Includes Principal, Interest & Property Tax</div>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14px;">
+                  <div style="display: flex; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid #EDF2F0;">
+                    <span style="color: #718096;"><i class="ri-checkbox-blank-circle-fill" style="color: #1B6F58; font-size: 10px;"></i> Principal & Interest:</span>
+                    <strong id="calcPrincipalInterest">$7,585 /mo</strong>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid #EDF2F0;">
+                    <span style="color: #718096;"><i class="ri-checkbox-blank-circle-fill" style="color: #EE703D; font-size: 10px;"></i> Property Tax:</span>
+                    <strong id="calcTaxMonthly">$1,000 /mo</strong>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid #EDF2F0;">
+                    <span style="color: #718096;"><i class="ri-checkbox-blank-circle-fill" style="color: #3B82F6; font-size: 10px;"></i> Total Loan Amount:</span>
+                    <strong id="calcTotalLoan">$1,200,000</strong>
+                  </div>
+                </div>
+              </div>
+
+              <div style="margin-top: 24px;">
+                <button class="btn btn-outline" style="width: 100%; font-size: 13px;" onclick="window.location.href='404.html'">
+                  <i class="ri-file-shield-line"></i> Apply for Pre-Approval
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- TAB 6: BUYER PROFILE -->
+        <section id="tab-profile" class="dash-tab-panel">
+          <div class="dash-page-header">
+            <div>
+              <h1 class="dash-page-title">Buyer Profile & Acquisition Criteria</h1>
+              <p class="dash-page-subtitle">Configure your investment preferences so Stackly advisors can suggest exclusive off-market deals.</p>
+            </div>
+          </div>
+
+          <div class="dash-card" style="max-width: 800px;">
+            <form onsubmit="event.preventDefault(); window.location.href='404.html';">
+              <div class="dash-form-row">
+                <div class="dash-form-group">
+                  <label class="dash-form-label">Full Name</label>
+                  <input type="text" class="dash-form-control" id="buyerFullName" value="John Doe" required>
+                </div>
+                <div class="dash-form-group">
+                  <label class="dash-form-label">Email Address</label>
+                  <input type="email" class="dash-form-control" id="buyerEmail" value="john.doe@stacklyinvest.com" required>
+                </div>
+              </div>
+
+              <div class="dash-form-row">
+                <div class="dash-form-group">
+                  <label class="dash-form-label">Phone Number</label>
+                  <input type="tel" class="dash-form-control" id="buyerPhone" value="+1 (555) 234-5678">
+                </div>
+                <div class="dash-form-group">
+                  <label class="dash-form-label">Primary Target City</label>
+                  <input type="text" class="dash-form-control" id="buyerCity" value="Miami, New York, Palm Beach">
+                </div>
+              </div>
+
+              <div class="dash-form-row">
+                <div class="dash-form-group">
+                  <label class="dash-form-label">Maximum Budget ($)</label>
+                  <input type="number" class="dash-form-control" id="buyerMaxBudget" value="3500000" step="50000">
+                </div>
+                <div class="dash-form-group">
+                  <label class="dash-form-label">Preferred Property Type</label>
+                  <select class="dash-form-control" id="buyerPrefType">
+                    <option value="Luxury Villa" selected>Luxury Villa & Estates</option>
+                    <option value="Commercial Office">Commercial Corporate Office</option>
+                    <option value="Penthouse">Skyline High-Rise Penthouse</option>
+                    <option value="Multi-family">Multi-Family Residential</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="dash-form-group">
+                <label class="dash-form-label">Investment Objectives / Notes</label>
+                <textarea class="dash-form-control">Looking for waterfront villas with infinity pool or class-A commercial floor space in prime downtown corridors.</textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="padding: 12px 28px;" onclick="window.location.href='404.html'">
+                <i class="ri-save-line"></i> Save Acquisition Preferences
+              </button>
+            </form>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+  </div>
+
+  <!-- BOTTOM MOBILE NAVIGATION BAR -->
+  <nav class="dash-mobile-bottom-bar">
+    <ul class="dash-mobile-nav-items">
+      <li class="dash-mobile-nav-item active" onclick="switchMobileTab('overview', this)">
+        <a href="javascript:void(0);"><i class="ri-dashboard-3-line"></i><span>Home</span></a>
+      </li>
+      <li class="dash-mobile-nav-item" onclick="switchMobileTab('saved', this)">
+        <a href="javascript:void(0);"><i class="ri-heart-3-line"></i><span>Saved</span></a>
+      </li>
+      <li class="dash-mobile-nav-item" onclick="switchMobileTab('tours', this)">
+        <a href="javascript:void(0);"><i class="ri-calendar-event-line"></i><span>Tours</span></a>
+      </li>
+      <li class="dash-mobile-nav-item" onclick="switchMobileTab('inquiries', this)">
+        <a href="javascript:void(0);"><i class="ri-chat-voice-line"></i><span>Inquiries</span></a>
+      </li>
+      <li class="dash-mobile-nav-item" onclick="toggleSidebar(true)">
+        <a href="javascript:void(0);"><i class="ri-menu-line"></i><span>More</span></a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Schedule Tour Modal -->
+  <div class="dash-modal-backdrop" id="tourModal">
+    <div class="dash-modal">
+      <div class="dash-modal-header">
+        <h3 class="dash-modal-title"><i class="ri-calendar-event-line" style="color: #1B6F58;"></i> Schedule a Private Tour</h3>
+        <button type="button" class="dash-modal-close" onclick="closeModal('tourModal')"><i class="ri-close-line"></i></button>
+      </div>
+      <form onsubmit="handleBookTourSubmit(event)">
+        <div class="dash-modal-body">
+          <div class="dash-form-group">
+            <label class="dash-form-label">Select Property</label>
+            <select class="dash-form-control" id="tourPropSelect" required>
+              <option value="Oceanfront Contemporary Villa">Oceanfront Contemporary Villa ($1,450,000)</option>
+              <option value="Skyline Corporate Tower Suite">Skyline Corporate Tower Suite ($2,890,000)</option>
+              <option value="Grand Horizon Luxury Penthouse">Grand Horizon Luxury Penthouse ($3,400,000)</option>
+              <option value="Beverly Hills Modern Oasis">Beverly Hills Modern Oasis ($4,250,000)</option>
+            </select>
+          </div>
+          <div class="dash-form-row">
+            <div class="dash-form-group">
+              <label class="dash-form-label">Preferred Date</label>
+              <input type="date" class="dash-form-control" id="tourDate" required>
+            </div>
+            <div class="dash-form-group">
+              <label class="dash-form-label">Preferred Time Slot</label>
+              <select class="dash-form-control" id="tourTime" required>
+                <option value="10:00 AM">10:00 AM - Morning</option>
+                <option value="02:00 PM" selected>02:00 PM - Afternoon</option>
+                <option value="05:00 PM">05:00 PM - Sunset Tour</option>
+              </select>
+            </div>
+          </div>
+          <div class="dash-form-group">
+            <label class="dash-form-label">Tour Format</label>
+            <select class="dash-form-control" id="tourFormat">
+              <option value="In-Person Private Walkthrough">In-Person Private Walkthrough</option>
+              <option value="Live Interactive 3D Video Tour">Live Interactive 3D Video Tour</option>
+            </select>
+          </div>
+        </div>
+        <div class="dash-modal-footer">
+          <button type="button" class="btn btn-outline" onclick="closeModal('tourModal')">Cancel</button>
+          <button type="submit" class="btn btn-primary"><i class="ri-check-line"></i> Confirm Booking</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- New Inquiry Modal -->
+  <div class="dash-modal-backdrop" id="inquiryModal">
+    <div class="dash-modal">
+      <div class="dash-modal-header">
+        <h3 class="dash-modal-title"><i class="ri-mail-send-line" style="color: #1B6F58;"></i> Send Direct Inquiry</h3>
+        <button type="button" class="dash-modal-close" onclick="closeModal('inquiryModal')"><i class="ri-close-line"></i></button>
+      </div>
+      <form onsubmit="handleNewInquirySubmit(event)">
+        <div class="dash-modal-body">
+          <div class="dash-form-group">
+            <label class="dash-form-label">Regarding Property / Asset</label>
+            <input type="text" class="dash-form-control" id="inqProperty" placeholder="e.g. Oceanfront Villa or General Portfolio Advice" required>
+          </div>
+          <div class="dash-form-group">
+            <label class="dash-form-label">Subject</label>
+            <input type="text" class="dash-form-control" id="inqSubject" placeholder="e.g. Price negotiation / Zoning request" required>
+          </div>
+          <div class="dash-form-group">
+            <label class="dash-form-label">Message Details</label>
+            <textarea class="dash-form-control" id="inqMessage" placeholder="Type your specific questions for our licensed advisory team..." required></textarea>
+          </div>
+        </div>
+        <div class="dash-modal-footer">
+          <button type="button" class="btn btn-outline" onclick="closeModal('inquiryModal')">Cancel</button>
+          <button type="submit" class="btn btn-primary"><i class="ri-send-plane-fill"></i> Send Message</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div id="toastContainer" style="position: fixed; bottom: 24px; right: 24px; z-index: 3000; display: flex; flex-direction: column; gap: 10px;"></div>
+
+  <script>
+    function switchTab(tabId, el) {
+      document.querySelectorAll('.dash-tab-panel').forEach(p => p.classList.remove('active'));
+      const target = document.getElementById('tab-' + tabId);
+      if (target) target.classList.add('active');
+
+      document.querySelectorAll('.dash-sidebar-nav .dash-nav-item').forEach(btn => btn.classList.remove('active'));
+      if (el) el.classList.add('active');
+
+      document.querySelectorAll('.dash-mobile-nav-item').forEach(item => item.classList.remove('active'));
+      const matchMobile = Array.from(document.querySelectorAll('.dash-mobile-nav-item')).find(item => item.textContent.toLowerCase().includes(tabId));
+      if (matchMobile) matchMobile.classList.add('active');
+
+      toggleSidebar(false);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function switchMobileTab(tabId, el) {
+      document.querySelectorAll('.dash-mobile-nav-item').forEach(i => i.classList.remove('active'));
+      if (el) el.classList.add('active');
+      switchTab(tabId);
+    }
+
+    function toggleSidebar(open) {
+      const sidebar = document.getElementById('dashSidebar');
+      const backdrop = document.getElementById('sidebarBackdrop');
+      if (open) {
+        sidebar.classList.add('is-open');
+        backdrop.classList.add('is-active');
+      } else {
+        sidebar.classList.remove('is-open');
+        backdrop.classList.remove('is-active');
+      }
+    }
+
+    function openModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) modal.classList.add('is-active');
+    }
+
+    function closeModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) modal.classList.remove('is-active');
+    }
+
+    function showToast(msg, isError = false) {
+      const container = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+      toast.style.cssText = `
+        background: ${isError ? '#EF4444' : '#0D241E'};
+        color: #FFFFFF;
+        padding: 12px 20px;
+        border-radius: 10px;
+        font-size: 13.5px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border-left: 4px solid ${isError ? '#B91C1C' : '#1B6F58'};
+        animation: dashFadeIn 0.3s ease;
+      `;
+      const icon = isError ? '<i class="ri-error-warning-line"></i>' : '<i class="ri-checkbox-circle-line" style="color:#10B981;"></i>';
+      toast.innerHTML = `${icon} <span>${msg}</span>`;
+      container.appendChild(toast);
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateY(10px)';
+        toast.style.transition = 'all 0.3s ease';
+        setTimeout(() => toast.remove(), 300);
+      }, 3500);
+    }
+
+    function removeSavedProp(elementId, title) {
+      const el = document.getElementById(elementId);
+      if (el) {
+        el.style.opacity = '0';
+        el.style.transform = 'scale(0.9)';
+        el.style.transition = 'all 0.3s ease';
+        setTimeout(() => {
+          el.remove();
+          updateSavedCount();
+          showToast(`Removed "${title}" from your saved list.`);
+        }, 300);
+      }
+    }
+
+    function updateSavedCount() {
+      const count = document.querySelectorAll('#fullSavedGrid .prop-item').length;
+      const badge = document.getElementById('badgeSavedCount');
+      const kpi = document.getElementById('kpiSaved');
+      if (badge) badge.innerText = count;
+      if (kpi) kpi.innerText = count;
+    }
+
+    function filterSavedProperties(cat, btn) {
+      document.querySelectorAll('#tab-saved .btn').forEach(b => {
+        b.classList.remove('btn-primary');
+        b.classList.add('btn-outline');
+      });
+      btn.classList.remove('btn-outline');
+      btn.classList.add('btn-primary');
+
+      const items = document.querySelectorAll('#fullSavedGrid .prop-item');
+      items.forEach(item => {
+        if (cat === 'all' || item.dataset.cat === cat) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    function bookTourForProp(propTitle) {
+      const select = document.getElementById('tourPropSelect');
+      if (select) {
+        for (let i = 0; i < select.options.length; i++) {
+          if (select.options[i].value === propTitle) {
+            select.selectedIndex = i;
+            break;
+          }
+        }
+      }
+      openModal('tourModal');
+    }
+
+    function shareProperty(title) {
+      navigator.clipboard ? navigator.clipboard.writeText(window.location.href) : null;
+      showToast(`Link copied to clipboard for "${title}"`);
+    }
+
+    function handleBookTourSubmit(e) {
+      e.preventDefault();
+      const prop = document.getElementById('tourPropSelect').value;
+      const date = document.getElementById('tourDate').value;
+      const time = document.getElementById('tourTime').value;
+      closeModal('tourModal');
+      showToast(`Tour confirmed for ${prop} on ${date} at ${time}!`);
+    }
+
+    function rescheduleTour(title) {
+      bookTourForProp(title);
+    }
+
+    function cancelTour(rowId) {
+      if (confirm('Are you sure you want to cancel this scheduled tour?')) {
+        const row = document.getElementById(rowId);
+        if (row) {
+          row.style.opacity = '0';
+          setTimeout(() => row.remove(), 300);
+          showToast('Tour booking canceled.');
+        }
+      }
+    }
+
+    function handleNewInquirySubmit(e) {
+      e.preventDefault();
+      const prop = document.getElementById('inqProperty').value;
+      closeModal('inquiryModal');
+      showToast(`Inquiry regarding "${prop}" sent to our advisory team.`);
+    }
+
+    function calculateMortgage() {
+      const price = parseFloat(document.getElementById('calcPrice').value) || 0;
+      const down = parseFloat(document.getElementById('calcDown').value) || 0;
+      const rate = parseFloat(document.getElementById('calcRate').value) || 0;
+      const termYears = parseInt(document.getElementById('calcTerm').value) || 30;
+      const annualTax = parseFloat(document.getElementById('calcTax').value) || 0;
+
+      const principal = Math.max(0, price - down);
+      const monthlyRate = (rate / 100) / 12;
+      const numberOfPayments = termYears * 12;
+
+      let monthlyPI = 0;
+      if (monthlyRate > 0) {
+        monthlyPI = principal * (monthlyRate * Math.pow(1 + monthlyRate, numberOfPayments)) / (Math.pow(1 + monthlyRate, numberOfPayments) - 1);
+      } else {
+        monthlyPI = principal / numberOfPayments;
+      }
+
+      const monthlyTax = annualTax / 12;
+      const totalMonthly = monthlyPI + monthlyTax;
+
+      document.getElementById('calcMonthlyTotal').innerText = '$' + Math.round(totalMonthly).toLocaleString();
+      document.getElementById('calcPrincipalInterest').innerText = '$' + Math.round(monthlyPI).toLocaleString() + ' /mo';
+      document.getElementById('calcTaxMonthly').innerText = '$' + Math.round(monthlyTax).toLocaleString() + ' /mo';
+      document.getElementById('calcTotalLoan').innerText = '$' + Math.round(principal).toLocaleString();
+    }
+
+    function loadUserSession() {
+      const sessionRaw = localStorage.getItem('stackly_user_session');
+      let name = 'gow';
+      let email = 'gow@gmail.com';
+
+      if (sessionRaw) {
+        try {
+          const session = JSON.parse(sessionRaw);
+          if (session.name) name = session.name;
+          if (session.email) email = session.email;
+        } catch(e) {}
+      }
+
+      // Compute Initials
+      const nameParts = name.trim().split(' ');
+      const initials = nameParts.length > 1 
+        ? (nameParts[0][0] + nameParts[nameParts.length - 1][0]).toUpperCase()
+        : name.slice(0, 1).toUpperCase();
+
+      // Update Sidebar
+      const sidebarAvatar = document.getElementById('sidebarAvatar');
+      const sidebarName = document.getElementById('sidebarUserName');
+      const sidebarEmail = document.getElementById('sidebarUserEmail');
+      if (sidebarAvatar) sidebarAvatar.innerText = initials;
+      if (sidebarName) sidebarName.innerText = name;
+      if (sidebarEmail) sidebarEmail.innerText = email;
+
+      // Update Topbar Profile
+      const topbarAvatarLetter = document.getElementById('topbarAvatarLetter');
+      const dropdownName = document.getElementById('dropdownUserName');
+      const dropdownEmail = document.getElementById('dropdownUserEmail');
+      if (topbarAvatarLetter) topbarAvatarLetter.innerText = initials;
+      if (dropdownName) dropdownName.innerText = name;
+      if (dropdownEmail) dropdownEmail.innerText = email;
+
+      // Update Welcome Title
+      const welcome = document.getElementById('welcomeHeadline');
+      const firstName = name.split(' ')[0];
+      if (welcome) welcome.innerText = `Welcome back, ${firstName}! 👋`;
+
+      // Update Form fields
+      const inputName = document.getElementById('buyerFullName');
+      const inputEmail = document.getElementById('buyerEmail');
+      if (inputName) inputName.value = name;
+      if (inputEmail) inputEmail.value = email;
+    }
+
+    function toggleProfileDropdown(e) {
+      if (e) e.stopPropagation();
+      const dd = document.getElementById('profileDropdown');
+      if (dd) dd.classList.toggle('is-open');
+    }
+
+    // Close dropdown on click outside
+    document.addEventListener('click', (e) => {
+      const wrap = document.getElementById('topbarProfileWrap');
+      const dd = document.getElementById('profileDropdown');
+      if (dd && wrap && !wrap.contains(e.target)) {
+        dd.classList.remove('is-open');
+      }
+    });
+
+    function handleSaveProfile(e) {
+      e.preventDefault();
+      const name = document.getElementById('buyerFullName').value.trim();
+      const email = document.getElementById('buyerEmail').value.trim();
+      
+      const sessionRaw = localStorage.getItem('stackly_user_session');
+      let session = sessionRaw ? JSON.parse(sessionRaw) : {};
+      session.name = name;
+      session.email = email;
+      localStorage.setItem('stackly_user_session', JSON.stringify(session));
+
+      loadUserSession();
+      showToast('Buyer profile & investment criteria updated!');
+    }
+
+    function toggleNotifications() {
+      showToast('You have 2 new property price drops in your saved areas.');
+    }
+
+    function submitSearchTo404() {
+      const searchInput = document.getElementById('dashGlobalSearch');
+      if (searchInput && searchInput.value.trim().length > 0) {
+        window.location.href = '404.html';
+      } else if (searchInput) {
+        searchInput.focus();
+      }
+    }
+
+    function handleGlobalSearch(q) {
+      if (!q) {
+        document.querySelectorAll('.dash-property-card').forEach(c => c.style.display = 'flex');
+        return;
+      }
+      const cards = document.querySelectorAll('.dash-property-card');
+      cards.forEach(c => {
+        const text = c.textContent.toLowerCase();
+        c.style.display = text.includes(q.toLowerCase()) ? 'flex' : 'none';
+      });
+    }
+
+    function handleLogout() {
+      localStorage.removeItem('stackly_user_session');
+      window.location.href = 'login.html';
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      loadUserSession();
+      const dateInput = document.getElementById('tourDate');
+      if (dateInput) {
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.value = today;
+        dateInput.min = today;
+      }
+      calculateMortgage();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Developments & Projects | Stackly Real Estate</title>
+  <meta name="description" content="Discover major metropolitan developments, flagship commercial towers, luxury residential masterplans, and upcoming architectural projects by Stackly.">
+  
+  <link rel="icon" type="image/webp" href="assets/images/stackly.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Overpass:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Prata&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+  <link rel="stylesheet" href="css/scrollCue.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="projects-showcase-page endora-theme">
+
+  <!-- ======================================================================
+       1. Top Header Utility Bar
+       ====================================================================== -->
+  <div class="top-header-area">
+    <div class="container-fluid">
+      <div class="top-header-inner">
+        <div class="top-header-left">
+          <ul class="top-header-social-list">
+            <li><a href="404.html" class="social-link" aria-label="Facebook"><i class="ri-facebook-fill"></i></a></li>
+            <li><a href="404.html" class="social-link" aria-label="Twitter X"><i class="ri-twitter-x-line"></i></a></li>
+            <li><a href="404.html" class="social-link" aria-label="Instagram"><i class="ri-instagram-fill"></i></a></li>
+            <li><a href="404.html" class="social-link" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a></li>
+            <li><a href="404.html" class="social-link" aria-label="YouTube"><i class="ri-youtube-line"></i></a></li>
+            <li><a href="404.html" class="social-link" aria-label="Pinterest"><i class="ri-pinterest-line"></i></a></li>
+          </ul>
+          <div class="top-header-divider"></div>
+          <div class="top-header-mail">
+            <i class="ri-mail-line"></i>
+            <a href="404.html">info@stackly.com</a>
+          </div>
+        </div>
+        <div class="top-header-right">
+          <div class="top-header-call">
+            <i class="ri-phone-line"></i>
+            <a href="404.html">+91 74880 99999</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       2. Main Header & Navigation
+       ====================================================================== -->
+  <header class="site-header endora-navbar-wrap" id="siteNavbar">
+    <div class="container-fluid header-container">
+      <div class="navbar-left-group">
+        <!-- Stackly Logo -->
+        <a href="index.html" class="endora-brand-logo">
+          <img src="assets/images/stackly.webp" alt="Stackly" class="header-logo-img">
+        </a>
+
+        <!-- Search Property Field in Navbar -->
+        <form class="navbar-search-box" id="navbarSearchForm" onsubmit="event.preventDefault(); triggerNavbarSearch(this);">
+          <input type="text" id="navSearchKeyword" name="search" placeholder="Search property" autocomplete="off">
+          <button type="submit" aria-label="Search">
+            <i class="ri-search-line"></i>
+          </button>
+        </form>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="main-navigation">
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="properties.html" class="nav-link">Properties</a>
+          </li>
+          <li class="nav-item active">
+            <a href="projects.html" class="nav-link">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a href="blog.html" class="nav-link">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <div class="nav-auth-item">
+          <a href="login.html" class="nav-login-link">
+            Log In / Register
+          </a>
+        </div>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open mobile menu">
+          <i class="ri-menu-line"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="endora-brand-logo">
+        <img src="assets/images/stackly.webp" alt="Stackly" class="drawer-logo-img">
+      </a>
+      <button class="modal-close-btn" id="closeMobileDrawer"><i class="ri-close-line"></i></button>
+    </div>
+    <div class="mobile-drawer-body">
+      <ul class="mobile-menu-list">
+        <li><a href="index.html"><i class="ri-home-4-line"></i>Home</a></li>
+        <li><a href="about.html"><i class="ri-information-line"></i>About</a></li>
+        <li><a href="properties.html"><i class="ri-building-line"></i>Properties</a></li>
+        <li class="active"><a href="projects.html"><i class="ri-briefcase-line"></i>Projects</a></li>
+        <li><a href="blog.html"><i class="ri-article-line"></i>Blog</a></li>
+        <li><a href="contact.html"><i class="ri-customer-service-2-line"></i>Contact</a></li>
+      </ul>
+      <div style="margin-top: 20px;">
+        <a href="login.html" class="btn btn-primary" style="width: 100%; border-radius: 30px; background-color: #1B6F58; text-align: center; display: block; text-decoration: none; padding: 11px;">
+          <i class="ri-user-3-line"></i> Log In / Register
+        </a>
+      </div>
+      <div class="drawer-contact-card">
+        <div class="drawer-contact-item">
+          <i class="ri-mail-line"></i>
+          <a href="404.html">info@stackly.com</a>
+        </div>
+        <div class="drawer-contact-item">
+          <i class="ri-phone-line"></i>
+          <a href="404.html">+91 74880 99999</a>
+        </div>
+        <div class="drawer-social-list">
+          <a href="404.html" class="drawer-social-link" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+          <a href="404.html" class="drawer-social-link" aria-label="Twitter X"><i class="ri-twitter-x-line"></i></a>
+          <a href="404.html" class="drawer-social-link" aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
+          <a href="404.html" class="drawer-social-link" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       SECTION 1: 🏙️ PROJECTS HERO — MASTER DEVELOPMENTS
+       ====================================================================== -->
+  <section class="proj-hero-section">
+    <div class="proj-hero-bg-wrap">
+      <img src="assets/images/hero-projects.jpg" alt="Master Developments" class="proj-hero-img">
+      <div class="proj-hero-overlay"></div>
+    </div>
+
+    <div class="container proj-hero-content">
+      <div class="lux-breadcrumb-box">
+        <a href="index.html">HOME</a>
+        <span class="lux-bread-sep">/</span>
+        <span class="lux-bread-current">PROJECTS</span>
+      </div>
+
+      <span class="proj-hero-badge">FEATURED REGIONAL HUBS</span>
+      <h1 class="proj-hero-title">Master Developments</h1>
+      <p class="proj-hero-subtitle">
+        Architectural landmarks and visionary masterplans engineering the future of high-yield commercial hubs and luxury residential living.
+      </p>
+
+      <div class="proj-hero-actions">
+        <a href="404.html" class="btn btn-primary" style="padding: 14px 32px;">Explore Flagships <i class="fa-solid fa-gem"></i></a>
+        <a href="404.html" class="btn btn-outline" style="padding: 14px 32px; background: rgba(255,255,255,0.06); color: #fff; border-color: rgba(255,255,255,0.3);">Upcoming Launches</a>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <a href="#flagshipSection" class="lux-scroll-indicator" style="margin-top: 40px;" aria-label="Scroll down">
+        <span class="lux-scroll-text">DISCOVER DEVELOPMENTS</span>
+        <div class="lux-scroll-line"><span class="lux-scroll-dot"></span></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 2: 🏢 FLAGSHIP DEVELOPMENTS (2-Column Cards)
+       ====================================================================== -->
+  <section class="proj-flagship-section" id="flagshipSection">
+    <div class="container">
+      <div class="lux-section-header-center">
+        <span class="lux-section-kicker">FLAGSHIP PORTFOLIO</span>
+        <h2 class="lux-section-title">Major Metropolitan Projects</h2>
+        <p class="lux-section-sub">Iconic developments shaping modern skylines and delivering sustainable investor yields.</p>
+      </div>
+
+      <div class="proj-flagship-grid">
+        <!-- Project 1 -->
+        <div class="proj-card">
+          <div class="proj-card-media">
+            <img src="assets/images/city-ny.webp" alt="Manhattan Commercial Plaza" class="proj-card-img">
+            <div class="proj-card-badges">
+              <span class="proj-badge-status under-construction"><i class="fa-solid fa-helmet-safety"></i> Under Construction</span>
+              <span class="proj-badge-type">Commercial AAA</span>
+            </div>
+          </div>
+          <div class="proj-card-body">
+            <div class="proj-card-loc"><i class="fa-solid fa-location-dot"></i> New York, NY / Financial District</div>
+            <h3 class="proj-card-title">Manhattan Commercial Plaza</h3>
+            <p class="proj-card-desc">
+              A 42-story prime AAA office tower featuring LEED Platinum green certification, high-speed automated elevators, and rooftop skyline dining.
+            </p>
+            <div class="proj-card-meta">
+              <span><strong>Status:</strong> Q4 2026 Delivery</span>
+              <span><strong>Yield:</strong> 8.4% Est.</span>
+              <span><strong>Area:</strong> 250,000 Sq Ft</span>
+            </div>
+            <a href="404.html" class="proj-card-link">Explore Project <i class="fa-solid fa-building"></i></a>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="proj-card">
+          <div class="proj-card-media">
+            <img src="assets/images/city-ca.webp" alt="Silicon Valley Innovation Hub" class="proj-card-img">
+            <div class="proj-card-badges">
+              <span class="proj-badge-status completed"><i class="fa-solid fa-circle-check"></i> Completed</span>
+              <span class="proj-badge-type">Enterprise Tech</span>
+            </div>
+          </div>
+          <div class="proj-card-body">
+            <div class="proj-card-loc"><i class="fa-solid fa-location-dot"></i> Silicon Valley, CA / Tech Corridor</div>
+            <h3 class="proj-card-title">Silicon Valley Tech Campus</h3>
+            <p class="proj-card-desc">
+              State-of-the-art research and enterprise facility with dedicated Tier-4 data centers, redundant fiber connectivity, and campus lifestyle amenities.
+            </p>
+            <div class="proj-card-meta">
+              <span><strong>Status:</strong> 94% Leased</span>
+              <span><strong>Yield:</strong> 9.1% Est.</span>
+              <span><strong>Area:</strong> 480,000 Sq Ft</span>
+            </div>
+            <a href="404.html" class="proj-card-link">Explore Project <i class="fa-solid fa-building"></i></a>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="proj-card">
+          <div class="proj-card-media">
+            <img src="assets/images/city-vegas.webp" alt="Pacific Coast Medical Center" class="proj-card-img">
+            <div class="proj-card-badges">
+              <span class="proj-badge-status new-launch"><i class="fa-solid fa-sparkles"></i> New Launch</span>
+              <span class="proj-badge-type">Healthcare Life Sciences</span>
+            </div>
+          </div>
+          <div class="proj-card-body">
+            <div class="proj-card-loc"><i class="fa-solid fa-location-dot"></i> San Diego, CA / Coastal Hub</div>
+            <h3 class="proj-card-title">Pacific Coast Medical Center</h3>
+            <p class="proj-card-desc">
+              Multi-specialty surgical and clinical consulting facility directly situated in coastal transit corridors with dedicated emergency helicopter access.
+            </p>
+            <div class="proj-card-meta">
+              <span><strong>Status:</strong> Booking Open</span>
+              <span><strong>Yield:</strong> 7.9% Est.</span>
+              <span><strong>Area:</strong> 120,000 Sq Ft</span>
+            </div>
+            <a href="404.html" class="proj-card-link">Explore Project <i class="fa-solid fa-building"></i></a>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="proj-card">
+          <div class="proj-card-media">
+            <img src="assets/images/prop-6.webp" alt="Witten Industrial Hub" class="proj-card-img">
+            <div class="proj-card-badges">
+              <span class="proj-badge-status completed"><i class="fa-solid fa-circle-check"></i> Ready to Move</span>
+              <span class="proj-badge-type">Smart Logistics</span>
+            </div>
+          </div>
+          <div class="proj-card-body">
+            <div class="proj-card-loc"><i class="fa-solid fa-location-dot"></i> Witten Corridor / Interstate Junction</div>
+            <h3 class="proj-card-title">Witten Industrial & Logistics Park</h3>
+            <p class="proj-card-desc">
+              Automated high-bay warehouse facility engineered for robotic fulfillment, container docking bays, heavy 3-phase power, and integrated corporate offices.
+            </p>
+            <div class="proj-card-meta">
+              <span><strong>Status:</strong> Ready for Occupancy</span>
+              <span><strong>Yield:</strong> 8.8% Est.</span>
+              <span><strong>Area:</strong> 340,000 Sq Ft</span>
+            </div>
+            <a href="404.html" class="proj-card-link">Explore Project <i class="fa-solid fa-building"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 3: 🌆 FEATURED PROJECT — IMMERSIVE SHOWCASE
+       ====================================================================== -->
+  <section class="proj-immersive-section">
+    <div class="proj-immersive-bg-wrap">
+      <img src="assets/images/prop-3.webp" alt="The Grand Metropolis" class="proj-immersive-img">
+      <div class="proj-immersive-overlay"></div>
+    </div>
+
+    <div class="container proj-immersive-content">
+      <span class="proj-immersive-badge">SIGNATURE MASTERPIECE</span>
+      <h2 class="proj-immersive-title">THE GRAND METROPOLIS</h2>
+      <div class="proj-immersive-location"><i class="fa-solid fa-location-dot"></i> Chennai, India / Prime Waterfront Coast</div>
+      
+      <p class="proj-immersive-desc">
+        An extraordinary mixed-use destination uniting luxury high-rise residences, world-class hospitality, and corporate headquarters within a lush, self-sustaining smart eco-enclave.
+      </p>
+
+      <div class="proj-stats-banner">
+        <div class="proj-stat-cell">
+          <span class="proj-stat-val">₹4.5 Cr+</span>
+          <span class="proj-stat-name">Starting Price ($550k)</span>
+        </div>
+        <div class="proj-stat-cell">
+          <span class="proj-stat-val">450</span>
+          <span class="proj-stat-name">Luxury Residences & Suites</span>
+        </div>
+        <div class="proj-stat-cell">
+          <span class="proj-stat-val">1.2M</span>
+          <span class="proj-stat-name">Sq. Ft. Total Area</span>
+        </div>
+        <div class="proj-stat-cell">
+          <span class="proj-stat-val">Q2 2027</span>
+          <span class="proj-stat-name">Completion Year</span>
+        </div>
+      </div>
+
+      <div class="proj-immersive-actions">
+        <a href="404.html" class="btn btn-primary">View Development Deck <i class="fa-solid fa-file-pdf"></i></a>
+        <a href="404.html" class="btn btn-white">Schedule Private Briefing</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 4: 📍 DEVELOPMENTS BY LOCATION (Investment Corridor Explorer)
+       ====================================================================== -->
+  <section class="proj-location-section" id="projLocationSection">
+    <!-- Map Matrix Grid & Blueprint Accents -->
+    <div class="proj-corridor-bg-decor">
+      <div class="proj-corridor-coord-tag">LAT 13.0827° N / LONG 80.2707° E — AP-ME INVESTMENT CORRIDOR MATRIX</div>
+      <div class="proj-corridor-grid-line proj-corridor-line-1"></div>
+      <div class="proj-corridor-grid-line proj-corridor-line-2"></div>
+      <!-- SVG Connecting Corridor Route -->
+      <svg class="proj-corridor-route-svg" viewBox="0 0 1200 300" fill="none" preserveAspectRatio="none">
+        <path class="proj-corridor-route-path" d="M 100,150 C 350,50 550,250 850,120 S 1100,180 1150,150" stroke="rgba(27, 111, 88, 0.35)" stroke-width="2" />
+      </svg>
+    </div>
+
+    <div class="container" style="position: relative; z-index: 2;">
+      <!-- Header -->
+      <div class="lux-section-header-center proj-corridor-heading-anim">
+        <span class="lux-section-kicker"><i class="fa-solid fa-location-crosshairs"></i> STRATEGIC TERRITORIES</span>
+        <h2 class="lux-section-title">Developments by Location</h2>
+        <p class="lux-section-sub">Explore master developments curated across the world's most dynamic investment corridors.</p>
+      </div>
+
+      <!-- Corridor Explorer Meta Bar (Destination Counter + Progress Bar + Arrow Controls) -->
+      <div class="proj-corridor-control-bar">
+        <div class="proj-corridor-dest-tag">
+          <span class="proj-corridor-pulse-dot"></span>
+          <span class="proj-corridor-tag-text"><strong>05</strong> STRATEGIC MARKETS</span>
+        </div>
+
+        <div class="proj-corridor-progress-track">
+          <div class="proj-corridor-progress-fill" id="corridorProgressBar" style="width: 20%;"></div>
+        </div>
+
+        <div class="proj-corridor-nav-btns">
+          <button class="proj-corridor-nav-btn" id="corridorPrevBtn" aria-label="Previous Market"><i class="fa-solid fa-arrow-left"></i></button>
+          <button class="proj-corridor-nav-btn" id="corridorNextBtn" aria-label="Next Market"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <!-- Horizontal Investment Corridor Destination Journey -->
+      <div class="proj-corridor-cards-wrap" id="corridorCardsWrap">
+        <!-- Loc 1: Chennai (Active / Featured by default) -->
+        <div class="proj-corridor-card active" data-index="0" data-city="chennai" onclick="selectCorridorCard(this, 0, 'Chennai', 24)">
+          <div class="proj-loc-light-sweep"></div>
+          <div class="proj-loc-img-wrap">
+            <img src="assets/images/city-us.webp" alt="Chennai Developments" class="proj-loc-img">
+          </div>
+          <div class="proj-loc-badge-row">
+            <span class="proj-loc-market-tag">MARKET 01</span>
+            <span class="proj-loc-index">01 / 05</span>
+          </div>
+          <div class="proj-loc-overlay">
+            <div class="proj-loc-coords"><i class="fa-solid fa-compass"></i> 13.0827° N, 80.2707° E</div>
+            <h3 class="proj-loc-city">Chennai</h3>
+            <div class="proj-loc-count-wrap">
+              <span class="proj-loc-count"><strong class="corridor-counter" data-target="24">24</strong> Projects Active</span>
+              <span class="proj-loc-status-pill">GROWTH HUB</span>
+            </div>
+            <p class="proj-loc-desc">Automotive, Fintech & Port Infrastructure Core</p>
+            <div class="proj-loc-explore-row">
+              <span class="proj-loc-explore">Explore Market <i class="fa-solid fa-arrow-right-long"></i></span>
+              <span class="proj-loc-pin-badge"><i class="fa-solid fa-location-dot"></i></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Loc 2: Bangalore -->
+        <div class="proj-corridor-card" data-index="1" data-city="bangalore" onclick="selectCorridorCard(this, 1, 'Bangalore', 18)">
+          <div class="proj-loc-light-sweep"></div>
+          <div class="proj-loc-img-wrap">
+            <img src="assets/images/city-ca.webp" alt="Bangalore Developments" class="proj-loc-img">
+          </div>
+          <div class="proj-loc-badge-row">
+            <span class="proj-loc-market-tag">MARKET 02</span>
+            <span class="proj-loc-index">02 / 05</span>
+          </div>
+          <div class="proj-loc-overlay">
+            <div class="proj-loc-coords"><i class="fa-solid fa-compass"></i> 12.9716° N, 77.5946° E</div>
+            <h3 class="proj-loc-city">Bangalore</h3>
+            <div class="proj-loc-count-wrap">
+              <span class="proj-loc-count"><strong class="corridor-counter" data-target="18">18</strong> Projects Active</span>
+              <span class="proj-loc-status-pill">TECH CAPITAL</span>
+            </div>
+            <p class="proj-loc-desc">Silicon Innovation & Enterprise Tech Parks</p>
+            <div class="proj-loc-explore-row">
+              <span class="proj-loc-explore">Explore Market <i class="fa-solid fa-arrow-right-long"></i></span>
+              <span class="proj-loc-pin-badge"><i class="fa-solid fa-location-dot"></i></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Loc 3: Hyderabad -->
+        <div class="proj-corridor-card" data-index="2" data-city="hyderabad" onclick="selectCorridorCard(this, 2, 'Hyderabad', 12)">
+          <div class="proj-loc-light-sweep"></div>
+          <div class="proj-loc-img-wrap">
+            <img src="assets/images/city-ny.webp" alt="Hyderabad Developments" class="proj-loc-img">
+          </div>
+          <div class="proj-loc-badge-row">
+            <span class="proj-loc-market-tag">MARKET 03</span>
+            <span class="proj-loc-index">03 / 05</span>
+          </div>
+          <div class="proj-loc-overlay">
+            <div class="proj-loc-coords"><i class="fa-solid fa-compass"></i> 17.3850° N, 78.4867° E</div>
+            <h3 class="proj-loc-city">Hyderabad</h3>
+            <div class="proj-loc-count-wrap">
+              <span class="proj-loc-count"><strong class="corridor-counter" data-target="12">12</strong> Projects Active</span>
+              <span class="proj-loc-status-pill">PHARMA & IT</span>
+            </div>
+            <p class="proj-loc-desc">HITEC Corridor & Bio-Innovation clusters</p>
+            <div class="proj-loc-explore-row">
+              <span class="proj-loc-explore">Explore Market <i class="fa-solid fa-arrow-right-long"></i></span>
+              <span class="proj-loc-pin-badge"><i class="fa-solid fa-location-dot"></i></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Loc 4: Mumbai -->
+        <div class="proj-corridor-card" data-index="3" data-city="mumbai" onclick="selectCorridorCard(this, 3, 'Mumbai', 15)">
+          <div class="proj-loc-light-sweep"></div>
+          <div class="proj-loc-img-wrap">
+            <img src="assets/images/city-vegas.webp" alt="Mumbai Developments" class="proj-loc-img">
+          </div>
+          <div class="proj-loc-badge-row">
+            <span class="proj-loc-market-tag">MARKET 04</span>
+            <span class="proj-loc-index">04 / 05</span>
+          </div>
+          <div class="proj-loc-overlay">
+            <div class="proj-loc-coords"><i class="fa-solid fa-compass"></i> 19.0760° N, 72.8777° E</div>
+            <h3 class="proj-loc-city">Mumbai</h3>
+            <div class="proj-loc-count-wrap">
+              <span class="proj-loc-count"><strong class="corridor-counter" data-target="15">15</strong> Projects Active</span>
+              <span class="proj-loc-status-pill">FINANCIAL CORE</span>
+            </div>
+            <p class="proj-loc-desc">BKC Commercial & Seafront Luxury Highrises</p>
+            <div class="proj-loc-explore-row">
+              <span class="proj-loc-explore">Explore Market <i class="fa-solid fa-arrow-right-long"></i></span>
+              <span class="proj-loc-pin-badge"><i class="fa-solid fa-location-dot"></i></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Loc 5: Dubai -->
+        <div class="proj-corridor-card" data-index="4" data-city="dubai" onclick="selectCorridorCard(this, 4, 'Dubai', 8)">
+          <div class="proj-loc-light-sweep"></div>
+          <div class="proj-loc-img-wrap">
+            <img src="assets/images/prop-3.webp" alt="Dubai Developments" class="proj-loc-img">
+          </div>
+          <div class="proj-loc-badge-row">
+            <span class="proj-loc-market-tag">MARKET 05</span>
+            <span class="proj-loc-index">05 / 05</span>
+          </div>
+          <div class="proj-loc-overlay">
+            <div class="proj-loc-coords"><i class="fa-solid fa-compass"></i> 25.2048° N, 55.2708° E</div>
+            <h3 class="proj-loc-city">Dubai</h3>
+            <div class="proj-loc-count-wrap">
+              <span class="proj-loc-count"><strong class="corridor-counter" data-target="8">08</strong> Projects Active</span>
+              <span class="proj-loc-status-pill">GLOBAL ULTRA-LUX</span>
+            </div>
+            <p class="proj-loc-desc">Downtown Master Plans & Island Waterfronts</p>
+            <div class="proj-loc-explore-row">
+              <span class="proj-loc-explore">Explore Market <i class="fa-solid fa-arrow-right-long"></i></span>
+              <span class="proj-loc-pin-badge"><i class="fa-solid fa-location-dot"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 5: 🏗️ PROJECT CATEGORIES
+       ====================================================================== -->
+  <section class="proj-categories-section">
+    <div class="container">
+      <div class="lux-section-header-center">
+        <span class="lux-section-kicker">ASSET SPECTRUM</span>
+        <h2 class="lux-section-title">Project Categories</h2>
+        <p class="lux-section-sub">Purpose-built developments tailored for institutional resilience and lifestyle prestige.</p>
+      </div>
+
+      <div class="proj-cats-grid">
+        <!-- Cat 1 -->
+        <div class="proj-cat-box" onclick="window.location.href='404.html'">
+          <div class="proj-cat-media">
+            <img src="assets/images/prop-4.webp" alt="Residential Communities">
+            <div class="proj-cat-icon-badge"><i class="fa-solid fa-house-chimney-window"></i></div>
+          </div>
+          <div class="proj-cat-info">
+            <h3 class="proj-cat-title">Residential Communities</h3>
+            <p class="proj-cat-desc">Modern homes designed for everyday living, wellness, and family harmony.</p>
+            <span class="proj-cat-arrow-link">Explore Communities <i class="fa-solid fa-house-chimney"></i></span>
+          </div>
+        </div>
+
+        <!-- Cat 2 -->
+        <div class="proj-cat-box" onclick="window.location.href='404.html'">
+          <div class="proj-cat-media">
+            <img src="assets/images/prop-1.webp" alt="Luxury Developments">
+            <div class="proj-cat-icon-badge"><i class="fa-solid fa-gem"></i></div>
+          </div>
+          <div class="proj-cat-info">
+            <h3 class="proj-cat-title">Luxury Developments</h3>
+            <p class="proj-cat-desc">Premium residences with bespoke finishes and world-class resort amenities.</p>
+            <span class="proj-cat-arrow-link">Explore Luxury <i class="fa-solid fa-gem"></i></span>
+          </div>
+        </div>
+
+        <!-- Cat 3 -->
+        <div class="proj-cat-box" onclick="window.location.href='404.html'">
+          <div class="proj-cat-media">
+            <img src="assets/images/prop-2.webp" alt="Commercial Spaces">
+            <div class="proj-cat-icon-badge"><i class="fa-solid fa-briefcase"></i></div>
+          </div>
+          <div class="proj-cat-info">
+            <h3 class="proj-cat-title">Commercial Spaces</h3>
+            <p class="proj-cat-desc">Strategic business developments engineered for corporate productivity and high yields.</p>
+            <span class="proj-cat-arrow-link">Explore Commercial <i class="fa-solid fa-briefcase"></i></span>
+          </div>
+        </div>
+
+        <!-- Cat 4 -->
+        <div class="proj-cat-box" onclick="window.location.href='404.html'">
+          <div class="proj-cat-media">
+            <img src="assets/images/city-ny.webp" alt="Mixed-Use Developments">
+            <div class="proj-cat-icon-badge"><i class="fa-solid fa-city"></i></div>
+          </div>
+          <div class="proj-cat-info">
+            <h3 class="proj-cat-title">Mixed-Use Developments</h3>
+            <p class="proj-cat-desc">Integrated urban destinations seamlessly combining work, living, shopping and leisure.</p>
+            <span class="proj-cat-arrow-link">Explore Mixed-Use <i class="fa-solid fa-city"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 6: 📊 DEVELOPMENT HIGHLIGHTS (Blueprint Grid Stats)
+       ====================================================================== -->
+  <section class="proj-highlights-section">
+    <div class="proj-blueprint-pattern"></div>
+    <div class="container" style="position: relative; z-index: 2;">
+      <div class="lux-section-header-center">
+        <span class="lux-section-kicker" style="color: var(--primary);">DEVELOPMENT IMPACT</span>
+        <h2 class="lux-section-title" style="color: #FFFFFF;">Development Highlights</h2>
+        <p class="lux-section-sub" style="color: #A0A5AE;">A quantifiable track record of landmark execution across top-tier regional corridors.</p>
+      </div>
+
+      <div class="proj-highlights-grid">
+        <!-- Highlight 1 -->
+        <div class="proj-highlight-cell">
+          <div class="proj-highlight-num" data-target="35">0</div>
+          <div class="proj-highlight-suffix">+</div>
+          <div class="proj-highlight-title">Active Developments</div>
+          <p class="proj-highlight-desc">High-yield commercial and residential projects actively underway.</p>
+        </div>
+
+        <!-- Highlight 2 -->
+        <div class="proj-highlight-cell">
+          <div class="proj-highlight-num" data-target="2.5">0</div>
+          <div class="proj-highlight-suffix">M+</div>
+          <div class="proj-highlight-title">Sq. Ft. Developed</div>
+          <p class="proj-highlight-desc">LEED certified floorplate delivered across metropolitan corridors.</p>
+        </div>
+
+        <!-- Highlight 3 -->
+        <div class="proj-highlight-cell">
+          <div class="proj-highlight-num" data-target="18">0</div>
+          <div class="proj-highlight-suffix">+</div>
+          <div class="proj-highlight-title">Prime Locations</div>
+          <p class="proj-highlight-desc">Transit-connected corridors in top-tier national epicenters.</p>
+        </div>
+
+        <!-- Highlight 4 -->
+        <div class="proj-highlight-cell">
+          <div class="proj-highlight-num" data-target="12">0</div>
+          <div class="proj-highlight-suffix">K+</div>
+          <div class="proj-highlight-title">Homes Delivered</div>
+          <p class="proj-highlight-desc">Completed residences handed over to satisfied investors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 7: 🚧 UPCOMING PROJECTS (Horizontal Preview Carousel)
+       ====================================================================== -->
+  <section class="proj-upcoming-section" id="upcomingSection">
+    <div class="container">
+      <div class="proj-upcoming-header">
+        <div>
+          <span class="lux-section-kicker">FUTURE HORIZONS</span>
+          <h2 class="lux-section-title" style="margin-bottom: 6px;">Upcoming Projects</h2>
+          <p class="lux-section-sub" style="margin: 0;">An exclusive preview of next-generation architectural developments launching soon.</p>
+        </div>
+        <div class="lux-expertise-controls">
+          <button class="lux-ctrl-btn" id="upcomingPrevBtn" aria-label="Scroll left"><i class="fa-solid fa-chevron-left"></i></button>
+          <button class="lux-ctrl-btn" id="upcomingNextBtn" aria-label="Scroll right"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carousel Track -->
+    <div class="proj-carousel-wrap" id="upcomingCarouselWrap">
+      <div class="proj-carousel-inner" id="upcomingCarousel">
+        <!-- Upcoming 1 -->
+        <div class="proj-upcoming-card">
+          <div class="proj-upcoming-thumb">
+            <img src="assets/images/prop-3.webp" alt="Skyline Waterfront Residences">
+            <span class="proj-soon-badge"><i class="fa-solid fa-sparkles"></i> COMING SOON</span>
+          </div>
+          <div class="proj-upcoming-body">
+            <div class="proj-upcoming-loc"><i class="fa-solid fa-location-dot"></i> Dubai / Marina Coast</div>
+            <h3 class="proj-upcoming-name">Skyline Waterfront Residences</h3>
+            <div class="proj-upcoming-details">
+              <span><strong>Type:</strong> Luxury Marina Living</span>
+              <span><strong>Expected:</strong> Q1 2028</span>
+            </div>
+            <div class="proj-progress-bar-wrap">
+              <div class="proj-progress-bar" style="width: 25%;"></div>
+            </div>
+            <span class="proj-progress-text">Phase 1: Foundation & Excavation</span>
+          </div>
+        </div>
+
+        <!-- Upcoming 2 -->
+        <div class="proj-upcoming-card">
+          <div class="proj-upcoming-thumb">
+            <img src="assets/images/city-ny.webp" alt="Apex Cyber Heights">
+            <span class="proj-soon-badge"><i class="fa-solid fa-sparkles"></i> COMING SOON</span>
+          </div>
+          <div class="proj-upcoming-body">
+            <div class="proj-upcoming-loc"><i class="fa-solid fa-location-dot"></i> Hyderabad / Hitech City</div>
+            <h3 class="proj-upcoming-name">Apex Cyber Heights</h3>
+            <div class="proj-upcoming-details">
+              <span><strong>Type:</strong> Grade A Tech Park</span>
+              <span><strong>Expected:</strong> Q3 2027</span>
+            </div>
+            <div class="proj-progress-bar-wrap">
+              <div class="proj-progress-bar" style="width: 45%;"></div>
+            </div>
+            <span class="proj-progress-text">Phase 2: Superstructure Framing</span>
+          </div>
+        </div>
+
+        <!-- Upcoming 3 -->
+        <div class="proj-upcoming-card">
+          <div class="proj-upcoming-thumb">
+            <img src="assets/images/city-us.webp" alt="Oceanic Boulevard Living">
+            <span class="proj-soon-badge"><i class="fa-solid fa-sparkles"></i> COMING SOON</span>
+          </div>
+          <div class="proj-upcoming-body">
+            <div class="proj-upcoming-loc"><i class="fa-solid fa-location-dot"></i> Chennai / ECR Coastal Strip</div>
+            <h3 class="proj-upcoming-name">Oceanic Boulevard Living</h3>
+            <div class="proj-upcoming-details">
+              <span><strong>Type:</strong> Eco Coastal Masterplan</span>
+              <span><strong>Expected:</strong> Q4 2027</span>
+            </div>
+            <div class="proj-progress-bar-wrap">
+              <div class="proj-progress-bar" style="width: 35%;"></div>
+            </div>
+            <span class="proj-progress-text">Phase 2: Structural Pouring</span>
+          </div>
+        </div>
+
+        <!-- Upcoming 4 -->
+        <div class="proj-upcoming-card">
+          <div class="proj-upcoming-thumb">
+            <img src="assets/images/prop-6.webp" alt="North Star Industrial Hub">
+            <span class="proj-soon-badge"><i class="fa-solid fa-sparkles"></i> COMING SOON</span>
+          </div>
+          <div class="proj-upcoming-body">
+            <div class="proj-upcoming-loc"><i class="fa-solid fa-location-dot"></i> Bangalore / Airport Logistics Corridor</div>
+            <h3 class="proj-upcoming-name">North Star Smart Logistics Hub</h3>
+            <div class="proj-upcoming-details">
+              <span><strong>Type:</strong> Robotic Automated Distribution</span>
+              <span><strong>Expected:</strong> Q2 2028</span>
+            </div>
+            <div class="proj-progress-bar-wrap">
+              <div class="proj-progress-bar" style="width: 20%;"></div>
+            </div>
+            <span class="proj-progress-text">Phase 1: Civil Engineering</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 8: 🤝 FINAL CTA — BUILD YOUR FUTURE
+       ====================================================================== -->
+  <section class="proj-final-cta-section">
+    <div class="proj-final-bg-wrap">
+      <img src="assets/images/banner-loan.webp" alt="Build Your Future" class="proj-final-img">
+      <div class="proj-final-overlay"></div>
+    </div>
+
+    <div class="container proj-final-content">
+      <span class="proj-final-kicker">VISIONARY DEVELOPMENT PARTNERSHIP</span>
+      <h2 class="proj-final-headline">Discover Where the Future Is Being Built.</h2>
+      <p class="proj-final-lead">
+        Explore our developments and discover spaces designed for living, working, investing, and growing.
+      </p>
+
+      <div class="proj-final-actions">
+        <a href="404.html" class="btn btn-primary" style="padding: 16px 36px; font-size: 14px;">Explore All Projects <i class="fa-solid fa-building-circle-check"></i></a>
+        <a href="404.html" class="btn btn-white" style="padding: 16px 36px; font-size: 14px;">Talk to Our Development Team <i class="fa-solid fa-phone"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rich Footer -->
+  <footer class="site-footer" id="footerSection">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <a href="index.html">
+              <img src="assets/images/stackly.webp" alt="Stackly Real Estate">
+            </a>
+          </div>
+          <p class="footer-about-text">
+            Stackly is the premier real estate portal for finding commercial offices, luxury leisure spaces, warehouses, and prime investment properties nationwide.
+          </p>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>MMR Complex, Salem - 636 003, Tamil Nadu, India</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <a href="404.html" style="color: inherit; text-decoration: none;">+91 74880 99999</a>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-regular fa-envelope"></i>
+            <a href="404.html" style="color: inherit; text-decoration: none;">info@stackly.com</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">REAL ESTATE EXPRESS</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="properties.html">Properties</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">REAL ESTATE COURSES</h4>
+          <ul class="footer-links-list">
+            <li><a href="404.html">Get My License</a></li>
+            <li><a href="404.html">Upgrade My License</a></li>
+            <li><a href="404.html">Continuing Education</a></li>
+            <li><a href="404.html">Exam Prep Master</a></li>
+            <li><a href="404.html">Appraisal License</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">NEWSLETTER</h4>
+          <p style="color: #A0A5AE; font-size: 13px; margin-bottom: 14px;">
+            Subscribe to our weekly market briefing and exclusive investment opportunities.
+          </p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); handleNewsletterSubmit(this);" novalidate>
+            <input type="email" class="newsletter-input" placeholder="Your Email address">
+            <button type="submit" class="newsletter-btn">Subscribe</button>
+          </form>
+          <div class="footer-socials">
+            <a href="404.html" class="footer-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>Copyright &copy; 2026 Stackly. All Rights Reserved.</div>
+        <div class="footer-bottom-links">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Terms</a>
+          <a href="404.html">Safety</a>
+          <a href="404.html">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="btn-back-to-top" id="backToTopBtn" title="Back to top" aria-label="Back to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <!-- Loan Pre-Approval / Development Inquire Modal -->
+  <div class="modal-backdrop" id="loanModal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" onclick="closeAllModals()"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-header">
+        <h3 class="modal-title">Development Inquiry</h3>
+        <p style="font-size: 14px; color: #7D7D84;">Request detailed financial modeling and investor information deck</p>
+      </div>
+      <form onsubmit="event.preventDefault(); handleConsultationModalSubmit(this);" novalidate>
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" class="form-control modal-name" placeholder="John Doe">
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" class="form-control modal-email" placeholder="name@domain.com">
+        </div>
+        <div class="form-group">
+          <label>Target Investment / Project Allocation</label>
+          <select class="form-control">
+            <option>₹5 Cr - ₹10 Cr ($600k - $1.2M)</option>
+            <option>₹10 Cr - ₹25 Cr ($1.2M - $3M)</option>
+            <option>₹25 Cr+ ($3M+ Institutional)</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Request Investor Deck</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Sign In Modal -->
+  <div class="modal-backdrop" id="signinModal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" onclick="closeAllModals()"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-header">
+        <h3 class="modal-title">Sign In</h3>
+        <p style="font-size: 14px; color: #7D7D84;">Access your Stackly dashboard and saved properties</p>
+      </div>
+      <form onsubmit="event.preventDefault(); handleModalSignIn(this);" novalidate>
+        <div class="form-group">
+          <label>Username or Email Address</label>
+          <input type="text" class="form-control modal-user" placeholder="Enter username or email">
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" class="form-control modal-pwd" placeholder="Enter password">
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Sign In</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Register Modal -->
+  <div class="modal-backdrop" id="registerModal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" onclick="closeAllModals()"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-header">
+        <h3 class="modal-title">Register Account</h3>
+        <p style="font-size: 14px; color: #7D7D84;">Create a free Stackly account today</p>
+      </div>
+      <form onsubmit="event.preventDefault(); handleModalRegister(this);" novalidate>
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" class="form-control modal-reg-name" placeholder="e.g. John Doe">
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" class="form-control modal-reg-email" placeholder="name@example.com">
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Create Account</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ScrollCue & Application JavaScript -->
+  <script src="js/scrollCue.min.js"></script>
+  <script src="js/app.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Animated Numbers for Section 6
+      const statNums = document.querySelectorAll('.proj-highlight-num');
+      let statsAnimated = false;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !statsAnimated) {
+            statsAnimated = true;
+            statNums.forEach(num => {
+              const target = parseFloat(num.getAttribute('data-target'));
+              const isDecimal = target % 1 !== 0;
+              const duration = 2000;
+              const stepTime = 30;
+              const steps = duration / stepTime;
+              const increment = target / steps;
+              let current = 0;
+
+              const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                  num.textContent = isDecimal ? target.toFixed(1) : target;
+                  clearInterval(timer);
+                } else {
+                  num.textContent = isDecimal ? current.toFixed(1) : Math.floor(current);
+                }
+              }, stepTime);
+            });
+          }
+        });
+      }, { threshold: 0.3 });
+
+      const hlSection = document.querySelector('.proj-highlights-section');
+      if (hlSection) observer.observe(hlSection);
+
+      // 2. Upcoming Projects Carousel Controls
+      const carouselWrap = document.getElementById('upcomingCarouselWrap');
+      const prevBtn = document.getElementById('upcomingPrevBtn');
+      const nextBtn = document.getElementById('upcomingNextBtn');
+
+      if (carouselWrap && prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => {
+          carouselWrap.scrollBy({ left: -380, behavior: 'smooth' });
+        });
+        nextBtn.addEventListener('click', () => {
+          carouselWrap.scrollBy({ left: 380, behavior: 'smooth' });
+        });
+      }
+    });
+
+    // 3. Investment Corridor Explorer Controller
+    let currentCorridorIndex = 0;
+    const corridorData = [
+      { name: 'Chennai', count: 24 },
+      { name: 'Bangalore', count: 18 },
+      { name: 'Hyderabad', count: 12 },
+      { name: 'Mumbai', count: 15 },
+      { name: 'Dubai', count: 8 }
+    ];
+
+    window.selectCorridorCard = (card, index, cityName, count, showToastMsg = true) => {
+      window.location.href = '404.html';
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const prevBtn = document.getElementById('corridorPrevBtn');
+      const nextBtn = document.getElementById('corridorNextBtn');
+      const allCards = document.querySelectorAll('.proj-corridor-card');
+
+      allCards.forEach((card, index) => {
+        const data = corridorData[index];
+        card.addEventListener('mouseenter', () => {
+          if (!card.classList.contains('active')) {
+            selectCorridorCard(card, index, data.name, data.count, false);
+          }
+        });
+      });
+
+      if (prevBtn && nextBtn && allCards.length) {
+        prevBtn.addEventListener('click', () => {
+          currentCorridorIndex = (currentCorridorIndex - 1 + allCards.length) % allCards.length;
+          const targetCard = allCards[currentCorridorIndex];
+          const data = corridorData[currentCorridorIndex];
+          selectCorridorCard(targetCard, currentCorridorIndex, data.name, data.count, true);
+          targetCard.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        });
+
+        nextBtn.addEventListener('click', () => {
+          currentCorridorIndex = (currentCorridorIndex + 1) % allCards.length;
+          const targetCard = allCards[currentCorridorIndex];
+          const data = corridorData[currentCorridorIndex];
+          selectCorridorCard(targetCard, currentCorridorIndex, data.name, data.count, true);
+          targetCard.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        });
+      }
+    });
+  </script>
+
+  <!-- GSAP & ScrollTrigger Animation Engine -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Developments by Location Motion Engine -->
+  <script>
+    (function initCorridorMotion() {
+      function start() {
+        if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+          setTimeout(start, 50);
+          return;
+        }
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        const locationSection = document.getElementById('projLocationSection');
+        const corridorHeading = document.querySelector('.proj-corridor-heading-anim');
+        const corridorCards = gsap.utils.toArray('.proj-corridor-card');
+        const corridorImages = gsap.utils.toArray('.proj-loc-img');
+        const counters = document.querySelectorAll('.corridor-counter');
+
+        if (locationSection) {
+          // 1. Heading Coordinate Reveal
+          if (corridorHeading) {
+            gsap.fromTo(corridorHeading,
+              { opacity: 0, y: 35 },
+              {
+                opacity: 1,
+                y: 0,
+                duration: 0.9,
+                ease: "power3.out",
+                scrollTrigger: {
+                  trigger: locationSection,
+                  start: "top 82%",
+                  once: true
+                }
+              }
+            );
+          }
+
+          // 2. Sequential Cards Reveal Timeline
+          if (corridorCards.length) {
+            gsap.timeline({
+              scrollTrigger: {
+                trigger: ".proj-corridor-cards-wrap",
+                start: "top 80%",
+                once: true,
+                onEnter: () => {
+                  counters.forEach(counter => {
+                    const target = parseInt(counter.getAttribute('data-target'), 10) || 0;
+                    const obj = { val: 0 };
+                    gsap.to(obj, {
+                      val: target,
+                      duration: 1.5,
+                      ease: "power2.out",
+                      onUpdate: () => {
+                        counter.textContent = Math.floor(obj.val);
+                      }
+                    });
+                  });
+                }
+              }
+            }).fromTo(corridorCards,
+              { opacity: 0, y: 40, clipPath: "inset(0% 100% 0% 0%)" },
+              {
+                opacity: 1,
+                y: 0,
+                clipPath: "inset(0% 0% 0% 0%)",
+                duration: 0.85,
+                stagger: 0.12,
+                ease: "power3.out",
+                clearProps: "clipPath"
+              }
+            );
+          }
+
+          // 3. Scroll-Driven Parallax on Images
+          corridorImages.forEach((img) => {
+            gsap.to(img, {
+              yPercent: 8,
+              ease: "none",
+              scrollTrigger: {
+                trigger: img.closest('.proj-corridor-card'),
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1.2
+              }
+            });
+          });
+        }
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', start);
+      } else {
+        start();
+      }
+      window.addEventListener('load', () => {
+        if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+      });
+    })();
+  </script>
+</body>
+</html>

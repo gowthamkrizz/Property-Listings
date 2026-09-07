@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog & Market Insights | Stackly Real Estate</title>
+  <meta name="description" content="Stay ahead of the property market with Stackly's editorial insights, commercial real estate intelligence, architecture trends, and investment analysis.">
+  
+  <link rel="icon" type="image/webp" href="assets/images/stackly.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Overpass:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Prata&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+  <link rel="stylesheet" href="css/scrollCue.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="blog-editorial-page endora-theme">
+
+  <!-- ======================================================================
+       1. Top Header Utility Bar
+       ====================================================================== -->
+  <div class="top-header-area">
+    <div class="container-fluid">
+      <div class="top-header-inner">
+        <div class="top-header-left">
+          <ul class="top-header-social-list">
+            <li><a href="404.html" class="social-link" aria-label="Facebook"><i class="ri-facebook-fill"></i></a></li>
+            <li><a href="404.html" class="social-link" aria-label="Twitter X"><i class="ri-twitter-x-line"></i></a></li>
+            <li><a href="404.html" class="social-link" aria-label="Instagram"><i class="ri-instagram-fill"></i></a></li>
+            <li><a href="404.html" class="social-link" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a></li>
+            <li><a href="404.html" class="social-link" aria-label="YouTube"><i class="ri-youtube-line"></i></a></li>
+            <li><a href="404.html" class="social-link" aria-label="Pinterest"><i class="ri-pinterest-line"></i></a></li>
+          </ul>
+          <div class="top-header-divider"></div>
+          <div class="top-header-mail">
+            <i class="ri-mail-line"></i>
+            <a href="404.html">info@stackly.com</a>
+          </div>
+        </div>
+        <div class="top-header-right">
+          <div class="top-header-call">
+            <i class="ri-phone-line"></i>
+            <a href="404.html">+91 74880 99999</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       2. Main Header & Navigation
+       ====================================================================== -->
+  <header class="site-header endora-navbar-wrap" id="siteNavbar">
+    <div class="container-fluid header-container">
+      <div class="navbar-left-group">
+        <!-- Stackly Logo -->
+        <a href="index.html" class="endora-brand-logo">
+          <img src="assets/images/stackly.webp" alt="Stackly" class="header-logo-img">
+        </a>
+
+        <!-- Search Property Field in Navbar -->
+        <form class="navbar-search-box" id="navbarSearchForm" onsubmit="event.preventDefault(); triggerNavbarSearch(this);">
+          <input type="text" id="navSearchKeyword" name="search" placeholder="Search property" autocomplete="off">
+          <button type="submit" aria-label="Search">
+            <i class="ri-search-line"></i>
+          </button>
+        </form>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="main-navigation">
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="properties.html" class="nav-link">Properties</a>
+          </li>
+          <li class="nav-item">
+            <a href="projects.html" class="nav-link">Projects</a>
+          </li>
+          <li class="nav-item active">
+            <a href="blog.html" class="nav-link">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <div class="nav-auth-item">
+          <a href="login.html" class="nav-login-link">
+            Log In / Register
+          </a>
+        </div>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open mobile menu">
+          <i class="ri-menu-line"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="endora-brand-logo">
+        <img src="assets/images/stackly.webp" alt="Stackly" class="drawer-logo-img">
+      </a>
+      <button class="modal-close-btn" id="closeMobileDrawer"><i class="ri-close-line"></i></button>
+    </div>
+    <div class="mobile-drawer-body">
+      <ul class="mobile-menu-list">
+        <li><a href="index.html"><i class="ri-home-4-line"></i>Home</a></li>
+        <li><a href="about.html"><i class="ri-information-line"></i>About</a></li>
+        <li><a href="properties.html"><i class="ri-building-line"></i>Properties</a></li>
+        <li><a href="projects.html"><i class="ri-briefcase-line"></i>Projects</a></li>
+        <li class="active"><a href="blog.html"><i class="ri-article-line"></i>Blog</a></li>
+        <li><a href="contact.html"><i class="ri-customer-service-2-line"></i>Contact</a></li>
+      </ul>
+      <div style="margin-top: 20px;">
+        <a href="login.html" class="btn btn-primary" style="width: 100%; border-radius: 30px; background-color: #1B6F58; text-align: center; display: block; text-decoration: none; padding: 11px;">
+          <i class="ri-user-3-line"></i> Log In / Register
+        </a>
+      </div>
+      <div class="drawer-contact-card">
+        <div class="drawer-contact-item">
+          <i class="ri-mail-line"></i>
+          <a href="404.html">info@stackly.com</a>
+        </div>
+        <div class="drawer-contact-item">
+          <i class="ri-phone-line"></i>
+          <a href="404.html">+91 74880 99999</a>
+        </div>
+        <div class="drawer-social-list">
+          <a href="404.html" class="drawer-social-link" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+          <a href="404.html" class="drawer-social-link" aria-label="Twitter X"><i class="ri-twitter-x-line"></i></a>
+          <a href="404.html" class="drawer-social-link" aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
+          <a href="404.html" class="drawer-social-link" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       SECTION 1: 🏙️ BLOG HERO — LATEST INSIGHTS
+       ====================================================================== -->
+  <section class="blog-hero-section">
+    <div class="blog-hero-bg-wrap">
+      <img src="assets/images/hero-blog.jpg" alt="Real Estate Insights" class="blog-hero-img">
+      <div class="blog-hero-overlay"></div>
+    </div>
+
+    <div class="container blog-hero-content">
+      <div class="lux-breadcrumb-box">
+        <a href="index.html">HOME</a>
+        <span class="lux-bread-sep">/</span>
+        <span class="lux-bread-current">BLOG</span>
+      </div>
+
+      <span class="blog-hero-badge">INDUSTRY INSIGHTS</span>
+      <h1 class="blog-hero-title">Latest Blog & News</h1>
+      <p class="blog-hero-subtitle">
+        Curated market analysis, architectural trends, investment intelligence, and executive perspectives from the Stackly advisory desk.
+      </p>
+
+      <!-- Scroll Indicator -->
+      <a href="#featuredArticleSection" class="lux-scroll-indicator" style="margin-top: 36px;" aria-label="Scroll to featured story">
+        <span class="lux-scroll-text">FEATURED STORY</span>
+        <div class="lux-scroll-line"><span class="lux-scroll-dot"></span></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 2: ⭐ FEATURED ARTICLE (60/40 Split)
+       ====================================================================== -->
+  <section class="blog-featured-section" id="featuredArticleSection">
+    <div class="container">
+      <div class="blog-featured-card">
+        <!-- 60% Image -->
+        <div class="blog-feat-media-col">
+          <img src="assets/images/city-ny.webp" alt="Featured Real Estate Story" class="blog-feat-img">
+          <span class="blog-feat-badge"><i class="fa-solid fa-star"></i> FEATURED ARTICLE</span>
+        </div>
+
+        <!-- 40% Content -->
+        <div class="blog-feat-content-col">
+          <div class="blog-feat-meta">
+            <span class="blog-cat-pill">Investment & Architecture</span>
+            <span class="blog-meta-date"><i class="fa-regular fa-calendar"></i> March 12, 2026</span>
+            <span class="blog-meta-author"><i class="fa-regular fa-user"></i> By Meliodas Long</span>
+          </div>
+
+          <h2 class="blog-feat-title">
+            How Modern Architecture & Spatial Design Are Redefining Commercial Real Estate Yields
+          </h2>
+
+          <p class="blog-feat-desc">
+            An in-depth analysis of how floorplate efficiency, natural illumination, biophilic wellness, and smart automated HVAC systems drive tier-1 corporate tenant retention and command up to 18% capital premiums across metropolitan centers.
+          </p>
+
+          <div class="blog-feat-footer">
+            <a href="404.html" class="btn btn-primary" style="padding: 14px 30px;">
+              Read Full Story <i class="fa-solid fa-book-open"></i>
+            </a>
+            <span class="blog-read-time"><i class="fa-regular fa-clock"></i> 6 min read</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 3: 📰 BLOG ARTICLES GRID (Filterable)
+       ====================================================================== -->
+  <section class="blog-grid-section" id="blogGridSection">
+    <div class="container">
+      <!-- Filter Bar -->
+      <div class="blog-filter-bar">
+        <button class="blog-pill-btn active" data-cat="all">All Articles</button>
+        <button class="blog-pill-btn" data-cat="trends">Property Trends</button>
+        <button class="blog-pill-btn" data-cat="investment">Investment</button>
+        <button class="blog-pill-btn" data-cat="architecture">Architecture</button>
+        <button class="blog-pill-btn" data-cat="market">Market News</button>
+        <button class="blog-pill-btn" data-cat="interior">Interior Design</button>
+      </div>
+
+      <!-- Articles Grid -->
+      <div class="blog-cards-grid" id="blogCardsGrid">
+        <!-- Article 1 -->
+        <article class="blog-story-card" data-cat="trends">
+          <div class="blog-story-thumb">
+            <img src="assets/images/prop-1.webp" alt="Commercial Real Estate Trends">
+            <span class="blog-card-cat-badge">Property Trends</span>
+          </div>
+          <div class="blog-story-body">
+            <div class="blog-story-meta">
+              <span><i class="fa-regular fa-calendar"></i> March 08, 2026</span>
+              <span><i class="fa-regular fa-clock"></i> 4 min read</span>
+            </div>
+            <h3 class="blog-story-title">The Evolution of Flexible Workplace Hubs in Prime Metropolises</h3>
+            <p class="blog-story-excerpt">How hybrid work dynamics have spurred demand for high-spec, decentralized satellite offices with hospitality amenities.</p>
+            <a href="404.html" class="blog-story-link">Read More <i class="fa-solid fa-book-open"></i></a>
+          </div>
+        </article>
+
+        <!-- Article 2 -->
+        <article class="blog-story-card" data-cat="investment">
+          <div class="blog-story-thumb">
+            <img src="assets/images/city-ca.webp" alt="Investment Guide">
+            <span class="blog-card-cat-badge">Investment</span>
+          </div>
+          <div class="blog-story-body">
+            <div class="blog-story-meta">
+              <span><i class="fa-regular fa-calendar"></i> March 04, 2026</span>
+              <span><i class="fa-regular fa-clock"></i> 5 min read</span>
+            </div>
+            <h3 class="blog-story-title">Top 5 High-Yield Metropolitan Corridors for Institutional Buyers in 2026</h3>
+            <p class="blog-story-excerpt">A breakdown of cap rates, demographic growth patterns, and infrastructure catalysts across leading regional hubs.</p>
+            <a href="404.html" class="blog-story-link">Read More <i class="fa-solid fa-book-open"></i></a>
+          </div>
+        </article>
+
+        <!-- Article 3 -->
+        <article class="blog-story-card" data-cat="architecture">
+          <div class="blog-story-thumb">
+            <img src="assets/images/prop-3.webp" alt="Architecture">
+            <span class="blog-card-cat-badge">Architecture</span>
+          </div>
+          <div class="blog-story-body">
+            <div class="blog-story-meta">
+              <span><i class="fa-regular fa-calendar"></i> February 28, 2026</span>
+              <span><i class="fa-regular fa-clock"></i> 7 min read</span>
+            </div>
+            <h3 class="blog-story-title">The Rise of Net-Zero Energy & Carbon-Neutral Luxury Developments</h3>
+            <p class="blog-story-excerpt">How solar integration, smart facade shading, and thermal efficiency elevate asset valuations and tenant satisfaction.</p>
+            <a href="404.html" class="blog-story-link">Read More <i class="fa-solid fa-book-open"></i></a>
+          </div>
+        </article>
+
+        <!-- Article 4 -->
+        <article class="blog-story-card" data-cat="market">
+          <div class="blog-story-thumb">
+            <img src="assets/images/city-us.webp" alt="Market News">
+            <span class="blog-card-cat-badge">Market News</span>
+          </div>
+          <div class="blog-story-body">
+            <div class="blog-story-meta">
+              <span><i class="fa-regular fa-calendar"></i> February 22, 2026</span>
+              <span><i class="fa-regular fa-clock"></i> 4 min read</span>
+            </div>
+            <h3 class="blog-story-title">Interest Rates & Commercial Cap Rates: The 2026 Market Outlook</h3>
+            <p class="blog-story-excerpt">An objective macroeconomic perspective on debt financing, lender spreads, and liquidity trends in commercial real estate.</p>
+            <a href="404.html" class="blog-story-link">Read More <i class="fa-solid fa-book-open"></i></a>
+          </div>
+        </article>
+
+        <!-- Article 5 -->
+        <article class="blog-story-card" data-cat="interior">
+          <div class="blog-story-thumb">
+            <img src="assets/images/prop-5.webp" alt="Interior Design">
+            <span class="blog-card-cat-badge">Interior Design</span>
+          </div>
+          <div class="blog-story-body">
+            <div class="blog-story-meta">
+              <span><i class="fa-regular fa-calendar"></i> February 16, 2026</span>
+              <span><i class="fa-regular fa-clock"></i> 6 min read</span>
+            </div>
+            <h3 class="blog-story-title">Acoustics & Lighting Mastery in High-End Executive & Medical Suites</h3>
+            <p class="blog-story-excerpt">Creating tranquil, high-focus consultation spaces through architectural sound dampening and circadian lighting.</p>
+            <a href="404.html" class="blog-story-link">Read More <i class="fa-solid fa-book-open"></i></a>
+          </div>
+        </article>
+
+        <!-- Article 6 -->
+        <article class="blog-story-card" data-cat="investment">
+          <div class="blog-story-thumb">
+            <img src="assets/images/prop-4.webp" alt="Home Buying">
+            <span class="blog-card-cat-badge">Investment</span>
+          </div>
+          <div class="blog-story-body">
+            <div class="blog-story-meta">
+              <span><i class="fa-regular fa-calendar"></i> February 10, 2026</span>
+              <span><i class="fa-regular fa-clock"></i> 5 min read</span>
+            </div>
+            <h3 class="blog-story-title">The Essential Due-Diligence Checklist for Trophy Residential Estates</h3>
+            <p class="blog-story-excerpt">Protecting your capital with structural engineering surveys, title deed searches, zoning boundaries, and tax assessments.</p>
+            <a href="404.html" class="blog-story-link">Read More <i class="fa-solid fa-book-open"></i></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 4: 📈 MARKET INSIGHTS (Property Intelligence)
+       ====================================================================== -->
+  <section class="blog-intel-section">
+    <div class="container">
+      <div class="lux-section-header-center">
+        <span class="lux-section-kicker">PROPERTY INTELLIGENCE</span>
+        <h2 class="lux-section-title">Real Estate Market at a Glance</h2>
+        <p class="lux-section-sub">Quarterly performance metrics across national residential and commercial asset indices.</p>
+      </div>
+
+      <div class="blog-intel-grid">
+        <!-- Intel 1 -->
+        <div class="blog-intel-card">
+          <div class="blog-intel-header">
+            <span class="blog-intel-label">CAPITAL APPRECIATION</span>
+            <span class="blog-intel-trend up"><i class="fa-solid fa-arrow-trend-up"></i> +8.4%</span>
+          </div>
+          <h3 class="blog-intel-val">Property Prices ↑</h3>
+          <p class="blog-intel-text">Median property valuations across prime urban corridors continue upward trajectory driven by limited grade-A inventory.</p>
+          <div class="blog-intel-bar"><div class="blog-intel-progress" style="width: 84%;"></div></div>
+        </div>
+
+        <!-- Intel 2 -->
+        <div class="blog-intel-card">
+          <div class="blog-intel-header">
+            <span class="blog-intel-label">OCCUPANCY METRIC</span>
+            <span class="blog-intel-trend up"><i class="fa-solid fa-arrow-trend-up"></i> 94.2%</span>
+          </div>
+          <h3 class="blog-intel-val">Rental Demand ↑</h3>
+          <p class="blog-intel-text">Corporate relocations and high-net-worth tenant inflows sustain exceptional multi-year lease yields.</p>
+          <div class="blog-intel-bar"><div class="blog-intel-progress" style="width: 94%;"></div></div>
+        </div>
+
+        <!-- Intel 3 -->
+        <div class="blog-intel-card">
+          <div class="blog-intel-header">
+            <span class="blog-intel-label">ACTIVE INVENTORY</span>
+            <span class="blog-intel-trend neutral"><i class="fa-solid fa-building"></i> 35+ Hubs</span>
+          </div>
+          <h3 class="blog-intel-val">New Developments</h3>
+          <p class="blog-intel-text">Master-planned logistics hubs, medical plazas, and luxury residential complexes expanding into secondary tech epicenters.</p>
+          <div class="blog-intel-bar"><div class="blog-intel-progress" style="width: 70%;"></div></div>
+        </div>
+
+        <!-- Intel 4 -->
+        <div class="blog-intel-card">
+          <div class="blog-intel-header">
+            <span class="blog-intel-label">CAPITAL VOLUME</span>
+            <span class="blog-intel-trend up"><i class="fa-solid fa-chart-pie"></i> ₹1.2B+</span>
+          </div>
+          <h3 class="blog-intel-val">Investment Opportunities</h3>
+          <p class="blog-intel-text">Active private syndications and pre-launch allocations offering priority investor cap rates from 7.8% to 9.4%.</p>
+          <div class="blog-intel-bar"><div class="blog-intel-progress" style="width: 78%;"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 5: 🏡 EXPLORE TOPICS (Typography Category Cards)
+       ====================================================================== -->
+  <section class="blog-topics-section">
+    <div class="container">
+      <div class="lux-section-header-center">
+        <span class="lux-section-kicker">KNOWLEDGE DIRECTORY</span>
+        <h2 class="lux-section-title">Explore Topics</h2>
+        <p class="lux-section-sub">Browse curated editorial collections tailored to your specific investment horizon.</p>
+      </div>
+
+      <div class="blog-topics-grid">
+        <!-- Topic 1 -->
+        <div class="blog-topic-item" onclick="window.location.href='404.html'">
+          <div class="blog-topic-bg-img" style="background-image: url('assets/images/prop-1.webp');"></div>
+          <div class="blog-topic-content">
+            <span class="blog-topic-num">01</span>
+            <h3 class="blog-topic-name">BUYING</h3>
+            <p class="blog-topic-desc">Essential due diligence, purchase contracts, and valuation benchmarks.</p>
+            <span class="blog-topic-arrow"><i class="fa-solid fa-cart-shopping"></i></span>
+          </div>
+        </div>
+
+        <!-- Topic 2 -->
+        <div class="blog-topic-item" onclick="window.location.href='404.html'">
+          <div class="blog-topic-bg-img" style="background-image: url('assets/images/city-ny.webp');"></div>
+          <div class="blog-topic-content">
+            <span class="blog-topic-num">02</span>
+            <h3 class="blog-topic-name">INVESTING</h3>
+            <p class="blog-topic-desc">Cap rate modeling, lease structuring, and syndication strategies.</p>
+            <span class="blog-topic-arrow"><i class="fa-solid fa-chart-line"></i></span>
+          </div>
+        </div>
+
+        <!-- Topic 3 -->
+        <div class="blog-topic-item" onclick="window.location.href='404.html'">
+          <div class="blog-topic-bg-img" style="background-image: url('assets/images/prop-3.webp');"></div>
+          <div class="blog-topic-content">
+            <span class="blog-topic-num">03</span>
+            <h3 class="blog-topic-name">LUXURY LIVING</h3>
+            <p class="blog-topic-desc">Waterfront sanctuaries, architectural estates, and bespoke interiors.</p>
+            <span class="blog-topic-arrow"><i class="fa-solid fa-gem"></i></span>
+          </div>
+        </div>
+
+        <!-- Topic 4 -->
+        <div class="blog-topic-item" onclick="window.location.href='404.html'">
+          <div class="blog-topic-bg-img" style="background-image: url('assets/images/prop-2.webp');"></div>
+          <div class="blog-topic-content">
+            <span class="blog-topic-num">04</span>
+            <h3 class="blog-topic-name">ARCHITECTURE</h3>
+            <p class="blog-topic-desc">Sustainable design, smart building automation, and structural engineering.</p>
+            <span class="blog-topic-arrow"><i class="fa-solid fa-compass-drafting"></i></span>
+          </div>
+        </div>
+
+        <!-- Topic 5 -->
+        <div class="blog-topic-item" onclick="window.location.href='404.html'">
+          <div class="blog-topic-bg-img" style="background-image: url('assets/images/city-ca.webp');"></div>
+          <div class="blog-topic-content">
+            <span class="blog-topic-num">05</span>
+            <h3 class="blog-topic-name">MARKET TRENDS</h3>
+            <p class="blog-topic-desc">Regional demographic shifts, price index reports, and liquidity outlooks.</p>
+            <span class="blog-topic-arrow"><i class="fa-solid fa-arrow-trend-up"></i></span>
+          </div>
+        </div>
+
+        <!-- Topic 6 -->
+        <div class="blog-topic-item" onclick="window.location.href='404.html'">
+          <div class="blog-topic-bg-img" style="background-image: url('assets/images/prop-6.webp');"></div>
+          <div class="blog-topic-content">
+            <span class="blog-topic-num">06</span>
+            <h3 class="blog-topic-name">PROPERTY GUIDES</h3>
+            <p class="blog-topic-desc">Escrow compliance, taxation guidelines, and landlord responsibilities.</p>
+            <span class="blog-topic-arrow"><i class="fa-solid fa-book-bookmark"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 6: ✉️ NEWSLETTER + FINAL CTA
+       ====================================================================== -->
+  <section class="blog-newsletter-cta-section">
+    <div class="blog-newsletter-bg-wrap">
+      <img src="assets/images/banner-loan.webp" alt="Property Intelligence" class="blog-newsletter-img">
+      <div class="blog-newsletter-overlay"></div>
+    </div>
+
+    <div class="container blog-newsletter-content">
+      <span class="blog-newsletter-kicker">EXECUTIVE INTELLIGENCE BRIEFING</span>
+      <h2 class="blog-newsletter-headline">Stay Ahead of the Property Market.</h2>
+      <p class="blog-newsletter-lead">
+        Get the latest property trends, market insights, investment opportunities, and expert advice delivered directly to your inbox every Thursday.
+      </p>
+
+      <!-- Newsletter Subscribe Bar -->
+      <form class="blog-subscribe-form" onsubmit="event.preventDefault(); handleNewsletterSubmit(this);" novalidate>
+        <input type="email" class="blog-subscribe-input newsletter-input" placeholder="Enter your email address...">
+        <button type="submit" class="btn btn-primary blog-subscribe-btn">Subscribe</button>
+      </form>
+
+      <div class="blog-sub-footer-link">
+        <a href="properties.html" class="blog-explore-link">Explore Properties <i class="fa-solid fa-house-chimney"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rich Footer -->
+  <footer class="site-footer" id="footerSection">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <a href="index.html">
+              <img src="assets/images/stackly.webp" alt="Stackly Real Estate">
+            </a>
+          </div>
+          <p class="footer-about-text">
+            Stackly is the premier real estate portal for finding commercial offices, luxury leisure spaces, warehouses, and prime investment properties nationwide.
+          </p>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>MMR Complex, Salem - 636 003, Tamil Nadu, India</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <a href="404.html" style="color: inherit; text-decoration: none;">+91 74880 99999</a>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-regular fa-envelope"></i>
+            <a href="404.html" style="color: inherit; text-decoration: none;">info@stackly.com</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">REAL ESTATE EXPRESS</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="properties.html">Properties</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">REAL ESTATE COURSES</h4>
+          <ul class="footer-links-list">
+            <li><a href="404.html">Get My License</a></li>
+            <li><a href="404.html">Upgrade My License</a></li>
+            <li><a href="404.html">Continuing Education</a></li>
+            <li><a href="404.html">Exam Prep Master</a></li>
+            <li><a href="404.html">Appraisal License</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">NEWSLETTER</h4>
+          <p style="color: #A0A5AE; font-size: 13px; margin-bottom: 14px;">
+            Subscribe to our weekly market briefing and exclusive investment opportunities.
+          </p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); handleNewsletterSubmit(this);" novalidate>
+            <input type="email" class="newsletter-input" placeholder="Your Email address">
+            <button type="submit" class="newsletter-btn">Subscribe</button>
+          </form>
+          <div class="footer-socials">
+            <a href="404.html" class="footer-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>Copyright &copy; 2026 Stackly. All Rights Reserved.</div>
+        <div class="footer-bottom-links">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Terms</a>
+          <a href="404.html">Safety</a>
+          <a href="404.html">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="btn-back-to-top" id="backToTopBtn" title="Back to top" aria-label="Back to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <!-- Sign In Modal -->
+  <div class="modal-backdrop" id="signinModal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" onclick="closeAllModals()"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-header">
+        <h3 class="modal-title">Sign In</h3>
+        <p style="font-size: 14px; color: #7D7D84;">Access your Stackly dashboard and saved properties</p>
+      </div>
+      <form onsubmit="event.preventDefault(); handleModalSignIn(this);" novalidate>
+        <div class="form-group">
+          <label>Username or Email Address</label>
+          <input type="text" class="form-control modal-user" placeholder="Enter username or email">
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" class="form-control modal-pwd" placeholder="Enter password">
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Sign In</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Register Modal -->
+  <div class="modal-backdrop" id="registerModal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" onclick="closeAllModals()"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-header">
+        <h3 class="modal-title">Register Account</h3>
+        <p style="font-size: 14px; color: #7D7D84;">Create a free Stackly account today</p>
+      </div>
+      <form onsubmit="event.preventDefault(); handleModalRegister(this);" novalidate>
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" class="form-control modal-reg-name" placeholder="e.g. John Doe">
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" class="form-control modal-reg-email" placeholder="name@example.com">
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Create Account</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ScrollCue & Application JavaScript -->
+  <script src="js/scrollCue.min.js"></script>
+  <script src="js/app.js"></script>
+
+  <!-- GSAP & ScrollTrigger Animation Engine -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Blog Page Animation & Category Filter Engine -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Category Filter Engine
+      const filterPills = document.querySelectorAll('.blog-pill-btn');
+      const cards = document.querySelectorAll('.blog-story-card');
+
+      filterPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          filterPills.forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+
+          const cat = pill.getAttribute('data-cat');
+
+          cards.forEach((card, i) => {
+            const cardCat = card.getAttribute('data-cat');
+            if (cat === 'all' || cardCat === cat) {
+              card.style.display = 'flex';
+              if (typeof gsap !== 'undefined') {
+                gsap.fromTo(card,
+                  { opacity: 0, y: 20, scale: 0.96 },
+                  { opacity: 1, y: 0, scale: 1, duration: 0.45, delay: i * 0.05, ease: "power2.out" }
+                );
+              } else {
+                card.style.opacity = '1';
+                card.style.transform = 'none';
+              }
+            } else {
+              if (typeof gsap !== 'undefined') {
+                gsap.to(card, {
+                  opacity: 0,
+                  y: 10,
+                  scale: 0.96,
+                  duration: 0.25,
+                  ease: "power2.in",
+                  onComplete: () => {
+                    card.style.display = 'none';
+                  }
+                });
+              } else {
+                card.style.display = 'none';
+              }
+            }
+          });
+        });
+      });
+
+      // 2. GSAP Scroll Animations
+      if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Featured Story Entrance
+        const featCard = document.querySelector('.blog-featured-card');
+        if (featCard) {
+          gsap.fromTo(featCard,
+            { opacity: 0, y: 40 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.9,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: featCard,
+                start: "top 85%",
+                once: true
+              }
+            }
+          );
+        }
+
+        // Articles Grid Entrance
+        const gridCards = gsap.utils.toArray('.blog-story-card');
+        if (gridCards.length) {
+          gsap.fromTo(gridCards,
+            { opacity: 0, y: 35 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.7,
+              stagger: 0.1,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: "#blogCardsGrid",
+                start: "top 85%",
+                once: true
+              }
+            }
+          );
+        }
+
+        // Market Intelligence Cards Entrance
+        const intelCards = gsap.utils.toArray('.blog-intel-card');
+        if (intelCards.length) {
+          gsap.fromTo(intelCards,
+            { opacity: 0, y: 30 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.6,
+              stagger: 0.1,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: ".blog-intel-grid",
+                start: "top 85%",
+                once: true
+              }
+            }
+          );
+        }
+      }
+    });
+  </script>
+</body>
+</html>
