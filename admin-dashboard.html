@@ -663,26 +663,26 @@
           </div>
 
           <div class="dash-card" style="max-width: 800px;">
-            <form onsubmit="event.preventDefault(); window.location.href='404.html';">
+            <form id="adminSettingsForm" onsubmit="handleSaveAdminSettings(event)">
               <div class="dash-form-row">
                 <div class="dash-form-group">
-                  <label class="dash-form-label">Platform Name</label>
-                  <input type="text" class="dash-form-control" value="Stackly Real Estate Commercial Platform" required>
+                  <label class="dash-form-label">Platform Name *</label>
+                  <input type="text" class="dash-form-control" id="adminPlatformName" value="Stackly Real Estate Commercial Platform" required placeholder="Enter platform name">
                 </div>
                 <div class="dash-form-group">
-                  <label class="dash-form-label">Support Email</label>
-                  <input type="email" class="dash-form-control" value="info@stackly.com" required>
+                  <label class="dash-form-label">Support Email *</label>
+                  <input type="email" class="dash-form-control" id="adminSupportEmail" value="info@stackly.com" required placeholder="Enter support email">
                 </div>
               </div>
 
               <div class="dash-form-row">
                 <div class="dash-form-group">
-                  <label class="dash-form-label">Inquiry Phone Line</label>
-                  <input type="tel" class="dash-form-control" value="+91 74880 99999">
+                  <label class="dash-form-label">Inquiry Phone Line *</label>
+                  <input type="tel" class="dash-form-control" id="adminPhoneLine" value="+91 74880 99999" required minlength="10" placeholder="+91 74880 99999 or (555) 234-5678" oninput="this.setCustomValidity('')">
                 </div>
                 <div class="dash-form-group">
-                  <label class="dash-form-label">Currency Symbol</label>
-                  <select class="dash-form-control">
+                  <label class="dash-form-label">Currency Symbol *</label>
+                  <select class="dash-form-control" id="adminCurrency" required>
                     <option value="USD" selected>USD ($)</option>
                     <option value="EUR">EUR (€)</option>
                     <option value="INR">INR (₹)</option>
@@ -690,7 +690,7 @@
                 </div>
               </div>
 
-              <button type="submit" class="btn btn-primary" style="padding: 12px 28px;" onclick="window.location.href='404.html'">
+              <button type="submit" class="btn btn-primary" style="padding: 12px 28px;">
                 <i class="ri-save-line"></i> Save Platform Configurations
               </button>
             </form>
@@ -1147,6 +1147,51 @@
 
     function handleSaveAdminSettings(e) {
       if (e) e.preventDefault();
+      const form = e ? e.target : document.getElementById('adminSettingsForm');
+      const phoneInput = document.getElementById('adminPhoneLine');
+      const emailInput = document.getElementById('adminSupportEmail');
+
+      const name = document.getElementById('adminPlatformName').value.trim();
+      const email = emailInput ? emailInput.value.trim() : '';
+      const phone = phoneInput ? phoneInput.value.trim() : '';
+      const currency = document.getElementById('adminCurrency').value.trim();
+
+      if (!name || !email || !phone || !currency) {
+        showAdminToast('Please enter all required details before saving.', true);
+        return;
+      }
+
+      // Strict Phone Number Validation (At least 10 digits)
+      const digitsOnly = phone.replace(/\D/g, '');
+      if (digitsOnly.length < 10 || digitsOnly.length > 15) {
+        if (phoneInput) {
+          phoneInput.setCustomValidity('Please enter a valid phone number with at least 10 digits (e.g. +91 74880 99999 or (555) 234-5678).');
+          phoneInput.reportValidity();
+        }
+        showAdminToast('Invalid phone number. Must contain at least 10 digits.', true);
+        return;
+      } else if (phoneInput) {
+        phoneInput.setCustomValidity('');
+      }
+
+      // Strict Email Validation
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        if (emailInput) {
+          emailInput.setCustomValidity('Please enter a valid email address (e.g. info@stackly.com).');
+          emailInput.reportValidity();
+        }
+        showAdminToast('Please enter a valid email address.', true);
+        return;
+      } else if (emailInput) {
+        emailInput.setCustomValidity('');
+      }
+
+      if (form && !form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      // Redirect to 404 error page only after valid details are verified
       window.location.href = '404.html';
     }
 

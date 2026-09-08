@@ -912,7 +912,7 @@ body.menu-open {
 .real-estate-banner-area {
   position: relative;
   background-color: #528A86;
-  background-image: url('../assets/images/banner-bg.jpg');
+  background-image: url('../assets/images/banner-bg.webp');
   background-position: left center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -3812,7 +3812,7 @@ body.menu-open {
 
 /* 3. Our Philosophy */
 .lux-philosophy-section {
-  padding: 100px 0;
+  padding: 60px 0 45px;
   background-color: var(--lux-bg-light);
   border-top: 1px solid var(--lux-border);
   border-bottom: 1px solid var(--lux-border);
@@ -3898,7 +3898,7 @@ body.menu-open {
 
 /* 4. What Sets Us Apart */
 .lux-apart-section {
-  padding: 100px 0;
+  padding: 50px 0 70px;
   background-color: #FFFFFF;
 }
 
@@ -8179,8 +8179,25 @@ body.menu-open {
 /* Responsive adjustments for Blog Page */
 @media (max-width: 1024px) {
   .blog-hero-title { font-size: 42px; }
-  .blog-featured-card { grid-template-columns: 1fr; }
-  .blog-feat-media-col { min-height: 320px; }
+  .blog-featured-section .blog-featured-card,
+  .blog-featured-card {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .blog-feat-media-col {
+    min-height: 280px;
+    height: 280px;
+    width: 100%;
+    flex: none;
+  }
+  .blog-feat-content-col {
+    padding: 30px 24px !important;
+    width: 100%;
+    box-sizing: border-box;
+  }
   .blog-cards-grid,
   .blog-grid-3col { grid-template-columns: repeat(2, 1fr); gap: 24px; }
   .blog-intel-grid { grid-template-columns: repeat(2, 1fr); }
@@ -8189,7 +8206,52 @@ body.menu-open {
 
 @media (max-width: 768px) {
   .blog-hero-title { font-size: 32px; }
-  .blog-feat-title { font-size: 22px; }
+  .blog-featured-section {
+    padding: 50px 0 60px;
+  }
+  .blog-featured-section .blog-featured-card,
+  .blog-featured-card {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .blog-feat-media-col {
+    min-height: 220px;
+    height: 220px;
+    width: 100%;
+    flex: none;
+  }
+  .blog-feat-content-col {
+    padding: 24px 18px !important;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .blog-feat-meta {
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .blog-feat-title {
+    font-size: 20px !important;
+    line-height: 1.35 !important;
+    margin-bottom: 12px !important;
+  }
+  .blog-feat-desc {
+    font-size: 13.5px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 20px !important;
+  }
+  .blog-feat-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .blog-feat-footer .btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
   .blog-cards-grid,
   .blog-grid-3col { grid-template-columns: 1fr; gap: 20px; }
   .blog-filter-bar {
@@ -8208,6 +8270,19 @@ body.menu-open {
   .blog-subscribe-form { flex-direction: column; background: transparent; border: none; padding: 0; gap: 10px; }
   .blog-subscribe-input { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 6px; }
   .blog-newsletter-headline { font-size: 30px; }
+}
+
+@media (max-width: 480px) {
+  .blog-feat-media-col {
+    min-height: 180px;
+    height: 180px;
+  }
+  .blog-feat-content-col {
+    padding: 18px 14px !important;
+  }
+  .blog-feat-title {
+    font-size: 18px !important;
+  }
 }
 
 

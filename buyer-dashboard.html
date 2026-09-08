@@ -73,12 +73,7 @@
           <span class="dash-nav-badge">3</span>
         </a>
 
-        <div class="dash-nav-group-title">Finance & Tools</div>
-
-        <a class="dash-nav-item" onclick="switchTab('calculator', this)">
-          <i class="ri-calculator-line"></i>
-          <span>Mortgage Estimator</span>
-        </a>
+        <div class="dash-nav-group-title">Account & Preferences</div>
 
         <a class="dash-nav-item" onclick="switchTab('profile', this)">
           <i class="ri-user-settings-line"></i>
@@ -636,91 +631,7 @@
           </div>
         </section>
 
-        <!-- TAB 5: MORTGAGE CALCULATOR -->
-        <section id="tab-calculator" class="dash-tab-panel">
-          <div class="dash-page-header">
-            <div>
-              <h1 class="dash-page-title">Mortgage & Financing Estimator</h1>
-              <p class="dash-page-subtitle">Estimate monthly repayments, interest breakdown, and amortization plans.</p>
-            </div>
-          </div>
-
-          <div class="dash-grid-1-1">
-            
-            <div class="dash-card">
-              <h3 class="dash-card-title" style="margin-bottom: 20px;"><i class="ri-calculator-line" style="color: #1B6F58;"></i> Loan Parameters</h3>
-              
-              <div class="dash-form-group">
-                <label class="dash-form-label">Property Purchase Price ($)</label>
-                <input type="number" id="calcPrice" class="dash-form-control" value="1500000" step="10000" oninput="calculateMortgage()">
-              </div>
-
-              <div class="dash-form-row">
-                <div class="dash-form-group">
-                  <label class="dash-form-label">Down Payment ($)</label>
-                  <input type="number" id="calcDown" class="dash-form-control" value="300000" step="5000" oninput="calculateMortgage()">
-                </div>
-                <div class="dash-form-group">
-                  <label class="dash-form-label">Interest Rate (%)</label>
-                  <input type="number" id="calcRate" class="dash-form-control" value="6.5" step="0.1" oninput="calculateMortgage()">
-                </div>
-              </div>
-
-              <div class="dash-form-group">
-                <label class="dash-form-label">Loan Term (Years)</label>
-                <select id="calcTerm" class="dash-form-control" onchange="calculateMortgage()">
-                  <option value="30" selected>30 Years Fixed</option>
-                  <option value="20">20 Years Fixed</option>
-                  <option value="15">15 Years Fixed</option>
-                  <option value="10">10 Years Fixed</option>
-                </select>
-              </div>
-
-              <div class="dash-form-group">
-                <label class="dash-form-label">Annual Property Tax Estimate ($)</label>
-                <input type="number" id="calcTax" class="dash-form-control" value="12000" step="500" oninput="calculateMortgage()">
-              </div>
-
-              <button class="btn btn-primary" style="width: 100%;" onclick="window.location.href='404.html'">Recalculate Payments</button>
-            </div>
-
-            <div class="dash-card" style="display: flex; flex-direction: column; justify-content: space-between;">
-              <div>
-                <h3 class="dash-card-title" style="margin-bottom: 20px;"><i class="ri-pie-chart-line" style="color: #EE703D;"></i> Monthly Payment Breakdown</h3>
-                
-                <div style="background: #F4F8F6; padding: 24px; border-radius: 14px; text-align: center; margin-bottom: 24px; border: 1px solid #D5E5DF;">
-                  <div style="font-size: 13px; text-transform: uppercase; color: #718096; font-weight: 700; letter-spacing: 0.8px;">Estimated Monthly Total</div>
-                  <div id="calcMonthlyTotal" style="font-family: var(--font-heading); font-size: 42px; font-weight: 700; color: #1B6F58; margin: 8px 0;">$8,585</div>
-                  <div style="font-size: 12px; color: #718096;">Includes Principal, Interest & Property Tax</div>
-                </div>
-
-                <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14px;">
-                  <div style="display: flex; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid #EDF2F0;">
-                    <span style="color: #718096;"><i class="ri-checkbox-blank-circle-fill" style="color: #1B6F58; font-size: 10px;"></i> Principal & Interest:</span>
-                    <strong id="calcPrincipalInterest">$7,585 /mo</strong>
-                  </div>
-                  <div style="display: flex; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid #EDF2F0;">
-                    <span style="color: #718096;"><i class="ri-checkbox-blank-circle-fill" style="color: #EE703D; font-size: 10px;"></i> Property Tax:</span>
-                    <strong id="calcTaxMonthly">$1,000 /mo</strong>
-                  </div>
-                  <div style="display: flex; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid #EDF2F0;">
-                    <span style="color: #718096;"><i class="ri-checkbox-blank-circle-fill" style="color: #3B82F6; font-size: 10px;"></i> Total Loan Amount:</span>
-                    <strong id="calcTotalLoan">$1,200,000</strong>
-                  </div>
-                </div>
-              </div>
-
-              <div style="margin-top: 24px;">
-                <button class="btn btn-outline" style="width: 100%; font-size: 13px;" onclick="window.location.href='404.html'">
-                  <i class="ri-file-shield-line"></i> Apply for Pre-Approval
-                </button>
-              </div>
-            </div>
-
-          </div>
-        </section>
-
-        <!-- TAB 6: BUYER PROFILE -->
+        <!-- TAB 5: BUYER PROFILE -->
         <section id="tab-profile" class="dash-tab-panel">
           <div class="dash-page-header">
             <div>
@@ -730,37 +641,37 @@
           </div>
 
           <div class="dash-card" style="max-width: 800px;">
-            <form onsubmit="event.preventDefault(); window.location.href='404.html';">
+            <form id="buyerCriteriaForm" onsubmit="handleBuyerCriteriaSubmit(event)">
               <div class="dash-form-row">
                 <div class="dash-form-group">
-                  <label class="dash-form-label">Full Name</label>
-                  <input type="text" class="dash-form-control" id="buyerFullName" value="John Doe" required>
+                  <label class="dash-form-label">Full Name *</label>
+                  <input type="text" class="dash-form-control" id="buyerFullName" value="John Doe" required placeholder="Enter full name">
                 </div>
                 <div class="dash-form-group">
-                  <label class="dash-form-label">Email Address</label>
-                  <input type="email" class="dash-form-control" id="buyerEmail" value="john.doe@stacklyinvest.com" required>
+                  <label class="dash-form-label">Email Address *</label>
+                  <input type="email" class="dash-form-control" id="buyerEmail" value="john.doe@stacklyinvest.com" required placeholder="Enter email address">
                 </div>
               </div>
 
               <div class="dash-form-row">
                 <div class="dash-form-group">
-                  <label class="dash-form-label">Phone Number</label>
-                  <input type="tel" class="dash-form-control" id="buyerPhone" value="+1 (555) 234-5678">
+                  <label class="dash-form-label">Phone Number *</label>
+                  <input type="tel" class="dash-form-control" id="buyerPhone" value="+1 (555) 234-5678" required minlength="10" placeholder="+1 (555) 234-5678 or +91 74880 99999" oninput="this.setCustomValidity('')">
                 </div>
                 <div class="dash-form-group">
-                  <label class="dash-form-label">Primary Target City</label>
-                  <input type="text" class="dash-form-control" id="buyerCity" value="Miami, New York, Palm Beach">
+                  <label class="dash-form-label">Primary Target City *</label>
+                  <input type="text" class="dash-form-control" id="buyerCity" value="Miami, New York, Palm Beach" required placeholder="Enter target cities">
                 </div>
               </div>
 
               <div class="dash-form-row">
                 <div class="dash-form-group">
-                  <label class="dash-form-label">Maximum Budget ($)</label>
-                  <input type="number" class="dash-form-control" id="buyerMaxBudget" value="3500000" step="50000">
+                  <label class="dash-form-label">Maximum Budget ($) *</label>
+                  <input type="text" class="dash-form-control" id="buyerMaxBudget" value="3,500,000" required placeholder="e.g. $3,500,000 or 3500000">
                 </div>
                 <div class="dash-form-group">
-                  <label class="dash-form-label">Preferred Property Type</label>
-                  <select class="dash-form-control" id="buyerPrefType">
+                  <label class="dash-form-label">Preferred Property Type *</label>
+                  <select class="dash-form-control" id="buyerPrefType" required>
                     <option value="Luxury Villa" selected>Luxury Villa & Estates</option>
                     <option value="Commercial Office">Commercial Corporate Office</option>
                     <option value="Penthouse">Skyline High-Rise Penthouse</option>
@@ -770,11 +681,11 @@
               </div>
 
               <div class="dash-form-group">
-                <label class="dash-form-label">Investment Objectives / Notes</label>
-                <textarea class="dash-form-control">Looking for waterfront villas with infinity pool or class-A commercial floor space in prime downtown corridors.</textarea>
+                <label class="dash-form-label">Investment Objectives / Notes *</label>
+                <textarea class="dash-form-control" id="buyerNotes" required placeholder="Enter your investment goals or preferences...">Looking for waterfront villas with infinity pool or class-A commercial floor space in prime downtown corridors.</textarea>
               </div>
 
-              <button type="submit" class="btn btn-primary" style="padding: 12px 28px;" onclick="window.location.href='404.html'">
+              <button type="submit" class="btn btn-primary" style="padding: 12px 28px;">
                 <i class="ri-save-line"></i> Save Acquisition Preferences
               </button>
             </form>
@@ -1053,33 +964,6 @@
       showToast(`Inquiry regarding "${prop}" sent to our advisory team.`);
     }
 
-    function calculateMortgage() {
-      const price = parseFloat(document.getElementById('calcPrice').value) || 0;
-      const down = parseFloat(document.getElementById('calcDown').value) || 0;
-      const rate = parseFloat(document.getElementById('calcRate').value) || 0;
-      const termYears = parseInt(document.getElementById('calcTerm').value) || 30;
-      const annualTax = parseFloat(document.getElementById('calcTax').value) || 0;
-
-      const principal = Math.max(0, price - down);
-      const monthlyRate = (rate / 100) / 12;
-      const numberOfPayments = termYears * 12;
-
-      let monthlyPI = 0;
-      if (monthlyRate > 0) {
-        monthlyPI = principal * (monthlyRate * Math.pow(1 + monthlyRate, numberOfPayments)) / (Math.pow(1 + monthlyRate, numberOfPayments) - 1);
-      } else {
-        monthlyPI = principal / numberOfPayments;
-      }
-
-      const monthlyTax = annualTax / 12;
-      const totalMonthly = monthlyPI + monthlyTax;
-
-      document.getElementById('calcMonthlyTotal').innerText = '$' + Math.round(totalMonthly).toLocaleString();
-      document.getElementById('calcPrincipalInterest').innerText = '$' + Math.round(monthlyPI).toLocaleString() + ' /mo';
-      document.getElementById('calcTaxMonthly').innerText = '$' + Math.round(monthlyTax).toLocaleString() + ' /mo';
-      document.getElementById('calcTotalLoan').innerText = '$' + Math.round(principal).toLocaleString();
-    }
-
     function loadUserSession() {
       const sessionRaw = localStorage.getItem('stackly_user_session');
       let name = 'gow';
@@ -1142,19 +1026,67 @@
       }
     });
 
-    function handleSaveProfile(e) {
+    function handleBuyerCriteriaSubmit(e) {
       e.preventDefault();
+      const form = e.target;
+      const phoneInput = document.getElementById('buyerPhone');
+      const emailInput = document.getElementById('buyerEmail');
+
       const name = document.getElementById('buyerFullName').value.trim();
-      const email = document.getElementById('buyerEmail').value.trim();
-      
+      const email = emailInput ? emailInput.value.trim() : '';
+      const phone = phoneInput ? phoneInput.value.trim() : '';
+      const city = document.getElementById('buyerCity').value.trim();
+      const budget = document.getElementById('buyerMaxBudget').value.trim();
+      const notes = document.getElementById('buyerNotes').value.trim();
+
+      if (!name || !email || !phone || !city || !budget || !notes) {
+        showToast('Please enter all required details before saving.', true);
+        return;
+      }
+
+      // Strict Phone Number Validation (At least 10 digits)
+      const digitsOnly = phone.replace(/\D/g, '');
+      if (digitsOnly.length < 10 || digitsOnly.length > 15) {
+        if (phoneInput) {
+          phoneInput.setCustomValidity('Please enter a valid phone number with at least 10 digits (e.g. +1 (555) 234-5678 or +91 74880 99999).');
+          phoneInput.reportValidity();
+        }
+        showToast('Invalid phone number. Must contain at least 10 digits.', true);
+        return;
+      } else if (phoneInput) {
+        phoneInput.setCustomValidity('');
+      }
+
+      // Strict Email Validation
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        if (emailInput) {
+          emailInput.setCustomValidity('Please enter a valid email address.');
+          emailInput.reportValidity();
+        }
+        showToast('Please enter a valid email address.', true);
+        return;
+      } else if (emailInput) {
+        emailInput.setCustomValidity('');
+      }
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      // Update session storage
       const sessionRaw = localStorage.getItem('stackly_user_session');
       let session = sessionRaw ? JSON.parse(sessionRaw) : {};
       session.name = name;
       session.email = email;
       localStorage.setItem('stackly_user_session', JSON.stringify(session));
 
-      loadUserSession();
-      showToast('Buyer profile & investment criteria updated!');
+      // Redirect to 404 page only after all details have been filled and validated
+      window.location.href = '404.html';
+    }
+
+    function handleSaveProfile(e) {
+      handleBuyerCriteriaSubmit(e);
     }
 
     function toggleNotifications() {
