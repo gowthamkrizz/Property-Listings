@@ -293,8 +293,8 @@
 
               <!-- Phone Number -->
               <div class="contact-input-group">
-                <label for="contactPhone">Phone Number</label>
-                <input type="tel" id="contactPhone" class="contact-form-control" placeholder="e.g. 9876543210" inputmode="numeric" pattern="[0-9]*" oninput="this.value = this.value.replace(/\D/g, '')">
+                <label for="contactPhone">Phone Number *</label>
+                <input type="tel" id="contactPhone" class="contact-form-control" placeholder="e.g. 9876543210" maxlength="10" inputmode="numeric" pattern="[0-9]{10}" oninput="this.value = this.value.replace(/\D/g, '').slice(0, 10)">
                 <div class="form-field-error" id="errContactPhone" style="display: none;"></div>
               </div>
 
@@ -692,9 +692,13 @@
         clearFieldError('contactEmail', 'errContactEmail');
       }
 
-      // 3. Phone Number (Optional, but if entered must be valid numbers)
-      if (phone && !/^\d+$/.test(phone)) {
-        setFieldError('contactPhone', 'errContactPhone', 'Phone number must contain numbers only.');
+      // 3. Phone Number (Strict 10-digit validation)
+      const phoneDigits = phone.replace(/\D/g, '');
+      if (!phone) {
+        setFieldError('contactPhone', 'errContactPhone', 'Please enter your 10-digit mobile number.');
+        isValid = false;
+      } else if (!/^\d{10}$/.test(phoneDigits)) {
+        setFieldError('contactPhone', 'errContactPhone', 'Please enter a valid 10-digit mobile number.');
         isValid = false;
       } else {
         clearFieldError('contactPhone', 'errContactPhone');
