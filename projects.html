@@ -372,8 +372,8 @@
         </div>
 
         <div class="proj-corridor-nav-btns">
-          <button class="proj-corridor-nav-btn" id="corridorPrevBtn" aria-label="Previous Market"><i class="fa-solid fa-arrow-left"></i></button>
-          <button class="proj-corridor-nav-btn" id="corridorNextBtn" aria-label="Next Market"><i class="fa-solid fa-arrow-right"></i></button>
+          <button class="proj-corridor-nav-btn" id="corridorPrevBtn" onclick="changeCorridor(-1)" aria-label="Previous Market"><i class="fa-solid fa-arrow-left"></i></button>
+          <button class="proj-corridor-nav-btn" id="corridorNextBtn" onclick="changeCorridor(1)" aria-label="Next Market"><i class="fa-solid fa-arrow-right"></i></button>
         </div>
       </div>
 
@@ -964,51 +964,86 @@
     });
 
     // 3. Investment Corridor Explorer Controller
-    let currentCorridorIndex = 0;
-    const corridorData = [
-      { name: 'Chennai', count: 24 },
-      { name: 'Bangalore', count: 18 },
-      { name: 'Hyderabad', count: 12 },
-      { name: 'Mumbai', count: 15 },
-      { name: 'Dubai', count: 8 }
-    ];
+    function getActiveCorridorIndex() {
+      const allCards = document.querySelectorAll('.proj-corridor-card');
+      for (let i = 0; i < allCards.length; i++) {
+        if (allCards[i].classList.contains('active')) return i;
+      }
+      return 0;
+    }
 
-    window.selectCorridorCard = (card, index, cityName, count, showToastMsg = true) => {
+    function activateCorridorCard(card, index) {
+      const allCards = document.querySelectorAll('.proj-corridor-card');
+      const progressBar = document.getElementById('corridorProgressBar');
+      const wrap = document.getElementById('corridorCardsWrap');
+      if (!allCards.length) return;
+
+      allCards.forEach(c => c.classList.remove('active'));
+      if (card) {
+        card.classList.add('active');
+      }
+      if (progressBar) {
+        progressBar.style.width = `${((index + 1) / allCards.length) * 100}%`;
+      }
+      if (wrap && wrap.scrollWidth > wrap.clientWidth && card) {
+        wrap.scrollTo({
+          left: card.offsetLeft - wrap.offsetLeft - 16,
+          behavior: 'smooth'
+        });
+      }
+    }
+
+    window.changeCorridor = (direction) => {
+      const allCards = document.querySelectorAll('.proj-corridor-card');
+      if (!allCards.length) return;
+      const currentIndex = getActiveCorridorIndex();
+      const nextIndex = (currentIndex + direction + allCards.length) % allCards.length;
+      activateCorridorCard(allCards[nextIndex], nextIndex);
+    };
+
+    window.selectCorridorCard = (card, index, cityName, count) => {
+      // Redirect to 404 error page only when a corridor card/box is clicked
       window.location.href = '404.html';
     };
 
-    document.addEventListener('DOMContentLoaded', () => {
+    function initCorridorEvents() {
       const prevBtn = document.getElementById('corridorPrevBtn');
       const nextBtn = document.getElementById('corridorNextBtn');
       const allCards = document.querySelectorAll('.proj-corridor-card');
 
       allCards.forEach((card, index) => {
-        const data = corridorData[index];
         card.addEventListener('mouseenter', () => {
           if (!card.classList.contains('active')) {
-            selectCorridorCard(card, index, data.name, data.count, false);
+            activateCorridorCard(card, index);
           }
         });
       });
 
-      if (prevBtn && nextBtn && allCards.length) {
-        prevBtn.addEventListener('click', () => {
-          currentCorridorIndex = (currentCorridorIndex - 1 + allCards.length) % allCards.length;
-          const targetCard = allCards[currentCorridorIndex];
-          const data = corridorData[currentCorridorIndex];
-          selectCorridorCard(targetCard, currentCorridorIndex, data.name, data.count, true);
-          targetCard.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-        });
-
-        nextBtn.addEventListener('click', () => {
-          currentCorridorIndex = (currentCorridorIndex + 1) % allCards.length;
-          const targetCard = allCards[currentCorridorIndex];
-          const data = corridorData[currentCorridorIndex];
-          selectCorridorCard(targetCard, currentCorridorIndex, data.name, data.count, true);
-          targetCard.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-        });
+      if (prevBtn) {
+        prevBtn.onclick = (e) => {
+          if (e) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+          window.changeCorridor(-1);
+        };
       }
-    });
+      if (nextBtn) {
+        nextBtn.onclick = (e) => {
+          if (e) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+          window.changeCorridor(1);
+        };
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initCorridorEvents);
+    } else {
+      initCorridorEvents();
+    }
   </script>
 
   <!-- GSAP & ScrollTrigger Animation Engine -->

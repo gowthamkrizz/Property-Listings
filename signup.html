@@ -127,7 +127,7 @@
             <label for="regPhone">PHONE NUMBER (OPTIONAL)</label>
             <div class="auth-input-wrapper">
               <i class="ri-phone-line auth-input-icon"></i>
-              <input type="tel" id="regPhone" class="auth-form-control" placeholder="+1 (555) 000-0000" autocomplete="tel">
+              <input type="tel" id="regPhone" class="auth-form-control" placeholder="e.g. 9876543210" inputmode="numeric" pattern="[0-9]*" oninput="this.value = this.value.replace(/\D/g, '')" autocomplete="tel">
             </div>
           </div>
 

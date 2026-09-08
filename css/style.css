@@ -88,6 +88,24 @@ button, input, select, textarea {
   outline: none;
 }
 
+/* Hide native browser password reveal / clear icons (Edge, IE, Safari) */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  pointer-events: none !important;
+}
+
+input::-webkit-credentials-auto-fill-button,
+input::-webkit-contacts-auto-fill-button {
+  visibility: hidden;
+  display: none !important;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+}
+
 button {
   cursor: pointer;
   background: none;
@@ -9225,10 +9243,18 @@ body.menu-open {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 2;
 }
 
 .auth-pwd-toggle:hover {
   color: #020000;
+}
+
+.auth-form-control::-ms-reveal,
+.auth-form-control::-ms-clear {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
 }
 
 /* Custom JavaScript Validation Styles */
@@ -9439,7 +9465,6 @@ body.menu-open {
   display: flex;
   flex-direction: column;
   color: #2D3748;
-  overflow-x: hidden;
   max-width: 100vw;
 }
 
@@ -9447,9 +9472,7 @@ body.menu-open {
   display: flex;
   min-height: 100vh;
   width: 100%;
-  max-width: 100vw;
   position: relative;
-  overflow-x: hidden;
 }
 
 /* Sidebar */
@@ -9462,8 +9485,10 @@ body.menu-open {
   flex-shrink: 0;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   z-index: 1050;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  bottom: 0;
   height: 100vh;
   overflow-y: auto;
   border-right: 1px solid rgba(255, 255, 255, 0.08);
@@ -9685,6 +9710,8 @@ body.menu-open {
   min-width: 0;
   background-color: #F7FAF9;
   min-height: 100vh;
+  margin-left: 280px;
+  width: calc(100% - 280px);
 }
 
 /* Topbar */
@@ -10719,6 +10746,11 @@ textarea.dash-form-control {
 }
 
 @media (max-width: 991px) {
+  .dash-main {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+
   .dash-sidebar {
     position: fixed;
     top: 0;

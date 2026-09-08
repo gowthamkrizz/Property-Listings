@@ -294,7 +294,7 @@
               <!-- Phone Number -->
               <div class="contact-input-group">
                 <label for="contactPhone">Phone Number</label>
-                <input type="tel" id="contactPhone" class="contact-form-control" placeholder="+1 (555) 000-0000">
+                <input type="tel" id="contactPhone" class="contact-form-control" placeholder="e.g. 9876543210" inputmode="numeric" pattern="[0-9]*" oninput="this.value = this.value.replace(/\D/g, '')">
                 <div class="form-field-error" id="errContactPhone" style="display: none;"></div>
               </div>
 
@@ -547,7 +547,7 @@
         </div>
         <div class="form-group">
           <label>Phone Number</label>
-          <input type="tel" class="form-control modal-phone" placeholder="+1 (555) 000-0000">
+          <input type="tel" class="form-control modal-phone" placeholder="e.g. 9876543210" inputmode="numeric" pattern="[0-9]*" oninput="this.value = this.value.replace(/\D/g, '')">
         </div>
         <div class="form-group">
           <label>Preferred Contact Time</label>
@@ -636,6 +636,20 @@
       }
     }
 
+    const contactPhoneEl = document.getElementById('contactPhone');
+    if (contactPhoneEl) {
+      // Allow only numbers on input / paste
+      contactPhoneEl.addEventListener('input', function() {
+        this.value = this.value.replace(/\D/g, '');
+      });
+      // Prevent typing non-numeric characters
+      contactPhoneEl.addEventListener('keypress', function(e) {
+        if (e.key && !/[0-9]/.test(e.key)) {
+          e.preventDefault();
+        }
+      });
+    }
+
     ['contactName', 'contactEmail', 'contactPhone', 'contactMessage'].forEach(id => {
       const el = document.getElementById(id);
       if (el) {
@@ -678,7 +692,15 @@
         clearFieldError('contactEmail', 'errContactEmail');
       }
 
-      // 3. Message
+      // 3. Phone Number (Optional, but if entered must be valid numbers)
+      if (phone && !/^\d+$/.test(phone)) {
+        setFieldError('contactPhone', 'errContactPhone', 'Phone number must contain numbers only.');
+        isValid = false;
+      } else {
+        clearFieldError('contactPhone', 'errContactPhone');
+      }
+
+      // 4. Message
       if (!message) {
         setFieldError('contactMessage', 'errContactMessage', 'Please enter your inquiry message.');
         isValid = false;
@@ -690,7 +712,9 @@
       }
 
       if (!isValid) {
-        showToast('Please correct the highlighted errors in the form.');
+        if (typeof showToast === 'function') {
+          showToast('Please correct the highlighted errors in the form.');
+        }
         return;
       }
 
